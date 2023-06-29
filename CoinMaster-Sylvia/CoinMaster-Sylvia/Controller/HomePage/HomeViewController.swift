@@ -11,25 +11,65 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var dataPoints: [CGFloat] = []
-    let imageNames = ["banner1", "banner2", "banner3", "banner4", "banner1"]
+   
     var images = [UIImage]()
+    var usdPairs: [CurrencyPair] = []
+    var productsStats: ProductsStats?
+    
+    enum BaseCurrency: CaseIterable {
+        case bch
+        case link
+        case usdt
+        case btc
+
+        var currencyName: String {
+            switch self {
+            case .bch: return  "BCH"
+            case .link: return "LINK"
+            case .usdt: return "USDT"
+            case .btc: return "BTC"
+            }
+        }
+        var currencyIcon: UIImage! {
+            switch self {
+            case .bch: return  UIImage(named: "bch")
+            case .link: return UIImage(named: "link")
+            case .usdt: return UIImage(named: "usdt")
+            case .btc: return UIImage(named: "btc")
+            }
+        }
+        var currencyChName: String {
+            switch self {
+            case .bch: return  "比特幣現金"
+            case .link: return "Chainlink"
+            case .usdt: return "泰達幣"
+            case .btc: return "比特幣"
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for name in imageNames {
-            if let image = UIImage(named: name) {
-                images.append(image)
-            }
-        }
-        
+
+        // TableViewUI
         tableView.contentInsetAdjustmentBehavior = .never
+        // usdPairsAPI
+        CoinbaseService.shared.getApiResponse(api: CoinbaseApi.products,
+                                              authRequired: false) { (products: [CurrencyPair]) in
+            
+            let USDPairs = products.filter { currencyPair in
+                return String(currencyPair.id.suffix(3)) == "USD"
+            }
+            self.usdPairs = USDPairs
+//            print("USD Curreny Pairs (Array): \(USDPairs)")
+        }
     }
     
 }
 
 extension HomeViewController: UITabBarDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 1 + usdPairs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,43 +78,70 @@ extension HomeViewController: UITabBarDelegate, UITableViewDataSource {
                 print("error")
                 return UITableViewCell()
             }
-            cell.images = self.images
-            cell.balanceLabel.text = ""
+            
+            cell.balanceLabel.text = "3,456"
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell2", for: indexPath) as? HomeTableViewCell2 else {
                 print("error")
                 return UITableViewCell()
             }
-            cell.currencyEnLabel.text = "USDT"
-//            let data = [3, 6, 10, 53, 19]
-            
-            data.sort { prv, next in
-                prv[0] < next[0]
+            // BaseCurrencyName
+            let baseCurrency = self.usdPairs[indexPath.row - 1].baseCurrency
+            cell.currencyEnLabel.text = baseCurrency
+            // BaseCurrencyIcon
+            if let currency = BaseCurrency.allCases.first(where: { $0.currencyName == baseCurrency }) {
+                cell.currencyChLabel.text = currency.currencyChName
+                cell.currencyIconImage.image = currency.currencyIcon
+            } else {
+                cell.currencyEnLabel.text = ""
+                cell.currencyIconImage.image = nil
             }
+            // BaseCurrencyLineChart
+            var data = [Double]()
+            for _ in 0..<10 {
+                let randomValue = Double(arc4random_uniform(10))
+                data.append(randomValue)
+            }
+//            let doubleData = data.map { Double($0) }
+            cell.setupLineChartView(with: data)
+            // produtsStats
+//            let productId =
+//            CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.products,
+//                                                        param: "\()/stats",
+//                                                        authRequired: false) { (products: ProductsStats) in
+//                
+//                let USDPairs = products.filter { currencyPair in
+//                    return String(currencyPair.id.suffix(3)) == "USD"
+//                }
+//                self.usdPairs = USDPairs
+//    //            print("USD Curreny Pairs (Array): \(USDPairs)")
+//            }
             
-            var doubleData = data.map { $0[2] }
             
-            // 標準化
-            doubleData = self.normalizeData(doubleData)
-            
-            print(doubleData)
-            cell.setupLineChartView(with: doubleData)
             return cell
         }
     }
-    
-    func normalizeData(_ data: [Double]) -> [Double] {
-        let minValue = data.min() ?? 0
-        let maxValue = data.max() ?? 1
-
-        let normalizedData = data.map { (value) -> Double in
-            return (value - minValue) / (maxValue - minValue)
-        }
-
-        return normalizedData
-    }
+       
 }
+
+//            data.sort { prv, next in
+//                prv[0] < next[0]
+//            }
+
+//            var doubleData = data.map { $0 Double[2] }
+// 標準化
+//            doubleData = self.normalizeData(doubleData)
+
+//func normalizeData(_ data: [Double]) -> [Double] {
+//    let minValue = data.min() ?? 0
+//    let maxValue = data.max() ?? 1
+//
+//    let normalizedData = data.map { (value) -> Double in
+//        return (value - minValue) / (maxValue - minValue)
+//    }
+//return normalizedData
+//}
 
 var data = [
     [
