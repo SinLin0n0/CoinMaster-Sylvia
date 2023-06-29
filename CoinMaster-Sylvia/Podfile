@@ -11,5 +11,6 @@ target 'CoinMaster-Sylvia' do
   pod 'SwiftLint'
   pod 'IQKeyboardManagerSwift', '6.3.0'
   pod 'iCarousel'
+  pod 'MJRefresh'
 
 end

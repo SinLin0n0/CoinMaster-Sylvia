@@ -2,4 +2,5 @@ ${PODS_ROOT}/Target Support Files/Pods-CoinMaster-Sylvia/Pods-CoinMaster-Sylvia-
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
 ${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework

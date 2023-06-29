@@ -119,13 +119,12 @@ final class CoinbaseService {
                                              httpMethod: HttpMethod = .get,
                                              body: String = "",
                                              completion: ((T) -> Void)? = nil) {
-           
+    
            let semaphore = DispatchSemaphore(value: 0)
            guard let url = URL(string: api.rawValue + param) else {
-               print("Invalid URL")
                return
            }
-           
+        print("🥶\(url.absoluteString)")
            var request = URLRequest(url: url, timeoutInterval: Double.infinity)
            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
            

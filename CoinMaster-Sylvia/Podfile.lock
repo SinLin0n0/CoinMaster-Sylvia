@@ -3,6 +3,7 @@ PODS:
   - iCarousel (1.8.3)
   - IQKeyboardManagerSwift (6.3.0)
   - Kingfisher (7.6.2)
+  - MJRefresh (3.7.5)
   - SwiftLint (0.52.2)
 
 DEPENDENCIES:
@@ -10,6 +11,7 @@ DEPENDENCIES:
   - iCarousel
   - IQKeyboardManagerSwift (= 6.3.0)
   - Kingfisher
+  - MJRefresh
   - SwiftLint
 
 SPEC REPOS:
@@ -18,6 +20,7 @@ SPEC REPOS:
     - iCarousel
     - IQKeyboardManagerSwift
     - Kingfisher
+    - MJRefresh
     - SwiftLint
 
 SPEC CHECKSUMS:
@@ -25,8 +28,9 @@ SPEC CHECKSUMS:
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   SwiftLint: 1ac76dac888ca05cb0cf24d0c85887ec1209961d
 
-PODFILE CHECKSUM: 17174b3fa5f336af76ad23c9712448e885203d11
+PODFILE CHECKSUM: 1e5ec5f4289362f95a4f70db4be967d4cf59bc24
 
 COCOAPODS: 1.12.0

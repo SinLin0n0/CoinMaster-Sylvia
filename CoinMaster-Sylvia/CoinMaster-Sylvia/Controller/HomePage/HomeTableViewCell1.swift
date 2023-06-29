@@ -46,25 +46,6 @@ class HomeTableViewCell1: UITableViewCell {
     @objc func autoScrollBanner() {
         carousel.scrollToItem(at: carousel.currentItemIndex + 1, animated: true)
     }
-    
-
-//    @objc func autoScrollBanner() {
-//
-//        index += 1
-//
-//        if index == images.count - 1 {
-//            pageControl.currentPage = 0
-//        }else {
-//                pageControl.currentPage = index
-//            }
-//        if index < images.count {
-//            imageCollectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
-//        } else if index == images.count {
-//            index = 0
-//            imageCollectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: false)
-//            autoScrollBanner()
-//        }
-//    }
 
     @IBAction func hideBalance(_ sender: Any) {
         if hideBalanceViewIsHidden {
@@ -96,7 +77,7 @@ extension HomeTableViewCell1: iCarouselDelegate, iCarouselDataSource {
     }
     
     func carousel(_ carousel: iCarousel, valueFor option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {
-        // 把頭尾包在一起，預設值是沒有包的
+        // 更改輪播的預設值，把頭尾包在一起，如果是0的話就是不會輪播
         if option == .wrap {
             return 1
         }
@@ -106,27 +87,14 @@ extension HomeTableViewCell1: iCarouselDelegate, iCarouselDataSource {
     func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
         pageControl.currentPage = carousel.currentItemIndex
     }
+    
+    func carousel(_ carousel: iCarousel, didSelectItemAt index: Int) {
+        
+        if let urlString = webArray?[index] {
+            if let url = URL(string: urlString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    
 }
-
-//extension HomeTableViewCell1: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        images.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell else {
-//            fatalError("Unable to dequeue ArrivalInfoTableViewCell")
-//        }
-//        cell.bannerImage.image = images[indexPath.row]
-//        return cell
-//    }
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//            let cell = collectionView.cellForItem(at: indexPath)
-//
-//            if let urlString = webArray?[indexPath.item] {
-//                if let url = URL(string: urlString) {
-//                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//                }
-//            }
-//        }
-//}

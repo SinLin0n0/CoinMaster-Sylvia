@@ -29,6 +29,8 @@ class HomeTableViewCell2: UITableViewCell {
     private var lineChartContentViewHost: UIHostingController<LineChartContentView>?
 
     func setupLineChartView(with data: [Double]) {
+
+        
         let lineChartContentView = LineChartContentView(chartData: data)
         lineChartContentViewHost = UIHostingController(rootView: lineChartContentView)
         
@@ -37,7 +39,11 @@ class HomeTableViewCell2: UITableViewCell {
         }
         
         lineChartContentViewHost.view.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(lineChartContentViewHost.view)
+
+        lineChartView.subviews.forEach { subview in
+            subview.removeFromSuperview()
+        }
+        lineChartView.addSubview(lineChartContentViewHost.view)
         
         NSLayoutConstraint.activate([
             lineChartContentViewHost.view.leadingAnchor.constraint(equalTo: lineChartView.leadingAnchor),

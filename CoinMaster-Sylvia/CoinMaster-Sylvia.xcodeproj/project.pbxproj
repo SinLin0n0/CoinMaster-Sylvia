@@ -13,7 +13,7 @@
 		275B103A2A4D4C850029666D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10362A4D4C850029666D /* Account.swift */; };
 		275B103B2A4D4C850029666D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10372A4D4C850029666D /* Profile.swift */; };
 		275B103D2A4D78E50029666D /* ProductsStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B103C2A4D78E50029666D /* ProductsStats.swift */; };
-		27ED7D4E2A4C5D0E007B7638 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED7D4D2A4C5D0E007B7638 /* HomeCollectionViewCell.swift */; };
+		275B10402A4DC5780029666D /* CurrencyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B103F2A4DC5780029666D /* CurrencyDetailsViewController.swift */; };
 		27FC0B032A4C1FA00059BDFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B022A4C1FA00059BDFB /* AppDelegate.swift */; };
 		27FC0B052A4C1FA00059BDFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B042A4C1FA00059BDFB /* SceneDelegate.swift */; };
 		27FC0B0A2A4C1FA00059BDFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FC0B082A4C1FA00059BDFB /* Main.storyboard */; };
@@ -32,7 +32,7 @@
 		275B10362A4D4C850029666D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		275B10372A4D4C850029666D /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		275B103C2A4D78E50029666D /* ProductsStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductsStats.swift; path = "../../../../../.Trash/CoinMaster-Sylvia 上午9.11.59/CoinMaster-Sylvia/CoinMaster-Sylvia/ProductsStats.swift"; sourceTree = "<group>"; };
-		27ED7D4D2A4C5D0E007B7638 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		275B103F2A4DC5780029666D /* CurrencyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailsViewController.swift; sourceTree = "<group>"; };
 		27FC0AFF2A4C1FA00059BDFB /* CoinMaster-Sylvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinMaster-Sylvia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FC0B022A4C1FA00059BDFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27FC0B042A4C1FA00059BDFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +65,7 @@
 		275B10312A4D4BE70029666D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				275B103E2A4DC5370029666D /* CurrencyDetailsPage */,
 				275B10322A4D4BF00029666D /* HomePage */,
 			);
 			path = Controller;
@@ -76,7 +77,6 @@
 				27FC0B192A4C31AA0059BDFB /* HomeViewController.swift */,
 				27FC0B1B2A4C31AA0059BDFB /* HomeTableViewCell1.swift */,
 				27FC0B182A4C31AA0059BDFB /* HomeTableViewCell2.swift */,
-				27ED7D4D2A4C5D0E007B7638 /* HomeCollectionViewCell.swift */,
 				27FC0B1A2A4C31AA0059BDFB /* LineChartView.swift */,
 			);
 			path = HomePage;
@@ -93,6 +93,14 @@
 				275B103C2A4D78E50029666D /* ProductsStats.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		275B103E2A4DC5370029666D /* CurrencyDetailsPage */ = {
+			isa = PBXGroup;
+			children = (
+				275B103F2A4DC5780029666D /* CurrencyDetailsViewController.swift */,
+			);
+			path = CurrencyDetailsPage;
 			sourceTree = "<group>";
 		};
 		27FC0AF62A4C1FA00059BDFB = {
@@ -274,11 +282,11 @@
 				27FC0B172A4C20000059BDFB /* ApiKeys.swift in Sources */,
 				27FC0B032A4C1FA00059BDFB /* AppDelegate.swift in Sources */,
 				27FC0B1E2A4C31AA0059BDFB /* LineChartView.swift in Sources */,
-				27ED7D4E2A4C5D0E007B7638 /* HomeCollectionViewCell.swift in Sources */,
 				27FC0B052A4C1FA00059BDFB /* SceneDelegate.swift in Sources */,
 				275B103D2A4D78E50029666D /* ProductsStats.swift in Sources */,
 				27FC0B1C2A4C31AA0059BDFB /* HomeTableViewCell2.swift in Sources */,
 				275B10392A4D4C850029666D /* CoinbaseService.swift in Sources */,
+				275B10402A4DC5780029666D /* CurrencyDetailsViewController.swift in Sources */,
 				275B10382A4D4C850029666D /* CurrencyPair.swift in Sources */,
 				27FC0B1D2A4C31AA0059BDFB /* HomeViewController.swift in Sources */,
 			);
