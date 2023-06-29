@@ -610,6 +610,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		057337A65B9409714662D87C0D5A9CA9 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				A189E3B7491BA8FA4AD412D44508ED4D /* MJRefresh.h */,
+				B72F3D6684B35598C0DFE0F4FD8CD650 /* MJRefreshAutoFooter.h */,
+				C16A6F2831EEC1C0E71EE6390E043B0C /* MJRefreshAutoFooter.m */,
+				0324285577B4A6224385BC222E4505BB /* MJRefreshAutoGifFooter.h */,
+				E6A74AB74F4D11AD008287F62F60C5DC /* MJRefreshAutoGifFooter.m */,
+				1EDBA01001324F159724D23668E4EAED /* MJRefreshAutoNormalFooter.h */,
+				F895D763873A3544254CC792279FED9D /* MJRefreshAutoNormalFooter.m */,
+				4C9B28E9A56516B05323B3AE219CEE66 /* MJRefreshAutoStateFooter.h */,
+				17ECA2AF5DA047B8A84A20B438F60872 /* MJRefreshAutoStateFooter.m */,
+				4F450C01D25FB391CC786F40FDE56022 /* MJRefreshBackFooter.h */,
+				CFAEA2262718E706F85B90B5EA5F87AD /* MJRefreshBackFooter.m */,
+				E9B49BFFF8960570148E2A42526912FF /* MJRefreshBackGifFooter.h */,
+				0EC2A7C7D6D805A7BBEA33790CED1D8B /* MJRefreshBackGifFooter.m */,
+				755FE3896B7478B030C191D9D89A42B6 /* MJRefreshBackNormalFooter.h */,
+				950D6702CFE39D5872457B51D31C0B09 /* MJRefreshBackNormalFooter.m */,
+				22368D9DBF5C59C0241FC021228ADB4E /* MJRefreshBackStateFooter.h */,
+				EA5D28EE245333C2A4BEA334C49D406F /* MJRefreshBackStateFooter.m */,
+				19182520B88B215691E06143278D56F5 /* MJRefreshComponent.h */,
+				C19D915924D4E1C33BCD3EEFAD923881 /* MJRefreshComponent.m */,
+				B0651A02672E6D49C2191A2F3DDD31C9 /* MJRefreshConfig.h */,
+				3E5372861131808F53696687C1EFCA82 /* MJRefreshConfig.m */,
+				BC0681F54BD7E9505FD60B45FBDDD47F /* MJRefreshConst.h */,
+				649179A73519C1AFD719C2443954C26D /* MJRefreshConst.m */,
+				C27CB35135924CC2859BC7401B24FA01 /* MJRefreshFooter.h */,
+				B344B0014788054A2BE57C470A8018A9 /* MJRefreshFooter.m */,
+				6B31A4547A2C2BD0151335CCB1DD4BA7 /* MJRefreshGifHeader.h */,
+				D07548126885D8F708B783E1811F7599 /* MJRefreshGifHeader.m */,
+				01928D6A58CF5E0F3FA7676D2872A45C /* MJRefreshHeader.h */,
+				8EF3DC68A3508FFD7B2ECDA8679A1E66 /* MJRefreshHeader.m */,
+				4B8E52E1B0390D7BBAAFD023B89D1FD6 /* MJRefreshNormalHeader.h */,
+				82299080EEC190F8078F29676C5B9579 /* MJRefreshNormalHeader.m */,
+				AF3690E27E724B2D4B9CB7EF4D3CA648 /* MJRefreshNormalTrailer.h */,
+				5EBBEAC170F65E7DCEDD7FFDE278B477 /* MJRefreshNormalTrailer.m */,
+				F10180FE0F46BA8A13C37144AE464BCD /* MJRefreshStateHeader.h */,
+				82CA2EA9FEF5A3F59343E6AA2C79645F /* MJRefreshStateHeader.m */,
+				2A53BA5B1A225671F51D4A86E6296C21 /* MJRefreshStateTrailer.h */,
+				0B898D0BA4340AE897CBEC3876204A8F /* MJRefreshStateTrailer.m */,
+				091836EE29D1D9CCC7294AAC475FA00D /* MJRefreshTrailer.h */,
+				31EAE21C681020C117008FBC14EC9A04 /* MJRefreshTrailer.m */,
+				E3E295920EB269F8A80DABD4107F1CD0 /* NSBundle+MJRefresh.h */,
+				CA6EEDB722103E867563442A339AECA5 /* NSBundle+MJRefresh.m */,
+				DDFF95A6564D2B382C67171EB47C5EE0 /* UICollectionViewLayout+MJRefresh.h */,
+				A0ED906B9A4687810FBA029B03C74B1F /* UICollectionViewLayout+MJRefresh.m */,
+				DA710E77CAC08521AA7D0795159BC96F /* UIScrollView+MJExtension.h */,
+				2CB247CD19C57B9E0B9D81C4060D66FE /* UIScrollView+MJExtension.m */,
+				A6E6937BEC082AC93A671243C6CFAE92 /* UIScrollView+MJRefresh.h */,
+				13F83B62B6296EF1B3128E9484BB8B5E /* UIScrollView+MJRefresh.m */,
+				2D23507D6ECA5F2D15115F170D3A53DB /* UIView+MJExtension.h */,
+				177B6EB6EEACF6669B7B3717173E12BE /* UIView+MJExtension.m */,
+				6B44CE20BB3AFEB65E717CA7CE1E8738 /* Resources */,
+				5F001904D5D32F17AE86FB344D5C30AF /* Support Files */,
+			);
+			name = MJRefresh;
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
 		0ABE0C6B4983E57E8F8C7E69BAA3DD31 /* Pods-CoinMaster-Sylvia */ = {
 			isa = PBXGroup;
 			children = (
@@ -821,6 +880,72 @@
 				A89111DD4A68566BA04DC02017C8883F /* MJRefresh.bundle */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		6B44CE20BB3AFEB65E717CA7CE1E8738 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				30F9E5A73680594A9491DA69F657DB3F /* MJRefresh.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8783BF6766FCEF2DEE0D5E8D1E8D6411 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A479B8C4647862700E6D041E6DB608FE /* Alamofire */,
+				CA885EFE0F861238AE73F634F515DD16 /* iCarousel */,
+				D83A34000AAA3B63E093BF3D249EFB34 /* IQKeyboardManagerSwift */,
+				19E2D43DBE75871AFB2B36E5895F0AFB /* Kingfisher */,
+				057337A65B9409714662D87C0D5A9CA9 /* MJRefresh */,
+				F06BEA74992AD75F386AFDFEFB5BA7F1 /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A479B8C4647862700E6D041E6DB608FE /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				B6F62732C7266F20B376B8C23E81B43E /* AFError.swift */,
+				17A0F08C12967DE0E0F509897BAC7815 /* Alamofire.swift */,
+				11D0DA659E5A1CF33F0E2AC0E0F28B4D /* AlamofireExtended.swift */,
+				41193E033F29976BD783DF17840B77D9 /* AuthenticationInterceptor.swift */,
+				3E5364A5EE2754CDB5D7BD4C3C0431C6 /* CachedResponseHandler.swift */,
+				315A5FA701B9010AE939CB73ED431AAD /* Combine.swift */,
+				04B610B9858B3B9B418B98349115AF4D /* Concurrency.swift */,
+				E6B203390438907F7AA25BB49A44FB26 /* DispatchQueue+Alamofire.swift */,
+				3453EB91C0A614E3C31A57C35047ACC8 /* EventMonitor.swift */,
+				BB31873526F6DDD6335EC5A03B4C7511 /* HTTPHeaders.swift */,
+				2FB760F9C5DD7C813064274BB67D1BAD /* HTTPMethod.swift */,
+				1C8023970445DB7558865BD01D45478A /* MultipartFormData.swift */,
+				249AF50008D166C4AA715289C85E12A0 /* MultipartUpload.swift */,
+				CC8BC527D9D8644382364CE133897DCE /* NetworkReachabilityManager.swift */,
+				C80B989458D99B1EB973CCBFF10EFF56 /* Notifications.swift */,
+				57C9253C875C21060AC0635ED979C33F /* OperationQueue+Alamofire.swift */,
+				1DBD3CA8E15AA4D95593815538B5494F /* ParameterEncoder.swift */,
+				2B445D5E4E1480AA17ECD9CB23243883 /* ParameterEncoding.swift */,
+				B260F558665D97A858357197888215AA /* Protected.swift */,
+				5E0904D0F7DF5E3401740A53C869F043 /* RedirectHandler.swift */,
+				D4C61DC6CC28CAC666A0E32952BC353D /* Request.swift */,
+				40437F1C4333CF551F51F75695D48CC3 /* RequestInterceptor.swift */,
+				DE4D54937E1813CAFA5944F6FB74B522 /* RequestTaskMap.swift */,
+				279C1E9D17B6A38BC0334EA429C4B45D /* Response.swift */,
+				C0A4914C0D7FC990574AF843C305DA4F /* ResponseSerialization.swift */,
+				7120719EE366F53DCC44B4C09190C149 /* Result+Alamofire.swift */,
+				49FA67E83DE3C78DC22FE8B3DCD2AD75 /* RetryPolicy.swift */,
+				4D84307525FC82A534BF512698DB7928 /* ServerTrustEvaluation.swift */,
+				CBCAB2FBC25ED7303BCB4FDC405083D1 /* Session.swift */,
+				7BB2B2D36AE5EF865F8B9A02F7E7F171 /* SessionDelegate.swift */,
+				5ED01CFDA4D66A8276A3740E7DAF0AE5 /* StringEncoding+Alamofire.swift */,
+				EFD55EF6D0763C11AE22965904EF322E /* URLConvertible+URLRequestConvertible.swift */,
+				21F90E28B5C6A8F46C4AA62EAB324D09 /* URLEncodedFormEncoder.swift */,
+				C289E8A7D1377747317D6CA642834D35 /* URLRequest+Alamofire.swift */,
+				5DB47CC6413847759EC8B51F3135320D /* URLSessionConfiguration+Alamofire.swift */,
+				BFA361B1120C6856B9F1ADE8A7307C01 /* Validation.swift */,
+				3B545DB560ACC196E0AF8604E3E7E0EB /* Support Files */,
+			);
+			name = Alamofire;
+			path = Alamofire;
 			sourceTree = "<group>";
 		};
 		C1161C17D80D36DB8C544033E91418AC /* Targets Support Files */ = {
@@ -1058,6 +1183,23 @@
 			);
 			name = Kingfisher;
 			path = Kingfisher;
+			sourceTree = "<group>";
+		};
+		F06BEA74992AD75F386AFDFEFB5BA7F1 /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				4F0DFF7B91748DDEF7660C8FECE1EDE1 /* Support Files */,
+			);
+			name = SwiftLint;
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+		F4F37066E9B9181E101B61EFFA084439 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F352A05D91EAE7F2C4C44E7FA92E20D /* IQKeyboardManager.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
