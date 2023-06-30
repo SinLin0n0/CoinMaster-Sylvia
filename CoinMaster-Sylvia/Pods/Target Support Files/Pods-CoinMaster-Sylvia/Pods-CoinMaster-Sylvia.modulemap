@@ -1,0 +1,6 @@
+framework module Pods_CoinMaster_Sylvia {
+  umbrella header "Pods-CoinMaster-Sylvia-umbrella.h"
+
+  export *
+  module * { export * }
+}

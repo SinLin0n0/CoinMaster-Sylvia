@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22F146952BE757D1193A5291 /* Pods_CoinMaster_Sylvia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860466229DA4B4CA2EB7948C /* Pods_CoinMaster_Sylvia.framework */; };
+		27FC0B032A4C1FA00059BDFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B022A4C1FA00059BDFB /* AppDelegate.swift */; };
+		27FC0B052A4C1FA00059BDFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B042A4C1FA00059BDFB /* SceneDelegate.swift */; };
+		27FC0B072A4C1FA00059BDFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B062A4C1FA00059BDFB /* ViewController.swift */; };
+		27FC0B0A2A4C1FA00059BDFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FC0B082A4C1FA00059BDFB /* Main.storyboard */; };
+		27FC0B0C2A4C1FA20059BDFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27FC0B0B2A4C1FA20059BDFB /* Assets.xcassets */; };
+		27FC0B0F2A4C1FA20059BDFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FC0B0D2A4C1FA20059BDFB /* LaunchScreen.storyboard */; };
+		27FC0B172A4C20000059BDFB /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B162A4C20000059BDFB /* ApiKeys.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		27FC0AFF2A4C1FA00059BDFB /* CoinMaster-Sylvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinMaster-Sylvia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27FC0B022A4C1FA00059BDFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		27FC0B042A4C1FA00059BDFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		27FC0B062A4C1FA00059BDFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		27FC0B092A4C1FA00059BDFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		27FC0B0B2A4C1FA20059BDFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27FC0B0E2A4C1FA20059BDFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		27FC0B102A4C1FA20059BDFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27FC0B162A4C20000059BDFB /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		860466229DA4B4CA2EB7948C /* Pods_CoinMaster_Sylvia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinMaster_Sylvia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94091719932C85AB1DD7EF9B /* Pods-CoinMaster-Sylvia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinMaster-Sylvia.debug.xcconfig"; path = "Target Support Files/Pods-CoinMaster-Sylvia/Pods-CoinMaster-Sylvia.debug.xcconfig"; sourceTree = "<group>"; };
+		A351BBD70E5CA39B52EF7F37 /* Pods-CoinMaster-Sylvia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinMaster-Sylvia.release.xcconfig"; path = "Target Support Files/Pods-CoinMaster-Sylvia/Pods-CoinMaster-Sylvia.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27FC0AFC2A4C1FA00059BDFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F146952BE757D1193A5291 /* Pods_CoinMaster_Sylvia.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27FC0AF62A4C1FA00059BDFB = {
+			isa = PBXGroup;
+			children = (
+				27FC0B012A4C1FA00059BDFB /* CoinMaster-Sylvia */,
+				27FC0B002A4C1FA00059BDFB /* Products */,
+				C73BB338CE0F2DEC6E7674E7 /* Pods */,
+				D3957C90DF2E5BE9DC391795 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		27FC0B002A4C1FA00059BDFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27FC0AFF2A4C1FA00059BDFB /* CoinMaster-Sylvia.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27FC0B012A4C1FA00059BDFB /* CoinMaster-Sylvia */ = {
+			isa = PBXGroup;
+			children = (
+				27FC0B022A4C1FA00059BDFB /* AppDelegate.swift */,
+				27FC0B042A4C1FA00059BDFB /* SceneDelegate.swift */,
+				27FC0B062A4C1FA00059BDFB /* ViewController.swift */,
+				27FC0B162A4C20000059BDFB /* ApiKeys.swift */,
+				27FC0B082A4C1FA00059BDFB /* Main.storyboard */,
+				27FC0B0B2A4C1FA20059BDFB /* Assets.xcassets */,
+				27FC0B0D2A4C1FA20059BDFB /* LaunchScreen.storyboard */,
+				27FC0B102A4C1FA20059BDFB /* Info.plist */,
+			);
+			path = "CoinMaster-Sylvia";
+			sourceTree = "<group>";
+		};
+		C73BB338CE0F2DEC6E7674E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94091719932C85AB1DD7EF9B /* Pods-CoinMaster-Sylvia.debug.xcconfig */,
+				A351BBD70E5CA39B52EF7F37 /* Pods-CoinMaster-Sylvia.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D3957C90DF2E5BE9DC391795 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				860466229DA4B4CA2EB7948C /* Pods_CoinMaster_Sylvia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27FC0AFE2A4C1FA00059BDFB /* CoinMaster-Sylvia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27FC0B132A4C1FA20059BDFB /* Build configuration list for PBXNativeTarget "CoinMaster-Sylvia" */;
+			buildPhases = (
+				F4ADB2C85FE20EF7B7F5253A /* [CP] Check Pods Manifest.lock */,
+				27FC0AFB2A4C1FA00059BDFB /* Sources */,
+				27FC0AFC2A4C1FA00059BDFB /* Frameworks */,
+				27FC0AFD2A4C1FA00059BDFB /* Resources */,
+				6D3A1BBF49BCF8320481C123 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoinMaster-Sylvia";
+			productName = "CoinMaster-Sylvia";
+			productReference = 27FC0AFF2A4C1FA00059BDFB /* CoinMaster-Sylvia.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27FC0AF72A4C1FA00059BDFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					27FC0AFE2A4C1FA00059BDFB = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 27FC0AFA2A4C1FA00059BDFB /* Build configuration list for PBXProject "CoinMaster-Sylvia" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27FC0AF62A4C1FA00059BDFB;
+			productRefGroup = 27FC0B002A4C1FA00059BDFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27FC0AFE2A4C1FA00059BDFB /* CoinMaster-Sylvia */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27FC0AFD2A4C1FA00059BDFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27FC0B0F2A4C1FA20059BDFB /* LaunchScreen.storyboard in Resources */,
+				27FC0B0C2A4C1FA20059BDFB /* Assets.xcassets in Resources */,
+				27FC0B0A2A4C1FA00059BDFB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D3A1BBF49BCF8320481C123 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoinMaster-Sylvia/Pods-CoinMaster-Sylvia-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoinMaster-Sylvia/Pods-CoinMaster-Sylvia-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoinMaster-Sylvia/Pods-CoinMaster-Sylvia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4ADB2C85FE20EF7B7F5253A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoinMaster-Sylvia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27FC0AFB2A4C1FA00059BDFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27FC0B072A4C1FA00059BDFB /* ViewController.swift in Sources */,
+				27FC0B172A4C20000059BDFB /* ApiKeys.swift in Sources */,
+				27FC0B032A4C1FA00059BDFB /* AppDelegate.swift in Sources */,
+				27FC0B052A4C1FA00059BDFB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		27FC0B082A4C1FA00059BDFB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27FC0B092A4C1FA00059BDFB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		27FC0B0D2A4C1FA20059BDFB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27FC0B0E2A4C1FA20059BDFB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27FC0B112A4C1FA20059BDFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		27FC0B122A4C1FA20059BDFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27FC0B142A4C1FA20059BDFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94091719932C85AB1DD7EF9B /* Pods-CoinMaster-Sylvia.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VV2Q9SW232;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CoinMaster-Sylvia/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sin.CoinMaster-Sylvia";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27FC0B152A4C1FA20059BDFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A351BBD70E5CA39B52EF7F37 /* Pods-CoinMaster-Sylvia.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VV2Q9SW232;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CoinMaster-Sylvia/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sin.CoinMaster-Sylvia";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27FC0AFA2A4C1FA00059BDFB /* Build configuration list for PBXProject "CoinMaster-Sylvia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27FC0B112A4C1FA20059BDFB /* Debug */,
+				27FC0B122A4C1FA20059BDFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27FC0B132A4C1FA20059BDFB /* Build configuration list for PBXNativeTarget "CoinMaster-Sylvia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27FC0B142A4C1FA20059BDFB /* Debug */,
+				27FC0B152A4C1FA20059BDFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27FC0AF72A4C1FA00059BDFB /* Project object */;
+}
