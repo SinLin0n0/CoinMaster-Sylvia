@@ -610,65 +610,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		057337A65B9409714662D87C0D5A9CA9 /* MJRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				A189E3B7491BA8FA4AD412D44508ED4D /* MJRefresh.h */,
-				B72F3D6684B35598C0DFE0F4FD8CD650 /* MJRefreshAutoFooter.h */,
-				C16A6F2831EEC1C0E71EE6390E043B0C /* MJRefreshAutoFooter.m */,
-				0324285577B4A6224385BC222E4505BB /* MJRefreshAutoGifFooter.h */,
-				E6A74AB74F4D11AD008287F62F60C5DC /* MJRefreshAutoGifFooter.m */,
-				1EDBA01001324F159724D23668E4EAED /* MJRefreshAutoNormalFooter.h */,
-				F895D763873A3544254CC792279FED9D /* MJRefreshAutoNormalFooter.m */,
-				4C9B28E9A56516B05323B3AE219CEE66 /* MJRefreshAutoStateFooter.h */,
-				17ECA2AF5DA047B8A84A20B438F60872 /* MJRefreshAutoStateFooter.m */,
-				4F450C01D25FB391CC786F40FDE56022 /* MJRefreshBackFooter.h */,
-				CFAEA2262718E706F85B90B5EA5F87AD /* MJRefreshBackFooter.m */,
-				E9B49BFFF8960570148E2A42526912FF /* MJRefreshBackGifFooter.h */,
-				0EC2A7C7D6D805A7BBEA33790CED1D8B /* MJRefreshBackGifFooter.m */,
-				755FE3896B7478B030C191D9D89A42B6 /* MJRefreshBackNormalFooter.h */,
-				950D6702CFE39D5872457B51D31C0B09 /* MJRefreshBackNormalFooter.m */,
-				22368D9DBF5C59C0241FC021228ADB4E /* MJRefreshBackStateFooter.h */,
-				EA5D28EE245333C2A4BEA334C49D406F /* MJRefreshBackStateFooter.m */,
-				19182520B88B215691E06143278D56F5 /* MJRefreshComponent.h */,
-				C19D915924D4E1C33BCD3EEFAD923881 /* MJRefreshComponent.m */,
-				B0651A02672E6D49C2191A2F3DDD31C9 /* MJRefreshConfig.h */,
-				3E5372861131808F53696687C1EFCA82 /* MJRefreshConfig.m */,
-				BC0681F54BD7E9505FD60B45FBDDD47F /* MJRefreshConst.h */,
-				649179A73519C1AFD719C2443954C26D /* MJRefreshConst.m */,
-				C27CB35135924CC2859BC7401B24FA01 /* MJRefreshFooter.h */,
-				B344B0014788054A2BE57C470A8018A9 /* MJRefreshFooter.m */,
-				6B31A4547A2C2BD0151335CCB1DD4BA7 /* MJRefreshGifHeader.h */,
-				D07548126885D8F708B783E1811F7599 /* MJRefreshGifHeader.m */,
-				01928D6A58CF5E0F3FA7676D2872A45C /* MJRefreshHeader.h */,
-				8EF3DC68A3508FFD7B2ECDA8679A1E66 /* MJRefreshHeader.m */,
-				4B8E52E1B0390D7BBAAFD023B89D1FD6 /* MJRefreshNormalHeader.h */,
-				82299080EEC190F8078F29676C5B9579 /* MJRefreshNormalHeader.m */,
-				AF3690E27E724B2D4B9CB7EF4D3CA648 /* MJRefreshNormalTrailer.h */,
-				5EBBEAC170F65E7DCEDD7FFDE278B477 /* MJRefreshNormalTrailer.m */,
-				F10180FE0F46BA8A13C37144AE464BCD /* MJRefreshStateHeader.h */,
-				82CA2EA9FEF5A3F59343E6AA2C79645F /* MJRefreshStateHeader.m */,
-				2A53BA5B1A225671F51D4A86E6296C21 /* MJRefreshStateTrailer.h */,
-				0B898D0BA4340AE897CBEC3876204A8F /* MJRefreshStateTrailer.m */,
-				091836EE29D1D9CCC7294AAC475FA00D /* MJRefreshTrailer.h */,
-				31EAE21C681020C117008FBC14EC9A04 /* MJRefreshTrailer.m */,
-				E3E295920EB269F8A80DABD4107F1CD0 /* NSBundle+MJRefresh.h */,
-				CA6EEDB722103E867563442A339AECA5 /* NSBundle+MJRefresh.m */,
-				DDFF95A6564D2B382C67171EB47C5EE0 /* UICollectionViewLayout+MJRefresh.h */,
-				A0ED906B9A4687810FBA029B03C74B1F /* UICollectionViewLayout+MJRefresh.m */,
-				DA710E77CAC08521AA7D0795159BC96F /* UIScrollView+MJExtension.h */,
-				2CB247CD19C57B9E0B9D81C4060D66FE /* UIScrollView+MJExtension.m */,
-				A6E6937BEC082AC93A671243C6CFAE92 /* UIScrollView+MJRefresh.h */,
-				13F83B62B6296EF1B3128E9484BB8B5E /* UIScrollView+MJRefresh.m */,
-				2D23507D6ECA5F2D15115F170D3A53DB /* UIView+MJExtension.h */,
-				177B6EB6EEACF6669B7B3717173E12BE /* UIView+MJExtension.m */,
-				6B44CE20BB3AFEB65E717CA7CE1E8738 /* Resources */,
-				5F001904D5D32F17AE86FB344D5C30AF /* Support Files */,
-			);
-			name = MJRefresh;
-			path = MJRefresh;
-			sourceTree = "<group>";
-		};
 		0ABE0C6B4983E57E8F8C7E69BAA3DD31 /* Pods-CoinMaster-Sylvia */ = {
 			isa = PBXGroup;
 			children = (
@@ -882,70 +823,27 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		6B44CE20BB3AFEB65E717CA7CE1E8738 /* Resources */ = {
+		930CE89C9E34BA8DEA706E2D7B884E2E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				30F9E5A73680594A9491DA69F657DB3F /* MJRefresh.bundle */,
+				F8C90DB010F30631A092ECD33B7F4A03 /* iCarousel.modulemap */,
+				4325A1DF3353BAF2D8A739E9DD87A46C /* iCarousel-dummy.m */,
+				32D6D31F499E11918A3405EC63EE6FCE /* iCarousel-Info.plist */,
+				DFFBB29AE72CF8D4219AA63D2CD31DDB /* iCarousel-prefix.pch */,
+				7861F58BA645D683D7DF0E4D48F02D09 /* iCarousel-umbrella.h */,
+				8636872AE414CF0B2E53339AC906FCA1 /* iCarousel.debug.xcconfig */,
+				819CA1E5A7B86EF2E929AF45678C0495 /* iCarousel.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/iCarousel";
+			sourceTree = "<group>";
+		};
+		A71B77D6AABBF6F3C2BCA661061C7547 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A89111DD4A68566BA04DC02017C8883F /* MJRefresh.bundle */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		8783BF6766FCEF2DEE0D5E8D1E8D6411 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A479B8C4647862700E6D041E6DB608FE /* Alamofire */,
-				CA885EFE0F861238AE73F634F515DD16 /* iCarousel */,
-				D83A34000AAA3B63E093BF3D249EFB34 /* IQKeyboardManagerSwift */,
-				19E2D43DBE75871AFB2B36E5895F0AFB /* Kingfisher */,
-				057337A65B9409714662D87C0D5A9CA9 /* MJRefresh */,
-				F06BEA74992AD75F386AFDFEFB5BA7F1 /* SwiftLint */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		A479B8C4647862700E6D041E6DB608FE /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				B6F62732C7266F20B376B8C23E81B43E /* AFError.swift */,
-				17A0F08C12967DE0E0F509897BAC7815 /* Alamofire.swift */,
-				11D0DA659E5A1CF33F0E2AC0E0F28B4D /* AlamofireExtended.swift */,
-				41193E033F29976BD783DF17840B77D9 /* AuthenticationInterceptor.swift */,
-				3E5364A5EE2754CDB5D7BD4C3C0431C6 /* CachedResponseHandler.swift */,
-				315A5FA701B9010AE939CB73ED431AAD /* Combine.swift */,
-				04B610B9858B3B9B418B98349115AF4D /* Concurrency.swift */,
-				E6B203390438907F7AA25BB49A44FB26 /* DispatchQueue+Alamofire.swift */,
-				3453EB91C0A614E3C31A57C35047ACC8 /* EventMonitor.swift */,
-				BB31873526F6DDD6335EC5A03B4C7511 /* HTTPHeaders.swift */,
-				2FB760F9C5DD7C813064274BB67D1BAD /* HTTPMethod.swift */,
-				1C8023970445DB7558865BD01D45478A /* MultipartFormData.swift */,
-				249AF50008D166C4AA715289C85E12A0 /* MultipartUpload.swift */,
-				CC8BC527D9D8644382364CE133897DCE /* NetworkReachabilityManager.swift */,
-				C80B989458D99B1EB973CCBFF10EFF56 /* Notifications.swift */,
-				57C9253C875C21060AC0635ED979C33F /* OperationQueue+Alamofire.swift */,
-				1DBD3CA8E15AA4D95593815538B5494F /* ParameterEncoder.swift */,
-				2B445D5E4E1480AA17ECD9CB23243883 /* ParameterEncoding.swift */,
-				B260F558665D97A858357197888215AA /* Protected.swift */,
-				5E0904D0F7DF5E3401740A53C869F043 /* RedirectHandler.swift */,
-				D4C61DC6CC28CAC666A0E32952BC353D /* Request.swift */,
-				40437F1C4333CF551F51F75695D48CC3 /* RequestInterceptor.swift */,
-				DE4D54937E1813CAFA5944F6FB74B522 /* RequestTaskMap.swift */,
-				279C1E9D17B6A38BC0334EA429C4B45D /* Response.swift */,
-				C0A4914C0D7FC990574AF843C305DA4F /* ResponseSerialization.swift */,
-				7120719EE366F53DCC44B4C09190C149 /* Result+Alamofire.swift */,
-				49FA67E83DE3C78DC22FE8B3DCD2AD75 /* RetryPolicy.swift */,
-				4D84307525FC82A534BF512698DB7928 /* ServerTrustEvaluation.swift */,
-				CBCAB2FBC25ED7303BCB4FDC405083D1 /* Session.swift */,
-				7BB2B2D36AE5EF865F8B9A02F7E7F171 /* SessionDelegate.swift */,
-				5ED01CFDA4D66A8276A3740E7DAF0AE5 /* StringEncoding+Alamofire.swift */,
-				EFD55EF6D0763C11AE22965904EF322E /* URLConvertible+URLRequestConvertible.swift */,
-				21F90E28B5C6A8F46C4AA62EAB324D09 /* URLEncodedFormEncoder.swift */,
-				C289E8A7D1377747317D6CA642834D35 /* URLRequest+Alamofire.swift */,
-				5DB47CC6413847759EC8B51F3135320D /* URLSessionConfiguration+Alamofire.swift */,
-				BFA361B1120C6856B9F1ADE8A7307C01 /* Validation.swift */,
-				3B545DB560ACC196E0AF8604E3E7E0EB /* Support Files */,
-			);
-			name = Alamofire;
-			path = Alamofire;
 			sourceTree = "<group>";
 		};
 		C1161C17D80D36DB8C544033E91418AC /* Targets Support Files */ = {
@@ -1185,21 +1083,148 @@
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
-		F06BEA74992AD75F386AFDFEFB5BA7F1 /* SwiftLint */ = {
+		E6CF54113D5EACC8998175861EABC050 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4F0DFF7B91748DDEF7660C8FECE1EDE1 /* Support Files */,
+				6C59B20262B3A9ADE3F7555BBD19F94F /* Kingfisher.modulemap */,
+				C9C628D359A75A1147D37D69ABBA13C9 /* Kingfisher-dummy.m */,
+				24F444B7CC00D5B88079DD6383BFE91F /* Kingfisher-Info.plist */,
+				9BA2946745A3BCC7082301CB8796D9C2 /* Kingfisher-prefix.pch */,
+				3B676BC1FA2FB4DB922B975A382FF8EC /* Kingfisher-umbrella.h */,
+				1C50717B4CBC1B2B1DBB86DA74FCFFF1 /* Kingfisher.debug.xcconfig */,
+				CC8AAACD9CF6C08FADF812374D666368 /* Kingfisher.release.xcconfig */,
 			);
-			name = SwiftLint;
-			path = SwiftLint;
+			name = "Support Files";
+			path = "../Target Support Files/Kingfisher";
 			sourceTree = "<group>";
 		};
-		F4F37066E9B9181E101B61EFFA084439 /* Resources */ = {
+		E6E888C65D3090B989CB853924A4D381 /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				3F352A05D91EAE7F2C4C44E7FA92E20D /* IQKeyboardManager.bundle */,
+				E2A6B5F4C391677B3EB96BC9C1A91EF8 /* MJRefresh.h */,
+				B6E6156B3B2D4148560E342B5784B7C9 /* MJRefreshAutoFooter.h */,
+				1CC16409C40DE0DAB448CFBD26C99380 /* MJRefreshAutoFooter.m */,
+				B865965CB76938D11834256B09661676 /* MJRefreshAutoGifFooter.h */,
+				C88B8FE5BC16E292F8FBB0ACDBFF250C /* MJRefreshAutoGifFooter.m */,
+				1790E5F08E98BE90047B5A645783F0F2 /* MJRefreshAutoNormalFooter.h */,
+				D1ACB8A95482AE61382ECBC2416B66C7 /* MJRefreshAutoNormalFooter.m */,
+				97F78EC1AA13F019599FBA843C8CE239 /* MJRefreshAutoStateFooter.h */,
+				E0103CD187308F5680F048DFE0CA5F1D /* MJRefreshAutoStateFooter.m */,
+				BC3B27330165BCD21BB8EED483E5C24F /* MJRefreshBackFooter.h */,
+				E5119B51E51E665FEC0CAD1F4EE7252C /* MJRefreshBackFooter.m */,
+				F1F4661838789E3A139A1C1BE9AD34BB /* MJRefreshBackGifFooter.h */,
+				DF01799FB45E591ECCE8BEA6B6C9B5C2 /* MJRefreshBackGifFooter.m */,
+				5A5F042E94153B33BC808FAA9A27E346 /* MJRefreshBackNormalFooter.h */,
+				4C07A4C2C7940DA7D4CBA963AA093ECF /* MJRefreshBackNormalFooter.m */,
+				1BDA33E1034820C43E5BEA22F5C10453 /* MJRefreshBackStateFooter.h */,
+				C04D797CE9A4468B0EE5F92D025648CA /* MJRefreshBackStateFooter.m */,
+				FCADDE6E51D2B1C77A83522D406FD37D /* MJRefreshComponent.h */,
+				7D366FEF4B7C9BE059A5C02D4AD2889B /* MJRefreshComponent.m */,
+				5ED3C4E690E4F5BA139ABFECF6E34D70 /* MJRefreshConfig.h */,
+				AA294AEC3878796A89922E783C019AB3 /* MJRefreshConfig.m */,
+				048CF91E2E16DFF64231D32CAE5704FA /* MJRefreshConst.h */,
+				289569AB55C610D737DCEFEEC8B6A674 /* MJRefreshConst.m */,
+				660F163FC633B29BD338289B60B9CC79 /* MJRefreshFooter.h */,
+				114CCCD84DD3AA91710F63A5DADFF988 /* MJRefreshFooter.m */,
+				2695979E57B2AED938E31AEDA913EF69 /* MJRefreshGifHeader.h */,
+				C1EC30C8C1AAEBC15057024D1E6AEBF2 /* MJRefreshGifHeader.m */,
+				DC4068D7B7C7EA3AF96FF854407953CB /* MJRefreshHeader.h */,
+				52537831C2DBF69710DE6ABE870E6177 /* MJRefreshHeader.m */,
+				DB910DD8D92A4D43CBDA75674BDE6E6F /* MJRefreshNormalHeader.h */,
+				7FB620C32673AE02273DED3E0B9B1213 /* MJRefreshNormalHeader.m */,
+				A5C6817719EDAE1BA8052E5E5E07EFCD /* MJRefreshNormalTrailer.h */,
+				A00015F363FCA99CF608F42F1299497C /* MJRefreshNormalTrailer.m */,
+				92E2586A65630E562AE8B78E42EF81E3 /* MJRefreshStateHeader.h */,
+				DB092F18F1F05CCB52F7DFFB0D681170 /* MJRefreshStateHeader.m */,
+				DE5C01974EF7C7F306CCCCD58B39BAD0 /* MJRefreshStateTrailer.h */,
+				70229D4A68ABE4EC3EDD81DBEFFC6EF5 /* MJRefreshStateTrailer.m */,
+				6D1F1F4E3943F603F0D0E8AE00EF5BF4 /* MJRefreshTrailer.h */,
+				10381A5654C63ECB97F64B40A707636A /* MJRefreshTrailer.m */,
+				44837281C1D26180FB654A16C644D27B /* NSBundle+MJRefresh.h */,
+				92CE5DCEEE962964EB1ACD41A80ED1CB /* NSBundle+MJRefresh.m */,
+				DFBAB44BD0FECA2A6BAEC67206F530F3 /* UICollectionViewLayout+MJRefresh.h */,
+				7608F6521FA9EBEFAC3E149EB483E4BF /* UICollectionViewLayout+MJRefresh.m */,
+				2E25D47A6C193DD3A65C52397EF2CD53 /* UIScrollView+MJExtension.h */,
+				8BB0341C811B3D4163422F78DED54A93 /* UIScrollView+MJExtension.m */,
+				DADD76FC862F8C156E466151410E8C06 /* UIScrollView+MJRefresh.h */,
+				DD51272423C4E323B763668464D7B99F /* UIScrollView+MJRefresh.m */,
+				5047D41EC4B7D4324EE5B73E8C8829CB /* UIView+MJExtension.h */,
+				993E3B45771677FFA9891E26CC2645EC /* UIView+MJExtension.m */,
+				A71B77D6AABBF6F3C2BCA661061C7547 /* Resources */,
+				D8949EE950363D71C92174FC8C9E1045 /* Support Files */,
 			);
-			name = Resources;
+			name = MJRefresh;
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		EE42498EBB532F44DBAA74D5713ACF10 /* Kingfisher */ = {
+			isa = PBXGroup;
+			children = (
+				A5B8EF6A6FFCF45DBD6E35F35884892C /* AnimatedImageView.swift */,
+				30A1B5FB04B33BAD23CD82482BAD602A /* AuthenticationChallengeResponsable.swift */,
+				E4428C769080DCA5EBFD079788935375 /* AVAssetImageDataProvider.swift */,
+				78795D4BA4255A177D7998D4DA37ECBD /* Box.swift */,
+				A1BFB0B241B67897459803ACCA321DEF /* CacheSerializer.swift */,
+				1E2D831CF695608E28940A44D628DC84 /* CallbackQueue.swift */,
+				662BD09A8DEEB9D925F939987572E5BF /* CPListItem+Kingfisher.swift */,
+				0510B46A21D1E13902781FF6CAAC9418 /* Delegate.swift */,
+				42C0394C8C65E8BF373C50C0D1DC9A4C /* DiskStorage.swift */,
+				9B20FF246D0DA4731CA86DF505C9FE1D /* ExtensionHelpers.swift */,
+				7DA63B26C797141CE2931CAFA7DEBB51 /* Filter.swift */,
+				D881ACD37111E1BAA87B747C12887FFE /* FormatIndicatedCacheSerializer.swift */,
+				53ED27FE8E29D8C153C856D954747094 /* GIFAnimatedImage.swift */,
+				21AEB439ECCB55FBC1B95F3A6CF0E669 /* GraphicsContext.swift */,
+				A82E429F44DF444D2358EAD98058D2C3 /* Image.swift */,
+				969CF1C29A2FC6D93C52CFE0FAF023EC /* ImageBinder.swift */,
+				4C261FB8014FEAA521BA2C2C9056E534 /* ImageCache.swift */,
+				AF14E5C3E571A2C8CB1F9E5CEAF8D41C /* ImageContext.swift */,
+				90E8939E409DCE9E6A7D5337E456B0B1 /* ImageDataProcessor.swift */,
+				6B04901F1B766314745C14EDBA715722 /* ImageDataProvider.swift */,
+				0A47ABA1F50509A462BCF478FC2868AC /* ImageDownloader.swift */,
+				9546CE493B6FD8F8C3D755BB80CEC2D7 /* ImageDownloaderDelegate.swift */,
+				F28BAAFFAE2528384E35D8620743F5A2 /* ImageDrawing.swift */,
+				C7C97A77AB89AF7FB89EE63FD39A71D3 /* ImageFormat.swift */,
+				D505C5A124B9F7A78DCC661D90A34353 /* ImageModifier.swift */,
+				603ED2E8DE19019018EAE8925F44ABDE /* ImagePrefetcher.swift */,
+				515ABA64AB704BB0F5920E372A1D4913 /* ImageProcessor.swift */,
+				EF56BACDE80640D38250F6F92F4A1399 /* ImageProgressive.swift */,
+				121D4480A77186734BF44EEFCF609583 /* ImageTransition.swift */,
+				A30E522F11CF3C3DD8270CF1D5F18B1C /* ImageView+Kingfisher.swift */,
+				56CA3F5D987DEC25B2D391D1B38DFB95 /* Indicator.swift */,
+				9E5F226079004F66DCFAC97D9DBACC90 /* KF.swift */,
+				CA1CE2C8E2437BA8CF17E29A34BD5928 /* KFAnimatedImage.swift */,
+				0940C31DBECBA501F86D2CF332DF9EFC /* KFImage.swift */,
+				6A66A93B5CDC1145E8B893187E6C84A3 /* KFImageOptions.swift */,
+				0943131BA9FE7796E34A10011E9289A2 /* KFImageProtocol.swift */,
+				57352752D92667E78B3840250B2107A9 /* KFImageRenderer.swift */,
+				24F383B0198B9311ECD82D12D9C2B14F /* KFOptionsSetter.swift */,
+				1EC5245D89864477366CD44FEE85244C /* Kingfisher.swift */,
+				AF155A3C7301CA0B41EAAF992FF728C0 /* KingfisherError.swift */,
+				E3323C18948A9AA93DC1AC565E0B49D7 /* KingfisherManager.swift */,
+				9814499740CB980750F70E3F82B8DAEF /* KingfisherOptionsInfo.swift */,
+				9EDFFDA617C6A82FABFE944FEA28DAFE /* MemoryStorage.swift */,
+				10879CA785BE0C85357A02A5B28FB46C /* NSButton+Kingfisher.swift */,
+				D0B9B01640D272AE33460072F2F7CDF3 /* NSTextAttachment+Kingfisher.swift */,
+				465B5E9FE26AE329FA855BEB4FE1C573 /* Placeholder.swift */,
+				7BD51C18A7747CB3D13759E8E41A0F3A /* RedirectHandler.swift */,
+				EDB55FA58752C0AE32C6EF772B7076FD /* RequestModifier.swift */,
+				B507EA77188898041EA3293E58FACE64 /* Resource.swift */,
+				FC990E2C504C596FF6EA8E95DBEEA88C /* Result.swift */,
+				26A12B2240814DA52A186E53160B4586 /* RetryStrategy.swift */,
+				25F531D009962FED910487CD5CB3BFD6 /* Runtime.swift */,
+				4BA41E24B2566F3B5369CA85F0BB1029 /* SessionDataTask.swift */,
+				A17E2F00E3A678DF4646BA799C5887A5 /* SessionDelegate.swift */,
+				38DBDD1AA93884E2F8C73393B23F4396 /* SizeExtensions.swift */,
+				40509A872577D7D17088AB6ABCC4447E /* Source.swift */,
+				B44AFDD76D83B549748D340CB09D3269 /* Storage.swift */,
+				5C553EE1D568049F0430199BB070C345 /* String+MD5.swift */,
+				1789E7713B80DB8AE7E18FC608891CFA /* TVMonogramView+Kingfisher.swift */,
+				D2C8776B2EC3F391E0CC2BBF2E207419 /* UIButton+Kingfisher.swift */,
+				9210DE0EDA30CBDA76005D619550F644 /* WKInterfaceImage+Kingfisher.swift */,
+				E6CF54113D5EACC8998175861EABC050 /* Support Files */,
+			);
+			name = Kingfisher;
+			path = Kingfisher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
