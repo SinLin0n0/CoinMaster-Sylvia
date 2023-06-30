@@ -7,16 +7,17 @@
 
 import UIKit
 import MJRefresh
+import Starscream
 
 class HomeViewController: UIViewController {
-    
+
     @IBOutlet weak var tableView: UITableView!
     var dataPoints: [CGFloat] = []
    
     var images = [UIImage]()
     var usdPairs: [CurrencyPair] = []
     var productsStats: ProductsStats?
-    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Refresch
@@ -24,26 +25,46 @@ class HomeViewController: UIViewController {
         tableView.mj_header = header
         // TableViewUI
         tableView.contentInsetAdjustmentBehavior = .never
+        
+//        WebsocketService.shared.setWebsocket()
     
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // usdPairsAPI
+        // fetch usdPairsAPI
         CoinbaseService.shared.getApiResponse(api: CoinbaseApi.products,
                                               authRequired: false) { (products: [CurrencyPair]) in
             
             let USDPairs = products.filter { currencyPair in
-                return String(currencyPair.id.suffix(3)) == "USD"
+                return String(currencyPair.id.suffix(3)) == "USD" && currencyPair.auctionMode == false
             }
             self.usdPairs = USDPairs
-//            print("USD Curreny Pairs (Array): \(USDPairs)")
         }
+        
+       
+
     }
     
     @objc func headerRefresh() {
         self.tableView!.reloadData()
         self.tableView.mj_header?.endRefreshing()
+    }
+    
+    func updateLabelWithValue(_ value: Double?, in label: UILabel) {
+        guard let value = value else {
+            label.text = "N/A"
+            return
+        }
+        
+        let formattedValue: String
+        if value.truncatingRemainder(dividingBy: 1) == 0 {
+            formattedValue = String(format: "%.0f", value)
+        } else {
+            formattedValue = String(format: "%.3f", value)
+        }
+        
+        label.text = formattedValue
     }
     
 }
@@ -59,8 +80,28 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 print("error")
                 return UITableViewCell()
             }
-            
-            cell.balanceLabel.text = "3,456"
+            // account balance
+            CoinbaseService.shared.getApiResponse(api: CoinbaseApi.accounts,
+                                                  authRequired: true,
+                                                  requestPath: RequestPath.accounts,
+                                                  httpMethod: HttpMethod.get) { (accounts: [Account]) in
+
+                for account in accounts {
+                    if account.currency == "USD" {
+                        let balance = account.balance
+                        if let decimalBalance = Decimal(string: balance) {
+                            let roundingBehavior = NSDecimalNumberHandler(roundingMode: .plain, scale: 5, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)
+                            let roundedBalance = NSDecimalNumber(decimal: decimalBalance).rounding(accordingToBehavior: roundingBehavior)
+                            let formattedBalance = "\(roundedBalance)"
+                            
+                            DispatchQueue.main.async {
+                                cell.balanceLabel.text = formattedBalance
+                                print(formattedBalance)
+                            }
+                        }
+                    }
+                }
+            }
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell2", for: indexPath) as? HomeTableViewCell2 else {
@@ -84,7 +125,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 let randomValue = Double(arc4random_uniform(10))
                 data.append(randomValue)
             }
-//            let doubleData = data.map { Double($0) }
             cell.setupLineChartView(with: data)
             // produtsStats
             let productId = self.usdPairs[indexPath.row - 1].id
@@ -93,22 +133,28 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                                                         param: "/\(productId)/stats",
                                                         authRequired: false) { (products: ProductsStats) in
                 if let open = Double(products.open), let last = Double(products.last) {
-                    let trend = open / last
+                    let trend = (last - open) / last * 100
                     DispatchQueue.main.async {
-                        if trend > 0 {
-                            cell.trendLabel.text = "+\(String(format: "%.2f", trend))"
-                            cell.trendLabel.textColor = .systemGreen
-                        } else {
-                            cell.trendLabel.text = "-\(String(format: "%.2f", trend))"
-                            cell.trendLabel.textColor = .systemPink
-                        }
-                        
+                        cell.trendLabel.text = trend >= 0 ? "+\(String(format: "%.2f", trend))" : "\(String(format: "%.2f", trend))"
+                        cell.trendLabel.textColor = trend > 0 ? .systemGreen : .systemPink
                     }
                 } else {
                     DispatchQueue.main.async {
                         cell.trendLabel.text = "N/A"
                     }
                 }
+                
+                if let low = Double(products.low), let high = Double(products.high) {
+                    let average = (low + high) / 2
+                    DispatchQueue.main.async {
+                        self.updateLabelWithValue(average, in: cell.exchangeRateLabel)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        cell.exchangeRateLabel.text = "N/A"
+                    }
+                }
+            
             }
             return cell
         }
@@ -156,73 +202,3 @@ enum BaseCurrency: CaseIterable {
         }
     }
 }
-
-
-
-//            data.sort { prv, next in
-//                prv[0] < next[0]
-//            }
-
-//            var doubleData = data.map { $0 Double[2] }
-// 標準化
-//            doubleData = self.normalizeData(doubleData)
-
-//func normalizeData(_ data: [Double]) -> [Double] {
-//    let minValue = data.min() ?? 0
-//    let maxValue = data.max() ?? 1
-//
-//    let normalizedData = data.map { (value) -> Double in
-//        return (value - minValue) / (maxValue - minValue)
-//    }
-//return normalizedData
-//}
-var data = [
-    [
-        1687921560,
-        1865.21,
-        1865.78,
-        1865.45,
-        1865.41,
-        12.26165979
-    ],
-    [
-        1687921500,
-        1864.16,
-        1865.45,
-        1864.49,
-        1865.44,
-        37.78367272
-    ],
-    [
-        1687921440,
-        1863.85,
-        1864.48,
-        1864.1,
-        1864.48,
-        11.8946594
-    ],
-    [
-        1687921380,
-        1863.41,
-        1864.64,
-        1864.58,
-        1864.15,
-        16.08341455
-    ],
-    [
-        1687921320,
-        1864.01,
-        1865,
-        1864.08,
-        1864.59,
-        43.83813165
-    ],
-    [
-        1687921260,
-        1860.62,
-        1864.52,
-        1860.72,
-        1864.09,
-        180.06002442
-    ]
-    ]

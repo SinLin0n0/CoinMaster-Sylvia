@@ -4,6 +4,7 @@ PODS:
   - IQKeyboardManagerSwift (6.3.0)
   - Kingfisher (7.6.2)
   - MJRefresh (3.7.5)
+  - Starscream (4.0.4)
   - SwiftLint (0.52.2)
 
 DEPENDENCIES:
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (= 6.3.0)
   - Kingfisher
   - MJRefresh
+  - Starscream (~> 4.0.0)
   - SwiftLint
 
 SPEC REPOS:
@@ -21,6 +23,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Kingfisher
     - MJRefresh
+    - Starscream
     - SwiftLint
 
 SPEC CHECKSUMS:
@@ -29,8 +32,9 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   SwiftLint: 1ac76dac888ca05cb0cf24d0c85887ec1209961d
 
-PODFILE CHECKSUM: 1e5ec5f4289362f95a4f70db4be967d4cf59bc24
+PODFILE CHECKSUM: f8ff8328db9963fe0f68c8deb7f9c37907da4ebb
 
 COCOAPODS: 1.12.0
