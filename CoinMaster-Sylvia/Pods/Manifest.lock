@@ -1,28 +1,40 @@
 PODS:
   - Alamofire (5.6.4)
+  - iCarousel (1.8.3)
   - IQKeyboardManagerSwift (6.3.0)
   - Kingfisher (7.6.2)
+  - MJRefresh (3.7.5)
+  - Starscream (4.0.4)
   - SwiftLint (0.52.2)
 
 DEPENDENCIES:
   - Alamofire
+  - iCarousel
   - IQKeyboardManagerSwift (= 6.3.0)
   - Kingfisher
+  - MJRefresh
+  - Starscream (~> 4.0.0)
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - iCarousel
     - IQKeyboardManagerSwift
     - Kingfisher
+    - MJRefresh
+    - Starscream
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   SwiftLint: 1ac76dac888ca05cb0cf24d0c85887ec1209961d
 
-PODFILE CHECKSUM: ec2c50e98a4216cec1ad22c58cdc2350958ae4c3
+PODFILE CHECKSUM: f8ff8328db9963fe0f68c8deb7f9c37907da4ebb
 
 COCOAPODS: 1.12.0
