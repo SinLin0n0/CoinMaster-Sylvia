@@ -12,6 +12,7 @@ enum CoinbaseApi: String {
     case products = "https://api-public.sandbox.pro.coinbase.com/products"
     case accounts  = "https://api-public.sandbox.pro.coinbase.com/accounts"
     case profile  = "https://api-public.sandbox.pro.coinbase.com/profiles?active"
+    case exchangeRate = "https://api.coinbase.com/v2/exchange-rates?currency=USD"
 }
 
 enum RequestPath: String {
@@ -67,7 +68,7 @@ final class CoinbaseService {
                                     body: String = "",
                                     completion: (([T]) -> Void)? = nil) {
         
-        let semaphore = DispatchSemaphore(value: 0)
+//        let semaphore = DispatchSemaphore(value: 0)
         guard let url = URL(string: api.rawValue) else {
             print("Invalid URL")
             return
@@ -91,7 +92,7 @@ final class CoinbaseService {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
                 print(String(describing: error))
-                semaphore.signal()
+//                semaphore.signal()
                 return
             }
             
@@ -105,11 +106,11 @@ final class CoinbaseService {
             }
             
             // print(String(data: data, encoding: .utf8)!)
-            semaphore.signal()
+//            semaphore.signal()
         }
         
         task.resume()
-        semaphore.wait()
+//        semaphore.wait()
     }
     
     func getApiSingleResponse<T: Codable>(api: CoinbaseApi,
@@ -120,7 +121,7 @@ final class CoinbaseService {
                                              body: String = "",
                                              completion: ((T) -> Void)? = nil) {
     
-           let semaphore = DispatchSemaphore(value: 0)
+//           let semaphore = DispatchSemaphore(value: 0)
            guard let url = URL(string: api.rawValue + param) else {
                return
            }
@@ -143,7 +144,7 @@ final class CoinbaseService {
            let task = URLSession.shared.dataTask(with: request) { data, response, error in
                guard let data = data else {
                    print(String(describing: error))
-                   semaphore.signal()
+//                   semaphore.signal()
                    return
                }
                
@@ -157,11 +158,11 @@ final class CoinbaseService {
                }
                
                // print(String(data: data, encoding: .utf8)!)
-               semaphore.signal()
+//               semaphore.signal()
            }
            
            task.resume()
-           semaphore.wait()
+//           semaphore.wait()
        }
 }
 

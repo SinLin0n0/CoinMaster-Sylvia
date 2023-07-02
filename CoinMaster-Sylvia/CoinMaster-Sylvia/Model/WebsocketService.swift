@@ -11,22 +11,29 @@ import Starscream
 class WebsocketService: WebSocketDelegate {
     static let shared = WebsocketService()
     var socket: WebSocket!
-
-    func setWebsocket() {
-        var request = URLRequest(url: URL(string: "wss://ws-feed.exchange.coinbase.com")!)
+    var currency: String?
+    var realTimeData: (([String]) -> ())?
+    
+    func setWebsocket(currency: String) {
+        let request = URLRequest(url: URL(string: "wss://ws-feed.exchange.coinbase.com")!)
         socket = WebSocket(request: request)
         socket.delegate = self
         socket.connect()
-        
+        self.currency = currency
+    }
+    
+    func stopSocket() {
+        socket.disconnect()
     }
     
     func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocket) {
         switch event {
         case .connected(let headers):
             // subscribe channel
+            guard let currency = currency else { return }
             let subscription = SubscriptionMessage(
                     type: "subscribe",
-                    productIds: ["ETH-USD"],
+                    productIds: ["\(currency)-USD"],
                     channels: ["ticker_batch"]
                 )
                 let jsonEncoder = JSONEncoder()
@@ -43,6 +50,9 @@ class WebsocketService: WebSocketDelegate {
                     do {
                         let decoder = JSONDecoder()
                         let tickerMessage = try decoder.decode(TickerMessage.self, from: data)
+                        let realTimeBid = tickerMessage.bestBid
+                        let realTimeAsk = tickerMessage.bestAsk
+                        self.realTimeData!([realTimeBid, realTimeAsk])
                         print("💛Received price: \(tickerMessage)")
                     } catch {
                         print("Failed to decode ticker message: \(error)")
@@ -71,46 +81,5 @@ class WebsocketService: WebSocketDelegate {
         } else {
             print("websocket encountered an error")
         }
-    }
-}
-
-struct SubscriptionMessage: Codable {
-    let type: String
-    let productIds: [String]
-    let channels: [String]
-    
-    enum CodingKeys: String, CodingKey {
-        case type
-        case productIds = "product_ids"
-        case channels
-    }
-}
-
-struct TickerMessage: Codable {
-    
-    let type, productId, price: String
-    let sequence, tradeId: Int
-    let open24h, volume24h, low24h, high24h, volume30d: String
-    let bestBid, bestBidSize, bestAsk, bestAskSize: String
-    let side, time, lastSize: String
-    
-    enum CodingKeys: String, CodingKey {
-        case type
-        case sequence
-        case productId = "product_id"
-        case price
-        case open24h = "open_24h"
-        case volume24h = "volume_24h"
-        case low24h = "low_24h"
-        case high24h = "high_24h"
-        case volume30d = "volume_30d"
-        case bestBid = "best_bid"
-        case bestBidSize = "best_bid_size"
-        case bestAsk = "best_ask"
-        case bestAskSize = "best_ask_size"
-        case side
-        case time
-        case tradeId = "trade_id"
-        case lastSize = "last_size"
     }
 }
