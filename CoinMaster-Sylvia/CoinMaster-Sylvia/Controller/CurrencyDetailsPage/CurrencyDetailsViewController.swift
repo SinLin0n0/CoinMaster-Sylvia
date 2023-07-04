@@ -15,7 +15,7 @@ enum TimeIntervalOption {
     case threeMonths
     case oneYear
 }
-class CurrencyDetailsViewController: UIViewController {
+class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var pageTitle: UILabel!
@@ -58,8 +58,8 @@ class CurrencyDetailsViewController: UIViewController {
         WebsocketService.shared.realTimeData = { data in
             // 買賣價要寫相反，因為是對user來說的值
             DispatchQueue.main.async {
-                let realTimeBid = (Double(data[1]) ?? 0)
-                let realTimeAsk = (Double(data[0]) ?? 0)
+                let realTimeBid = (Double(data.bestAsk) ?? 0)
+                let realTimeAsk = (Double(data.bestBid) ?? 0)
                 let realTimeBidFormatted = NumberFormatter.formattedNumber(realTimeBid)
                 let realTimeAskFormatted = NumberFormatter.formattedNumber(realTimeAsk)
                 
@@ -146,8 +146,26 @@ class CurrencyDetailsViewController: UIViewController {
     }
     
     @IBAction func buyCurrency(_ sender: Any) {
+        if let currencyTransactionVC = self.storyboard?.instantiateViewController(withIdentifier: "CurrencyTransactionViewController") as? CurrencyTransactionViewController {
+            currencyTransactionVC.modalPresentationStyle = .custom
+            currencyTransactionVC.transitioningDelegate = self
+            currencyTransactionVC.currencyName = self.currencyName
+            currencyTransactionVC.pageStatus = true
+            self.present(currencyTransactionVC, animated: true, completion: nil)
+        } else {
+            print("error")
+        }
     }
     @IBAction func sellCurrency(_ sender: Any) {
+        if let currencyTransactionVC = self.storyboard?.instantiateViewController(withIdentifier: "CurrencyTransactionViewController") as? CurrencyTransactionViewController {
+            currencyTransactionVC.modalPresentationStyle = .custom
+            currencyTransactionVC.transitioningDelegate = self
+            currencyTransactionVC.currencyName = self.currencyName
+            currencyTransactionVC.pageStatus = false
+            self.present(currencyTransactionVC, animated: true, completion: nil)
+        } else {
+            print("error")
+        }
     }
 }
 

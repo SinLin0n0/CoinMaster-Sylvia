@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "dollarsign@1x.png",
+      "filename" : "button_36px_switch@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "dollarsign@2x.png",
+      "filename" : "button_36px_switch@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "dollarsign@3x.png",
+      "filename" : "button_36px_switch@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

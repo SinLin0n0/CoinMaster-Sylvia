@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "down@1x.png",
+      "filename" : "button_28px_closePage@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "down@2x.png",
+      "filename" : "button_28px_closePage@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "down@3x.png",
+      "filename" : "button_28px_closePage@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
