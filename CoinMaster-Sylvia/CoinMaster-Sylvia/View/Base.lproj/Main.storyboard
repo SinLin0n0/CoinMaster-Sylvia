@@ -45,8 +45,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0tu-vP-79C">
                                                     <rect key="frame" x="16" y="173" width="361" height="80"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="34,567" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYt-V4-Lv5">
-                                                            <rect key="frame" x="59.666666666666664" y="40" width="66.666666666666686" height="24"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" text="1234" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYt-V4-Lv5">
+                                                            <rect key="frame" x="60" y="40" width="285" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -69,8 +69,8 @@
                                                                 <action selector="hideBalance:" destination="2mZ-Kx-zeO" eventType="touchUpInside" id="jB7-wg-kqn"/>
                                                             </connections>
                                                         </button>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqT-9r-qK9">
-                                                            <rect key="frame" x="59.666666666666671" y="40" width="112.00000000000001" height="24"/>
+                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aqT-9r-qK9">
+                                                            <rect key="frame" x="60" y="40" width="285" height="24"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarsign" translatesAutoresizingMaskIntoConstraints="NO" id="El8-Pm-o8O">
                                                                     <rect key="frame" x="2" y="1" width="62" height="22"/>
@@ -95,6 +95,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
+                                                        <constraint firstItem="aqT-9r-qK9" firstAttribute="trailing" secondItem="yYt-V4-Lv5" secondAttribute="trailing" id="6ek-7A-fyz"/>
                                                         <constraint firstAttribute="bottom" secondItem="yYt-V4-Lv5" secondAttribute="bottom" constant="16" id="7XD-wr-NTw"/>
                                                         <constraint firstItem="yYt-V4-Lv5" firstAttribute="top" secondItem="2Y9-d1-2Ht" secondAttribute="bottom" constant="8" id="828-r8-OzO"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yYt-V4-Lv5" secondAttribute="trailing" constant="16" id="AO7-q8-io3"/>
@@ -107,7 +108,7 @@
                                                         <constraint firstItem="2Y9-d1-2Ht" firstAttribute="leading" secondItem="0tu-vP-79C" secondAttribute="leading" constant="16" id="jEs-qs-cxC"/>
                                                         <constraint firstItem="aqT-9r-qK9" firstAttribute="centerY" secondItem="6GM-LX-lp3" secondAttribute="centerY" id="ngB-qH-E84"/>
                                                         <constraint firstAttribute="height" constant="80" id="s7w-tY-P1d"/>
-                                                        <constraint firstItem="aqT-9r-qK9" firstAttribute="width" secondItem="yYt-V4-Lv5" secondAttribute="width" multiplier="1.68" id="xGe-Uj-1aJ"/>
+                                                        <constraint firstItem="aqT-9r-qK9" firstAttribute="width" secondItem="yYt-V4-Lv5" secondAttribute="width" id="xGe-Uj-1aJ"/>
                                                         <constraint firstItem="aqT-9r-qK9" firstAttribute="leading" secondItem="6GM-LX-lp3" secondAttribute="trailing" constant="4" id="xPy-Jv-FmU"/>
                                                         <constraint firstItem="INW-Ye-mk5" firstAttribute="centerY" secondItem="2Y9-d1-2Ht" secondAttribute="centerY" id="zgm-mI-odw"/>
                                                     </constraints>
@@ -340,49 +341,17 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="634"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="618" id="bo0-Hb-Sad">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CurrencyDetailsTableViewCell1" rowHeight="618" id="bo0-Hb-Sad" customClass="CurrencyDetailsTableViewCell1" customModule="CoinMaster_Sylvia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="618"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bo0-Hb-Sad" id="Qfg-HZ-QIm">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="618"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRV-ll-hPH">
-                                                    <rect key="frame" x="40" y="24" width="84" height="68"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="即時買價NT$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e17-HF-NFA">
-                                                            <rect key="frame" x="0.3333333333333357" y="0.0" width="83.333333333333314" height="22"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="22" id="jQ3-j6-NAj"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="14"/>
-                                                            <color key="textColor" red="0.63508807349999996" green="0.63508807349999996" blue="0.63508807349999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="253" text="3.708" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTV-kk-oMJ">
-                                                            <rect key="frame" x="0.0" y="38" width="84" height="30"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="Dkc-te-Cek"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="30"/>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="WTV-kk-oMJ" secondAttribute="trailing" id="Rdk-K6-JGZ"/>
-                                                        <constraint firstItem="WTV-kk-oMJ" firstAttribute="top" secondItem="e17-HF-NFA" secondAttribute="bottom" constant="16" id="Rgv-Mn-xYW"/>
-                                                        <constraint firstItem="e17-HF-NFA" firstAttribute="top" secondItem="KRV-ll-hPH" secondAttribute="top" id="Z2T-FC-p5p"/>
-                                                        <constraint firstItem="WTV-kk-oMJ" firstAttribute="centerX" secondItem="e17-HF-NFA" secondAttribute="centerX" id="hLW-aD-4g1"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="lZN-AM-40J"/>
-                                                        <constraint firstItem="WTV-kk-oMJ" firstAttribute="leading" secondItem="KRV-ll-hPH" secondAttribute="leading" id="s8V-I6-7mX"/>
-                                                        <constraint firstAttribute="bottom" secondItem="WTV-kk-oMJ" secondAttribute="bottom" id="uWq-rq-NRj"/>
-                                                    </constraints>
-                                                </view>
                                                 <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3RP-yM-OCe">
                                                     <rect key="frame" x="16" y="24" width="361" height="106"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="即時買價NT$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eME-3p-Igb">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歷史均價NT$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eME-3p-Igb">
                                                             <rect key="frame" x="139" y="0.0" width="83.333333333333314" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="22" id="ecy-qE-x6b"/>
@@ -423,21 +392,56 @@
                                                         <constraint firstItem="eME-3p-Igb" firstAttribute="top" secondItem="3RP-yM-OCe" secondAttribute="top" id="iz5-WQ-eym"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LA9-KB-95O">
-                                                    <rect key="frame" x="0.0" y="146" width="393" height="366"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LA9-KB-95O" customClass="LineChartView" customModule="Charts">
+                                                    <rect key="frame" x="0.0" y="146.00000000000003" width="393" height="319.66666666666674"/>
                                                     <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="LA9-KB-95O" secondAttribute="height" multiplier="150:122" id="Nqz-la-sGQ"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRV-ll-hPH">
+                                                    <rect key="frame" x="40" y="24" width="84" height="68"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="即時買價NT$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e17-HF-NFA">
+                                                            <rect key="frame" x="0.3333333333333357" y="0.0" width="83.333333333333314" height="22"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="22" id="jQ3-j6-NAj"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="14"/>
+                                                            <color key="textColor" red="0.63508807349999996" green="0.63508807349999996" blue="0.63508807349999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="253" text="3.708" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTV-kk-oMJ">
+                                                            <rect key="frame" x="0.0" y="38" width="84" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="Dkc-te-Cek"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="30"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="WTV-kk-oMJ" secondAttribute="trailing" id="Rdk-K6-JGZ"/>
+                                                        <constraint firstItem="WTV-kk-oMJ" firstAttribute="top" secondItem="e17-HF-NFA" secondAttribute="bottom" constant="16" id="Rgv-Mn-xYW"/>
+                                                        <constraint firstItem="e17-HF-NFA" firstAttribute="top" secondItem="KRV-ll-hPH" secondAttribute="top" id="Z2T-FC-p5p"/>
+                                                        <constraint firstItem="WTV-kk-oMJ" firstAttribute="centerX" secondItem="e17-HF-NFA" secondAttribute="centerX" id="hLW-aD-4g1"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="lZN-AM-40J"/>
+                                                        <constraint firstItem="WTV-kk-oMJ" firstAttribute="leading" secondItem="KRV-ll-hPH" secondAttribute="leading" id="s8V-I6-7mX"/>
+                                                        <constraint firstAttribute="bottom" secondItem="WTV-kk-oMJ" secondAttribute="bottom" id="uWq-rq-NRj"/>
+                                                    </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZc-sd-dMG">
-                                                    <rect key="frame" x="0.0" y="568" width="393" height="50"/>
+                                                    <rect key="frame" x="0.0" y="521.66666666666663" width="393" height="96.333333333333371"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="交易紀錄" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pli-JJ-O6N">
-                                                            <rect key="frame" x="16" y="12.333333333333369" width="72" height="25.333333333333329"/>
+                                                            <rect key="frame" x="16" y="35.333333333333371" width="72" height="25.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="18"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiG-4T-MHs">
-                                                            <rect key="frame" x="313" y="8" width="64" height="34"/>
+                                                            <rect key="frame" x="313" y="8" width="64" height="80.333333333333329"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="5Pc-G2-rCf"/>
                                                             </constraints>
@@ -446,6 +450,9 @@
                                                             <state key="normal" title="查看全部">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="showAllTradeHistory:" destination="bo0-Hb-Sad" eventType="touchUpInside" id="9ag-yl-2oV"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.93139094600000005" green="0.93139094600000005" blue="0.93139094600000005" alpha="0.29863410596026491" colorSpace="custom" customColorSpace="displayP3"/>
@@ -458,7 +465,7 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V99-nC-9Vy">
-                                                    <rect key="frame" x="26" y="528" width="341" height="24"/>
+                                                    <rect key="frame" x="26" y="481.66666666666669" width="341" height="24"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jzb-hK-DbE">
                                                             <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="24"/>
@@ -469,11 +476,14 @@
                                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="15"/>
                                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                     <state key="normal" title="1D">
-                                                                        <color key="titleColor" red="0.63508807349999996" green="0.63508807349999996" blue="0.63508807349999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <color key="titleColor" name="mainRed"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="didDayButtonTapped:" destination="bo0-Hb-Sad" eventType="touchUpInside" id="rF2-MH-txB"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" name="mainRed"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="ExI-c7-5sk"/>
                                                                 <constraint firstItem="eXO-Kw-UTQ" firstAttribute="top" secondItem="Jzb-hK-DbE" secondAttribute="top" id="NLc-DG-QFj"/>
@@ -493,6 +503,9 @@
                                                                     <state key="normal" title="1W">
                                                                         <color key="titleColor" red="0.63508807349999996" green="0.63508807349999996" blue="0.63508807349999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="didWeekButtonTapped:" destination="bo0-Hb-Sad" eventType="touchUpInside" id="thz-Mn-d8N"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -500,6 +513,7 @@
                                                                 <constraint firstAttribute="bottom" secondItem="pf9-iR-q0C" secondAttribute="bottom" constant="3" id="721-Qz-tXb"/>
                                                                 <constraint firstItem="pf9-iR-q0C" firstAttribute="top" secondItem="eyR-iz-IOo" secondAttribute="top" id="7KX-Vm-wvN"/>
                                                                 <constraint firstAttribute="trailing" secondItem="pf9-iR-q0C" secondAttribute="trailing" id="9eJ-Qt-KaP"/>
+                                                                <constraint firstAttribute="width" constant="53.329999999999998" id="S4q-zF-Moh"/>
                                                                 <constraint firstItem="pf9-iR-q0C" firstAttribute="leading" secondItem="eyR-iz-IOo" secondAttribute="leading" id="ZaB-1L-WYU"/>
                                                                 <constraint firstAttribute="height" constant="24" id="q90-wv-1qe"/>
                                                             </constraints>
@@ -515,6 +529,9 @@
                                                                     <state key="normal" title="1M">
                                                                         <color key="titleColor" red="0.63508807349999996" green="0.63508807349999996" blue="0.63508807349999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="didMonthButtonTapped:" destination="bo0-Hb-Sad" eventType="touchUpInside" id="DqW-fP-avv"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -537,12 +554,16 @@
                                                                     <state key="normal" title="3M">
                                                                         <color key="titleColor" red="0.63508807349999996" green="0.63508807349999996" blue="0.63508807349999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="didThreeMonthButtonTapped:" destination="bo0-Hb-Sad" eventType="touchUpInside" id="Lsg-Vt-2D8"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="6pp-kp-omk"/>
                                                                 <constraint firstAttribute="trailing" secondItem="dIT-Mk-UQu" secondAttribute="trailing" id="8LL-AC-RfX"/>
+                                                                <constraint firstAttribute="width" constant="53.329999999999998" id="H43-rK-Pwg"/>
                                                                 <constraint firstItem="dIT-Mk-UQu" firstAttribute="top" secondItem="pEo-yP-ThX" secondAttribute="top" id="ccg-Fq-10d"/>
                                                                 <constraint firstItem="dIT-Mk-UQu" firstAttribute="leading" secondItem="pEo-yP-ThX" secondAttribute="leading" id="d2h-dM-tnq"/>
                                                                 <constraint firstAttribute="bottom" secondItem="dIT-Mk-UQu" secondAttribute="bottom" constant="3" id="ysN-1e-6w9"/>
@@ -554,14 +575,17 @@
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-fE-wQZ">
                                                                     <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="21"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="15"/>
+                                                                    <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="15"/>
                                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                     <state key="normal" title="1Y">
-                                                                        <color key="titleColor" name="mainRed"/>
+                                                                        <color key="titleColor" systemColor="systemGray2Color"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="didYearButtonTapped:" destination="bo0-Hb-Sad" eventType="touchUpInside" id="qp7-bj-VDY"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" name="mainRed"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="zwd-fE-wQZ" firstAttribute="leading" secondItem="knj-Jj-H3g" secondAttribute="leading" id="0rK-K2-JWT"/>
                                                                 <constraint firstItem="zwd-fE-wQZ" firstAttribute="top" secondItem="knj-Jj-H3g" secondAttribute="top" id="43d-yA-jCj"/>
@@ -581,6 +605,9 @@
                                                                     <state key="normal" title="ALL">
                                                                         <color key="titleColor" red="0.63508807349999996" green="0.63508807349999996" blue="0.63508807349999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="didAllButtonTapped:" destination="bo0-Hb-Sad" eventType="touchUpInside" id="l6P-fO-G1Z"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -589,6 +616,7 @@
                                                                 <constraint firstAttribute="height" constant="24" id="DO9-ql-8N0"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Lva-cW-aen" secondAttribute="trailing" id="KTI-VR-Ydb"/>
                                                                 <constraint firstItem="Lva-cW-aen" firstAttribute="leading" secondItem="UXO-vO-v3g" secondAttribute="leading" id="TXM-Hq-63t"/>
+                                                                <constraint firstAttribute="width" constant="53.329999999999998" id="ZOq-jj-HE3"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Lva-cW-aen" secondAttribute="bottom" constant="3" id="zSv-xp-cn0"/>
                                                             </constraints>
                                                         </view>
@@ -644,12 +672,35 @@
                                                 <constraint firstAttribute="bottom" secondItem="jZc-sd-dMG" secondAttribute="bottom" id="dJB-K2-ghG"/>
                                                 <constraint firstItem="V99-nC-9Vy" firstAttribute="leading" secondItem="Qfg-HZ-QIm" secondAttribute="leading" constant="26" id="p41-XD-V6I"/>
                                                 <constraint firstItem="jZc-sd-dMG" firstAttribute="leading" secondItem="Qfg-HZ-QIm" secondAttribute="leading" id="rdN-YK-XD4"/>
+                                                <constraint firstItem="LA9-KB-95O" firstAttribute="width" secondItem="Qfg-HZ-QIm" secondAttribute="width" id="t9k-Lc-06A"/>
                                                 <constraint firstAttribute="trailing" secondItem="LA9-KB-95O" secondAttribute="trailing" id="uxO-gT-66X"/>
                                                 <constraint firstAttribute="trailing" secondItem="FDV-Wd-Y7C" secondAttribute="trailing" constant="40" id="xXR-Yv-kGQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="allButton" destination="Lva-cW-aen" id="VNR-Q1-0Ea"/>
+                                            <outlet property="allView" destination="UXO-vO-v3g" id="THm-F3-Uur"/>
+                                            <outlet property="dayButton" destination="eXO-Kw-UTQ" id="2Xw-Ub-n9z"/>
+                                            <outlet property="dayView" destination="Jzb-hK-DbE" id="89A-6i-dfp"/>
+                                            <outlet property="historyAverageLabel" destination="dbZ-Lh-CKp" id="FxY-D7-lHp"/>
+                                            <outlet property="historyAverageView" destination="3RP-yM-OCe" id="Oxi-fS-CDf"/>
+                                            <outlet property="lineChartView" destination="LA9-KB-95O" id="fav-1D-CsJ"/>
+                                            <outlet property="monthButton" destination="iWT-hP-Tst" id="Ztd-Ba-579"/>
+                                            <outlet property="monthView" destination="tah-8O-XQz" id="app-gg-yz1"/>
+                                            <outlet property="realTimeAskLabel" destination="Fuw-Bp-Onx" id="BoD-ZF-YHW"/>
+                                            <outlet property="realTimeAskView" destination="FDV-Wd-Y7C" id="WwT-Oo-AJt"/>
+                                            <outlet property="realTimeBidLabel" destination="WTV-kk-oMJ" id="eQy-bF-dpa"/>
+                                            <outlet property="realTimeBidView" destination="KRV-ll-hPH" id="yhg-tt-f6D"/>
+                                            <outlet property="threeMonthButton" destination="dIT-Mk-UQu" id="sDt-DL-xpS"/>
+                                            <outlet property="threeMonthView" destination="pEo-yP-ThX" id="H67-k6-BzQ"/>
+                                            <outlet property="timestampLabel" destination="O1V-Qz-jqc" id="i10-Zv-NNC"/>
+                                            <outlet property="weekButton" destination="pf9-iR-q0C" id="zre-E9-maS"/>
+                                            <outlet property="weekView" destination="eyR-iz-IOo" id="t6g-gW-bQn"/>
+                                            <outlet property="yearButton" destination="zwd-fE-wQZ" id="BwU-Cr-MAh"/>
+                                            <outlet property="yearView" destination="knj-Jj-H3g" id="3sY-wv-Kfp"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="131" id="pyb-5v-knw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CurrencyDetailsTableViewCell2" rowHeight="131" id="pyb-5v-knw" customClass="CurrencyDetailsTableViewCell2" customModule="CoinMaster_Sylvia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="668" width="393" height="131"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pyb-5v-knw" id="y4z-Ff-FJx">
@@ -663,13 +714,13 @@
                                                         <constraint firstAttribute="width" constant="44" id="DLh-xH-rTL"/>
                                                         <constraint firstAttribute="height" constant="24" id="sNH-XH-h09"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="BUY">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023-02-08 08:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seJ-Mn-bb1">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2023-02-08 08:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seJ-Mn-bb1">
                                                     <rect key="frame" x="76" y="19" width="117.33333333333331" height="18.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18.329999999999998" id="mvY-gs-zxQ"/>
@@ -678,25 +729,25 @@
                                                     <color key="textColor" red="0.63508807349999996" green="0.63508807349999996" blue="0.63508807349999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="購入USTD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gq-y8-gEU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" ambiguous="YES" text="購入USTD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gq-y8-gEU">
                                                     <rect key="frame" x="16" y="56.000000000000007" width="75" height="23.333333333333336"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="16"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fya-rc-QKD">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" ambiguous="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fya-rc-QKD">
                                                     <rect key="frame" x="367.33333333333331" y="56.333333333333336" width="9.6666666666666856" height="22.666666666666664"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="16"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="成功" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wu-4C-rl1">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="成功" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wu-4C-rl1">
                                                     <rect key="frame" x="32" y="95.333333333333329" width="28" height="19.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="14"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onk-2y-cnj">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Onk-2y-cnj">
                                                     <rect key="frame" x="16" y="101.33333333333333" width="8" height="8"/>
                                                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                     <constraints>
@@ -704,8 +755,8 @@
                                                         <constraint firstAttribute="height" constant="8" id="XvY-fK-AiJ"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NT$ 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpU-wp-lw7">
-                                                    <rect key="frame" x="336.66666666666669" y="95.333333333333329" width="40.333333333333314" height="19.666666666666671"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpU-wp-lw7">
+                                                    <rect key="frame" x="377" y="105.33333333333333" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="14"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -729,6 +780,13 @@
                                                 <constraint firstItem="Fya-rc-QKD" firstAttribute="centerY" secondItem="0gq-y8-gEU" secondAttribute="centerY" id="qhh-Rm-gIw"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="priceLabel" destination="Fya-rc-QKD" id="VUu-eo-ex8"/>
+                                            <outlet property="productNameLabel" destination="0gq-y8-gEU" id="7Ca-8T-wJ9"/>
+                                            <outlet property="sideButton" destination="M6p-Yj-iJh" id="kTf-ch-sEr"/>
+                                            <outlet property="statusView" destination="Onk-2y-cnj" id="mzR-c1-uU9"/>
+                                            <outlet property="timeLabel" destination="seJ-Mn-bb1" id="cZW-xc-Iwm"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -740,10 +798,13 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="button_28px_backPreviousPage"/>
+                                <connections>
+                                    <action selector="returnToPreviousPage:" destination="f5E-zj-Azt" eventType="touchUpInside" id="6Go-Sr-H97"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNn-Xf-Gap">
-                                <rect key="frame" x="60" y="60.333333333333336" width="45.666666666666657" height="25.333333333333336"/>
-                                <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
+                                <rect key="frame" x="60" y="59" width="50.666666666666657" height="28"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -753,7 +814,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ro9-1c-LmP">
                                         <rect key="frame" x="0.0" y="80" width="393" height="1"/>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="eMm-yb-9bl"/>
                                         </constraints>
@@ -772,6 +833,9 @@
                                                 <state key="normal" title="買入">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buyCurrency:" destination="f5E-zj-Azt" eventType="touchUpInside" id="vVx-db-ex1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pik-pl-6Wx">
                                                 <rect key="frame" x="188" y="0.0" width="173" height="48"/>
@@ -784,6 +848,9 @@
                                                 <state key="normal" title="賣出">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="sellCurrency:" destination="f5E-zj-Azt" eventType="touchUpInside" id="3bv-JI-1Aw"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -816,6 +883,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YuM-xc-ITy"/>
+                    <connections>
+                        <outlet property="pageTitle" destination="UNn-Xf-Gap" id="OJi-gS-FFp"/>
+                        <outlet property="tableView" destination="b6Q-l7-MbN" id="t0o-ct-4i1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjn-qs-koz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

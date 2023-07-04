@@ -8,13 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		22F146952BE757D1193A5291 /* Pods_CoinMaster_Sylvia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860466229DA4B4CA2EB7948C /* Pods_CoinMaster_Sylvia.framework */; };
+		2731B8222A50894A00AE9AF7 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731B8212A50894A00AE9AF7 /* NumberFormatter.swift */; };
 		275B10382A4D4C850029666D /* CurrencyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10342A4D4C850029666D /* CurrencyPair.swift */; };
 		275B10392A4D4C850029666D /* CoinbaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10352A4D4C850029666D /* CoinbaseService.swift */; };
 		275B103A2A4D4C850029666D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10362A4D4C850029666D /* Account.swift */; };
 		275B103B2A4D4C850029666D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10372A4D4C850029666D /* Profile.swift */; };
 		275B103D2A4D78E50029666D /* ProductsStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B103C2A4D78E50029666D /* ProductsStats.swift */; };
 		275B10402A4DC5780029666D /* CurrencyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B103F2A4DC5780029666D /* CurrencyDetailsViewController.swift */; };
+		27625EC82A513C18006CE2F5 /* CurrencyOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27625EC72A513C18006CE2F5 /* CurrencyOrder.swift */; };
+		27625ECA2A517021006CE2F5 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27625EC92A517021006CE2F5 /* Double.swift */; };
 		276554BB2A4ECD7A00151017 /* WebsocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276554BA2A4ECD7A00151017 /* WebsocketService.swift */; };
+		27965C362A4FF9BC00F0DFA7 /* CurrencyDetailsTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27965C352A4FF9BC00F0DFA7 /* CurrencyDetailsTableViewCell1.swift */; };
+		27965C382A4FF9C400F0DFA7 /* CurrencyDetailsTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27965C372A4FF9C400F0DFA7 /* CurrencyDetailsTableViewCell2.swift */; };
+		27965C3A2A4FFA8E00F0DFA7 /* TickerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27965C392A4FFA8E00F0DFA7 /* TickerMessage.swift */; };
+		27965C3C2A5000B700F0DFA7 /* SubscriptionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27965C3B2A5000B700F0DFA7 /* SubscriptionMessage.swift */; };
+		27965C3E2A50105000F0DFA7 /* BaseCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27965C3D2A50105000F0DFA7 /* BaseCurrency.swift */; };
+		27965C402A5052A100F0DFA7 /* ExchangeRateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27965C3F2A5052A100F0DFA7 /* ExchangeRateResponse.swift */; };
+		27A8C2832A526045004BBAC0 /* ProductOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A8C2822A526045004BBAC0 /* ProductOrders.swift */; };
+		27A8C2852A52B10D004BBAC0 /* CandlesDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A8C2842A52B10D004BBAC0 /* CandlesDataPoint.swift */; };
+		27A8C2872A52FC8D004BBAC0 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A8C2862A52FC8D004BBAC0 /* DateFormatter.swift */; };
 		27FC0B032A4C1FA00059BDFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B022A4C1FA00059BDFB /* AppDelegate.swift */; };
 		27FC0B052A4C1FA00059BDFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B042A4C1FA00059BDFB /* SceneDelegate.swift */; };
 		27FC0B0A2A4C1FA00059BDFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FC0B082A4C1FA00059BDFB /* Main.storyboard */; };
@@ -28,13 +40,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2731B8212A50894A00AE9AF7 /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		275B10342A4D4C850029666D /* CurrencyPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyPair.swift; sourceTree = "<group>"; };
 		275B10352A4D4C850029666D /* CoinbaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinbaseService.swift; sourceTree = "<group>"; };
 		275B10362A4D4C850029666D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		275B10372A4D4C850029666D /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		275B103C2A4D78E50029666D /* ProductsStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductsStats.swift; path = "../../../../../.Trash/CoinMaster-Sylvia 上午9.11.59/CoinMaster-Sylvia/CoinMaster-Sylvia/ProductsStats.swift"; sourceTree = "<group>"; };
 		275B103F2A4DC5780029666D /* CurrencyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailsViewController.swift; sourceTree = "<group>"; };
-		276554BA2A4ECD7A00151017 /* WebsocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebsocketService.swift; path = ../Controller/HomePage/WebsocketService.swift; sourceTree = "<group>"; };
+		27625EC72A513C18006CE2F5 /* CurrencyOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyOrder.swift; sourceTree = "<group>"; };
+		27625EC92A517021006CE2F5 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		276554BA2A4ECD7A00151017 /* WebsocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketService.swift; sourceTree = "<group>"; };
+		27965C352A4FF9BC00F0DFA7 /* CurrencyDetailsTableViewCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailsTableViewCell1.swift; sourceTree = "<group>"; };
+		27965C372A4FF9C400F0DFA7 /* CurrencyDetailsTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailsTableViewCell2.swift; sourceTree = "<group>"; };
+		27965C392A4FFA8E00F0DFA7 /* TickerMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerMessage.swift; sourceTree = "<group>"; };
+		27965C3B2A5000B700F0DFA7 /* SubscriptionMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionMessage.swift; sourceTree = "<group>"; };
+		27965C3D2A50105000F0DFA7 /* BaseCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCurrency.swift; sourceTree = "<group>"; };
+		27965C3F2A5052A100F0DFA7 /* ExchangeRateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponse.swift; sourceTree = "<group>"; };
+		27A8C2822A526045004BBAC0 /* ProductOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOrders.swift; sourceTree = "<group>"; };
+		27A8C2842A52B10D004BBAC0 /* CandlesDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlesDataPoint.swift; sourceTree = "<group>"; };
+		27A8C2862A52FC8D004BBAC0 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		27FC0AFF2A4C1FA00059BDFB /* CoinMaster-Sylvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinMaster-Sylvia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FC0B022A4C1FA00059BDFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27FC0B042A4C1FA00059BDFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +88,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2731B8202A50893800AE9AF7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2731B8212A50894A00AE9AF7 /* NumberFormatter.swift */,
+				27A8C2862A52FC8D004BBAC0 /* DateFormatter.swift */,
+				27625EC92A517021006CE2F5 /* Double.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		275B10312A4D4BE70029666D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,24 +118,33 @@
 			path = HomePage;
 			sourceTree = "<group>";
 		};
-		275B10332A4D4C600029666D /* API */ = {
+		275B10332A4D4C600029666D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				275B10352A4D4C850029666D /* CoinbaseService.swift */,
 				276554BA2A4ECD7A00151017 /* WebsocketService.swift */,
+				27965C3B2A5000B700F0DFA7 /* SubscriptionMessage.swift */,
 				27FC0B162A4C20000059BDFB /* ApiKeys.swift */,
 				275B10362A4D4C850029666D /* Account.swift */,
 				275B10342A4D4C850029666D /* CurrencyPair.swift */,
 				275B10372A4D4C850029666D /* Profile.swift */,
+				27A8C2822A526045004BBAC0 /* ProductOrders.swift */,
 				275B103C2A4D78E50029666D /* ProductsStats.swift */,
+				27965C392A4FFA8E00F0DFA7 /* TickerMessage.swift */,
+				27965C3D2A50105000F0DFA7 /* BaseCurrency.swift */,
+				27965C3F2A5052A100F0DFA7 /* ExchangeRateResponse.swift */,
+				27625EC72A513C18006CE2F5 /* CurrencyOrder.swift */,
+				27A8C2842A52B10D004BBAC0 /* CandlesDataPoint.swift */,
 			);
-			path = API;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		275B103E2A4DC5370029666D /* CurrencyDetailsPage */ = {
 			isa = PBXGroup;
 			children = (
 				275B103F2A4DC5780029666D /* CurrencyDetailsViewController.swift */,
+				27965C352A4FF9BC00F0DFA7 /* CurrencyDetailsTableViewCell1.swift */,
+				27965C372A4FF9C400F0DFA7 /* CurrencyDetailsTableViewCell2.swift */,
 			);
 			path = CurrencyDetailsPage;
 			sourceTree = "<group>";
@@ -131,7 +174,8 @@
 				27FC0B042A4C1FA00059BDFB /* SceneDelegate.swift */,
 				27FC0B0B2A4C1FA20059BDFB /* Assets.xcassets */,
 				27FC0B102A4C1FA20059BDFB /* Info.plist */,
-				275B10332A4D4C600029666D /* API */,
+				2731B8202A50893800AE9AF7 /* Extension */,
+				275B10332A4D4C600029666D /* Model */,
 				275B10312A4D4BE70029666D /* Controller */,
 				27FC0B202A4C33E90059BDFB /* View */,
 			);
@@ -282,16 +326,28 @@
 				27FC0B1F2A4C31AA0059BDFB /* HomeTableViewCell1.swift in Sources */,
 				275B103B2A4D4C850029666D /* Profile.swift in Sources */,
 				275B103A2A4D4C850029666D /* Account.swift in Sources */,
+				27625EC82A513C18006CE2F5 /* CurrencyOrder.swift in Sources */,
+				27A8C2872A52FC8D004BBAC0 /* DateFormatter.swift in Sources */,
+				27A8C2852A52B10D004BBAC0 /* CandlesDataPoint.swift in Sources */,
 				27FC0B172A4C20000059BDFB /* ApiKeys.swift in Sources */,
+				27965C382A4FF9C400F0DFA7 /* CurrencyDetailsTableViewCell2.swift in Sources */,
+				27A8C2832A526045004BBAC0 /* ProductOrders.swift in Sources */,
 				27FC0B032A4C1FA00059BDFB /* AppDelegate.swift in Sources */,
 				27FC0B1E2A4C31AA0059BDFB /* LineChartView.swift in Sources */,
 				27FC0B052A4C1FA00059BDFB /* SceneDelegate.swift in Sources */,
 				275B103D2A4D78E50029666D /* ProductsStats.swift in Sources */,
 				27FC0B1C2A4C31AA0059BDFB /* HomeTableViewCell2.swift in Sources */,
+				27625ECA2A517021006CE2F5 /* Double.swift in Sources */,
 				275B10392A4D4C850029666D /* CoinbaseService.swift in Sources */,
+				27965C3E2A50105000F0DFA7 /* BaseCurrency.swift in Sources */,
 				275B10402A4DC5780029666D /* CurrencyDetailsViewController.swift in Sources */,
+				27965C362A4FF9BC00F0DFA7 /* CurrencyDetailsTableViewCell1.swift in Sources */,
 				275B10382A4D4C850029666D /* CurrencyPair.swift in Sources */,
+				27965C402A5052A100F0DFA7 /* ExchangeRateResponse.swift in Sources */,
 				27FC0B1D2A4C31AA0059BDFB /* HomeViewController.swift in Sources */,
+				27965C3A2A4FFA8E00F0DFA7 /* TickerMessage.swift in Sources */,
+				27965C3C2A5000B700F0DFA7 /* SubscriptionMessage.swift in Sources */,
+				2731B8222A50894A00AE9AF7 /* NumberFormatter.swift in Sources */,
 				276554BB2A4ECD7A00151017 /* WebsocketService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

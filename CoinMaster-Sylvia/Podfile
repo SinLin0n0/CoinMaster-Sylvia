@@ -13,5 +13,6 @@ target 'CoinMaster-Sylvia' do
   pod 'iCarousel'
   pod 'MJRefresh'
   pod 'Starscream', '~> 4.0.0'
+  pod 'Charts'
 
 end
