@@ -1,14 +1,20 @@
 PODS:
   - Alamofire (5.6.4)
+  - Charts (4.1.0):
+    - Charts/Core (= 4.1.0)
+  - Charts/Core (4.1.0):
+    - SwiftAlgorithms (~> 1.0)
   - iCarousel (1.8.3)
   - IQKeyboardManagerSwift (6.3.0)
   - Kingfisher (7.6.2)
   - MJRefresh (3.7.5)
   - Starscream (4.0.4)
+  - SwiftAlgorithms (1.0.0)
   - SwiftLint (0.52.2)
 
 DEPENDENCIES:
   - Alamofire
+  - Charts
   - iCarousel
   - IQKeyboardManagerSwift (= 6.3.0)
   - Kingfisher
@@ -19,22 +25,26 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Charts
     - iCarousel
     - IQKeyboardManagerSwift
     - Kingfisher
     - MJRefresh
     - Starscream
+    - SwiftAlgorithms
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Charts: ce0768268078eee0336f122c3c4ca248e4e204c5
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwiftLint: 1ac76dac888ca05cb0cf24d0c85887ec1209961d
 
-PODFILE CHECKSUM: f8ff8328db9963fe0f68c8deb7f9c37907da4ebb
+PODFILE CHECKSUM: a2f4a9e7e10f932ef4f5d4fb3c02a2b8fa1ab966
 
 COCOAPODS: 1.12.0

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LineChartContentView: View {
     let chartData: [Double]
+    let lineColor: Color
 
     var body: some View {
         GeometryReader { geometry in
@@ -33,7 +34,7 @@ struct LineChartContentView: View {
                     path.addQuadCurve(to: controlPoint, control: CGPoint(x: xPosition, y: height - yPosition))
                 }
             }
-            .stroke(Color.green, style: StrokeStyle(lineWidth: 2.3, lineJoin: .round))
+            .stroke(lineColor, style: StrokeStyle(lineWidth: 2.3, lineJoin: .round))
         }
     }
 }

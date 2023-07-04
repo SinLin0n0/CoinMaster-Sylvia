@@ -28,10 +28,10 @@ class HomeTableViewCell2: UITableViewCell {
     }
     private var lineChartContentViewHost: UIHostingController<LineChartContentView>?
 
-    func setupLineChartView(with data: [Double]) {
+    func setupLineChartView(with data: [Double], lineColor: UIColor) {
 
-        
-        let lineChartContentView = LineChartContentView(chartData: data)
+        let convertedColor = Color(lineColor)
+        let lineChartContentView = LineChartContentView(chartData: data, lineColor: convertedColor)
         lineChartContentViewHost = UIHostingController(rootView: lineChartContentView)
         
         guard let lineChartContentViewHost = lineChartContentViewHost else {

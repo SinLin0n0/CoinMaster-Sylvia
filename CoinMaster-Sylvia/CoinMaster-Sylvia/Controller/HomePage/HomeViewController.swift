@@ -27,7 +27,6 @@ class HomeViewController: UIViewController {
         tableView.mj_header = header
         // TableViewUI
         tableView.contentInsetAdjustmentBehavior = .never
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,36 +40,36 @@ class HomeViewController: UIViewController {
         CoinbaseService.shared.getApiResponse(api: CoinbaseApi.accounts,
                                               authRequired: true,
                                               requestPath: RequestPath.accounts,
-                                              httpMethod: HttpMethod.get) { (accounts: [Account]) in
+                                              httpMethod: HttpMethod.get) { [weak self] (accounts: [Account]) in
             for account in accounts {
                 if account.currency == "USD" {
                     let balance = account.balance
                     balanceExchange = Double(balance) ?? 0
                 }
             }
-            CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.exchangeRate, authRequired: false)  { (exchangeRate: ExchangeRateResponse) in
+            CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.exchangeRate, authRequired: false)  { [weak self] (exchangeRate: ExchangeRateResponse) in
                 if let twdExchangeRate = exchangeRate.data.rates["TWD"] {
-                    self.twdExchangeRate = (Double(twdExchangeRate) ?? 0)
+                    self?.twdExchangeRate = (Double(twdExchangeRate) ?? 0)
                     let balanceTWD = balanceExchange * (Double(twdExchangeRate) ?? 0)
                     let formattedBalance = NumberFormatter.formattedNumber(balanceTWD)
-                    self.formattedBalance = formattedBalance
+                    self?.formattedBalance = formattedBalance
                 }
                 
                 // fetch usdPairsAPI
                 CoinbaseService.shared.getApiResponse(api: CoinbaseApi.products,
-                                                      authRequired: false) { (products: [CurrencyPair]) in
+                                                      authRequired: false) { [weak self] (products: [CurrencyPair]) in
                     
-                    self.usdPairs = products.filter { currencyPair in
+                    self?.usdPairs = products.filter { currencyPair in
                         return String(currencyPair.id.suffix(3)) == "USD" && currencyPair.auctionMode == false && currencyPair.status == "online"
                     }
-                    self.usdPairsStats = [:]
+                    self?.usdPairsStats = [:]
                     let group = DispatchGroup()
-                    for pair in self.usdPairs {
+                    for pair in self!.usdPairs {
                         group.enter()
                         
                             CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.products,
                                                                         param: "/\(pair.id)/stats",
-                                                                        authRequired: false) { (products: ProductsStats) in
+                                                                        authRequired: false) { [weak self] (products: ProductsStats) in
                                 let open = Double(products.open) ?? 0
                                 let last = Double(products.last) ?? 0
                                 let trend = (last - open) / last * 100
@@ -79,20 +78,16 @@ class HomeViewController: UIViewController {
                                 let high = Double(products.high) ?? 0
                                 let average = (low + high) / 2
                                 
-                                self.usdPairsStats.updateValue((average, trend), forKey: pair.id)
+                                self?.usdPairsStats.updateValue((average, trend), forKey: pair.id)
                                 group.leave()
                         }
                     }
                     group.notify(queue: .main) {
-                        self.tableView?.reloadData()
+                        self?.tableView?.reloadData()
                     }
                 }
             }
         }
-       
-        
-        
-               
     }
     
     @objc func headerRefresh() {
@@ -137,7 +132,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 let randomValue = Double(arc4random_uniform(10))
                 data.append(randomValue)
             }
-            cell.setupLineChartView(with: data)
             // productsStats
             if let productStat = usdPairsStats["\(baseCurrency)-USD"] {
                 let average = productStat.0
@@ -145,16 +139,22 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 if trend > 0 {
                     cell.trendLabel.text = "+\(String(format: "%.2f", trend))%"
                     cell.trendLabel.textColor = .systemGreen
+                    cell.setupLineChartView(with: data, lineColor: .systemGreen)
                 } else if trend < 0 {
                     cell.trendLabel.text = "\(String(format: "%.2f", trend))%"
                     cell.trendLabel.textColor = .systemPink
+                    cell.setupLineChartView(with: data, lineColor: .systemPink)
                 } else {
                     cell.trendLabel.text = "\(String(format: "%.2f", trend))%"
                     cell.trendLabel.textColor = .systemGray
+                    cell.setupLineChartView(with: data, lineColor: .systemGreen)
                 }
                 let twdAverage = average * (self.twdExchangeRate ?? 1)
                 cell.exchangeRateLabel.text = NumberFormatter.formattedNumber(twdAverage)
             }
+            
+            
+            
 
             return cell
         }

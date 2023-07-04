@@ -32,32 +32,32 @@ class WebsocketService: WebSocketDelegate {
             // subscribe channel
             guard let currency = currency else { return }
             let subscription = SubscriptionMessage(
-                    type: "subscribe",
-                    productIds: ["\(currency)-USD"],
-                    channels: ["ticker_batch"]
-                )
-                let jsonEncoder = JSONEncoder()
-                if let jsonData = try? jsonEncoder.encode(subscription),
-                   let jsonString = String(data: jsonData, encoding: .utf8) {
-                    socket.write(string: jsonString)
-                }
+                type: "subscribe",
+                productIds: ["\(currency)-USD"],
+                channels: ["ticker_batch"]
+            )
+            let jsonEncoder = JSONEncoder()
+            if let jsonData = try? jsonEncoder.encode(subscription),
+               let jsonString = String(data: jsonData, encoding: .utf8) {
+                socket.write(string: jsonString)
+            }
             print("websocket is connected: \(headers)")
         case .disconnected(let reason, let code):
             print("websocket is disconnected: \(reason) with code: \(code)")
         case .text(let string):
-            print("💙Received text: \(string)")
+            //            print("💙Received text: \(string)")
             if let data = string.data(using: .utf8) {
-                    do {
-                        let decoder = JSONDecoder()
-                        let tickerMessage = try decoder.decode(TickerMessage.self, from: data)
-                        let realTimeBid = tickerMessage.bestBid
-                        let realTimeAsk = tickerMessage.bestAsk
-                        self.realTimeData!([realTimeBid, realTimeAsk])
-                        print("💛Received price: \(tickerMessage)")
-                    } catch {
-                        print("Failed to decode ticker message: \(error)")
-                    }
+                do {
+                    let decoder = JSONDecoder()
+                    let tickerMessage = try decoder.decode(TickerMessage.self, from: data)
+                    let realTimeBid = tickerMessage.bestBid
+                    let realTimeAsk = tickerMessage.bestAsk
+                    self.realTimeData!([realTimeBid, realTimeAsk])
+                    //                        print("💛Received price: \(tickerMessage)")
+                } catch {
+                    print("Failed to decode ticker message: \(error)")
                 }
+            }
         case .binary(let data):
             print("Received data: \(data.count)")
         case .ping(_):

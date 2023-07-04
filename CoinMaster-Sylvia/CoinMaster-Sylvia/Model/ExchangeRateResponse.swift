@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct ExchangeRateResponse: Codable {
     let data: ExchangeRateData

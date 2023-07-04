@@ -24,6 +24,9 @@
 		27965C3C2A5000B700F0DFA7 /* SubscriptionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27965C3B2A5000B700F0DFA7 /* SubscriptionMessage.swift */; };
 		27965C3E2A50105000F0DFA7 /* BaseCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27965C3D2A50105000F0DFA7 /* BaseCurrency.swift */; };
 		27965C402A5052A100F0DFA7 /* ExchangeRateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27965C3F2A5052A100F0DFA7 /* ExchangeRateResponse.swift */; };
+		27A8C2832A526045004BBAC0 /* ProductOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A8C2822A526045004BBAC0 /* ProductOrders.swift */; };
+		27A8C2852A52B10D004BBAC0 /* CandlesDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A8C2842A52B10D004BBAC0 /* CandlesDataPoint.swift */; };
+		27A8C2872A52FC8D004BBAC0 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A8C2862A52FC8D004BBAC0 /* DateFormatter.swift */; };
 		27FC0B032A4C1FA00059BDFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B022A4C1FA00059BDFB /* AppDelegate.swift */; };
 		27FC0B052A4C1FA00059BDFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B042A4C1FA00059BDFB /* SceneDelegate.swift */; };
 		27FC0B0A2A4C1FA00059BDFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FC0B082A4C1FA00059BDFB /* Main.storyboard */; };
@@ -53,6 +56,9 @@
 		27965C3B2A5000B700F0DFA7 /* SubscriptionMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionMessage.swift; sourceTree = "<group>"; };
 		27965C3D2A50105000F0DFA7 /* BaseCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCurrency.swift; sourceTree = "<group>"; };
 		27965C3F2A5052A100F0DFA7 /* ExchangeRateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponse.swift; sourceTree = "<group>"; };
+		27A8C2822A526045004BBAC0 /* ProductOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOrders.swift; sourceTree = "<group>"; };
+		27A8C2842A52B10D004BBAC0 /* CandlesDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlesDataPoint.swift; sourceTree = "<group>"; };
+		27A8C2862A52FC8D004BBAC0 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		27FC0AFF2A4C1FA00059BDFB /* CoinMaster-Sylvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinMaster-Sylvia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FC0B022A4C1FA00059BDFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27FC0B042A4C1FA00059BDFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				2731B8212A50894A00AE9AF7 /* NumberFormatter.swift */,
+				27A8C2862A52FC8D004BBAC0 /* DateFormatter.swift */,
 				27625EC92A517021006CE2F5 /* Double.swift */,
 			);
 			path = Extension;
@@ -121,11 +128,13 @@
 				275B10362A4D4C850029666D /* Account.swift */,
 				275B10342A4D4C850029666D /* CurrencyPair.swift */,
 				275B10372A4D4C850029666D /* Profile.swift */,
+				27A8C2822A526045004BBAC0 /* ProductOrders.swift */,
 				275B103C2A4D78E50029666D /* ProductsStats.swift */,
 				27965C392A4FFA8E00F0DFA7 /* TickerMessage.swift */,
 				27965C3D2A50105000F0DFA7 /* BaseCurrency.swift */,
 				27965C3F2A5052A100F0DFA7 /* ExchangeRateResponse.swift */,
 				27625EC72A513C18006CE2F5 /* CurrencyOrder.swift */,
+				27A8C2842A52B10D004BBAC0 /* CandlesDataPoint.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -318,8 +327,11 @@
 				275B103B2A4D4C850029666D /* Profile.swift in Sources */,
 				275B103A2A4D4C850029666D /* Account.swift in Sources */,
 				27625EC82A513C18006CE2F5 /* CurrencyOrder.swift in Sources */,
+				27A8C2872A52FC8D004BBAC0 /* DateFormatter.swift in Sources */,
+				27A8C2852A52B10D004BBAC0 /* CandlesDataPoint.swift in Sources */,
 				27FC0B172A4C20000059BDFB /* ApiKeys.swift in Sources */,
 				27965C382A4FF9C400F0DFA7 /* CurrencyDetailsTableViewCell2.swift in Sources */,
+				27A8C2832A526045004BBAC0 /* ProductOrders.swift in Sources */,
 				27FC0B032A4C1FA00059BDFB /* AppDelegate.swift in Sources */,
 				27FC0B1E2A4C31AA0059BDFB /* LineChartView.swift in Sources */,
 				27FC0B052A4C1FA00059BDFB /* SceneDelegate.swift in Sources */,

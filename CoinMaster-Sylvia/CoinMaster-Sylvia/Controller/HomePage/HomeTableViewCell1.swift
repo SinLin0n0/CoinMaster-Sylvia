@@ -9,7 +9,7 @@ import UIKit
 import iCarousel
 
 class HomeTableViewCell1: UITableViewCell {
-
+    
     @IBOutlet weak var balanceBgView: UIView!
     @IBOutlet weak var carousel: iCarousel!
     @IBOutlet weak var balanceLabel: UILabel!
@@ -46,7 +46,7 @@ class HomeTableViewCell1: UITableViewCell {
     @objc func autoScrollBanner() {
         carousel.scrollToItem(at: carousel.currentItemIndex + 1, animated: true)
     }
-
+    
     @IBAction func hideBalance(_ sender: Any) {
         if hideBalanceViewIsHidden {
             hideBalanceButton.setImage(UIImage(named: "eye-close"), for: .normal)
@@ -58,8 +58,6 @@ class HomeTableViewCell1: UITableViewCell {
             hideBalanceViewIsHidden = true
         }
     }
-    
-    
 }
 
 extension HomeTableViewCell1: iCarouselDelegate, iCarouselDataSource {
