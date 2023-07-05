@@ -8,15 +8,13 @@
 import UIKit
 
 class CoinConvertView: UIView {
-
-
+    
     @IBOutlet weak var currencyImage: UIImageView!
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var topTextFieldDescribingLabel: UILabel!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextFieldDescribingLabel: UILabel!
     @IBOutlet weak var bottomTextField: UITextField!
-    
-    @IBAction func switchCurrency(_ sender: Any) {
-    }
+    @IBOutlet weak var switchCurrencyButton: UIButton!
+
 }
