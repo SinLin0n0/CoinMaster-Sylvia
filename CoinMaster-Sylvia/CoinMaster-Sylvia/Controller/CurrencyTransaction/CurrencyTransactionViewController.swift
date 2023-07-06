@@ -119,7 +119,7 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
         transactionView?.currencyImage.image = getCurrencyIcon(for: currencyName)
         
         // SetTransactionView and Autolayout
-        self.settransactionView(transactionView: transactionView)
+        self.setTransactionView(transactionView: transactionView)
         
         // SetTextField
         self.setTextField(transactionView: transactionView)
@@ -146,7 +146,7 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
             return nil
         }
     }
-    func settransactionView(transactionView: CoinConvertView?) {
+    func setTransactionView(transactionView: CoinConvertView?) {
         if let transactionView = transactionView {
             self.currencyTransactionView.addSubview(transactionView)
             transactionView.translatesAutoresizingMaskIntoConstraints = false
@@ -185,10 +185,10 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if transactionView?.bottomTextField.text == "0" {
+        if transactionView?.bottomTextField.text == "0.000" {
             textField.text = ""
         }
-        if transactionView?.topTextField.text == "0" {
+        if transactionView?.topTextField.text == "0.00000000" {
             textField.text = ""
         }
         if transactionView?.bottomTextField.text == "nil" {
@@ -228,33 +228,32 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func send(_ sender: Any) {
         //         Pricec匯率、Size買幣數量
-//        let price = String(self.exchangeRate ?? 1)
-//        let size = self.transactionView?.topTextField.text ?? ""
-//        let side: String = isSell ? "buy" : "sell"
-//        guard let currencyName = self.currencyName else {
-//            print("currencyName is nil")
-//            return
-//        }
-//        let productId = "\(currencyName)-USD"
+        let price = String(self.exchangeRate ?? 1)
+        let size = self.transactionView?.topTextField.text ?? ""
+        let side: String = isSell ? "buy" : "sell"
+        guard let currencyName = self.currencyName else {
+            print("currencyName is nil")
+            return
+        }
+        let productId = "\(currencyName)-USD"
 //        print("👾\("{\"price\": \"\(price)\", \"size\": \"\(size)\", \"side\": \"\(side)\", \"product_id\": \"\(productId)\", \"time_in_force\": \"FOK\"}")")
-//        self.createOrders(price: "35000.99", size: size, side: side, productId: productId) { orderId in
-//            print("😈\(orderId)")
-            
-            let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TransactionCompletedViewController") as! TransactionCompletedViewController
-            nextVC.currencyName = self.currencyName
-            nextVC.isSell = self.isSell
-//            nextVC.orderId = orderId
-            self.navigationController?.pushViewController(nextVC, animated: true)
-//        }
-        
-        
+        self.createOrders(price: "35000.99", size: size, side: side, productId: productId) { orderId in
+            print("😈\(orderId)")
+            DispatchQueue.main.async {
+                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TransactionCompletedViewController") as! TransactionCompletedViewController
+                nextVC.currencyName = self.currencyName
+                nextVC.isSell = self.isSell
+                nextVC.orderId = orderId
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            }
+        }
     }
     
     func createOrders(price: String, size: String, side: String, productId: String, completion: @escaping (String) -> Void) {
         let body = "{\"price\": \"\(price)\", \"size\": \"\(size)\", \"side\": \"\(side)\", \"product_id\": \"\(productId)\", \"time_in_force\": \"FOK\"}"
         
         CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.orderBaseURL, authRequired: true, requestPath: RequestPath.orderBaseURL, httpMethod: HttpMethod.post, body: body, completion: { (order: TradeRequest) in
-            print("👻\(order)")
+//            print("👻\(order)")
             completion(order.id)
         })
     }

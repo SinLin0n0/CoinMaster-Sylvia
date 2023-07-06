@@ -122,6 +122,7 @@ final class CoinbaseService {
                                           param: String = "",
                                           authRequired: Bool,
                                           requestPath: RequestPath = .none,
+                                          requestPathParam: String = "",
                                           httpMethod: HttpMethod = .get,
                                           body: String = "",
                                           completion: ((T) -> Void)? = nil) {
@@ -134,7 +135,7 @@ final class CoinbaseService {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 //        request.addValue("application/json", forHTTPHeaderField: "Accept")
         if authRequired {
-            let timestampSignature = getTimestampSignature(requestPath: requestPath.rawValue,
+            let timestampSignature = getTimestampSignature(requestPath: requestPath.rawValue + requestPathParam,
                                                            method: httpMethod.rawValue,
                                                            body: body)
             
