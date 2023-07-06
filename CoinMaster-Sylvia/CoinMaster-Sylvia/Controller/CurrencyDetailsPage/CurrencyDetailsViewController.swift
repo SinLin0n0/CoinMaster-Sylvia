@@ -15,8 +15,10 @@ enum TimeIntervalOption {
     case threeMonths
     case oneYear
 }
-class CurrencyDetailsViewController: UIViewController {
+class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
+    @IBOutlet weak var sellButton: UIButton!
+    @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var pageTitle: UILabel!
     var currencyName: String?
@@ -25,13 +27,15 @@ class CurrencyDetailsViewController: UIViewController {
     var productOrders: [ProductOrders] = []
     var dataPointAverages: [Double] = []
     var timestamps: [Double] = []
+    var exchangeRate: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.sellButton.layer.cornerRadius = 5
+        self.buyButton.layer.cornerRadius = 5
     }
     
     var realTimeBidLabel: UILabel?
@@ -56,10 +60,12 @@ class CurrencyDetailsViewController: UIViewController {
         }
         
         WebsocketService.shared.realTimeData = { data in
+            let currency = Double(data.bestAsk)
+            self.exchangeRate = currency
             // 買賣價要寫相反，因為是對user來說的值
             DispatchQueue.main.async {
-                let realTimeBid = (Double(data[1]) ?? 0)
-                let realTimeAsk = (Double(data[0]) ?? 0)
+                let realTimeBid = (Double(data.bestAsk) ?? 0)
+                let realTimeAsk = (Double(data.bestBid) ?? 0)
                 let realTimeBidFormatted = NumberFormatter.formattedNumber(realTimeBid)
                 let realTimeAskFormatted = NumberFormatter.formattedNumber(realTimeAsk)
                 
@@ -146,8 +152,32 @@ class CurrencyDetailsViewController: UIViewController {
     }
     
     @IBAction func buyCurrency(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let targetViewController = storyboard.instantiateViewController(withIdentifier: "CurrencyTransactionViewController") as? CurrencyTransactionViewController {
+                    targetViewController.currencyName = self.currencyName
+                    targetViewController.isSell = true
+                    let currencyTransactionVC = UINavigationController(rootViewController: targetViewController)
+
+                    currencyTransactionVC.modalPresentationStyle = .custom
+                    currencyTransactionVC.transitioningDelegate = self
+                    currencyTransactionVC.navigationBar.isHidden = true
+
+                    present(currencyTransactionVC, animated: true, completion: nil)
+                }
     }
     @IBAction func sellCurrency(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let targetViewController = storyboard.instantiateViewController(withIdentifier: "CurrencyTransactionViewController") as? CurrencyTransactionViewController {
+                    targetViewController.currencyName = self.currencyName
+                    targetViewController.isSell = false
+                    let currencyTransactionVC = UINavigationController(rootViewController: targetViewController)
+
+                    currencyTransactionVC.modalPresentationStyle = .custom
+                    currencyTransactionVC.transitioningDelegate = self
+                    currencyTransactionVC.navigationBar.isHidden = true
+
+                    present(currencyTransactionVC, animated: true, completion: nil)
+                }
     }
 }
 
