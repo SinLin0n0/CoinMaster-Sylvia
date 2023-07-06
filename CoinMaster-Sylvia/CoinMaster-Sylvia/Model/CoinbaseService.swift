@@ -14,7 +14,7 @@ enum CoinbaseApi: String {
     case profile  = "https://api-public.sandbox.pro.coinbase.com/profiles?active"
     case exchangeRate = "https://api.coinbase.com/v2/exchange-rates?currency=USD"
     case oders = "https://api-public.sandbox.pro.coinbase.com/orders?limit=5&status=done"
-    
+    case orderBaseURL = "https://api-public.sandbox.pro.coinbase.com/orders"
 }
 
 enum RequestPath: String {
@@ -22,6 +22,7 @@ enum RequestPath: String {
     case accounts = "/accounts"
     case profile = "/profiles?active"
     case orders = "/orders?limit=5&status=done"
+    case orderBaseURL = "/orders"
 }
 
 enum HttpMethod: String {
@@ -131,7 +132,7 @@ final class CoinbaseService {
         }
         var request = URLRequest(url: url, timeoutInterval: Double.infinity)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+//        request.addValue("application/json", forHTTPHeaderField: "Accept")
         if authRequired {
             let timestampSignature = getTimestampSignature(requestPath: requestPath.rawValue,
                                                            method: httpMethod.rawValue,
@@ -144,7 +145,9 @@ final class CoinbaseService {
         }
         
         request.httpMethod = httpMethod.rawValue
-        
+        if httpMethod.rawValue == HttpMethod.post.rawValue {
+            request.httpBody = body.data(using: .utf8)
+        }
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
                 print(String(describing: error))
@@ -159,6 +162,7 @@ final class CoinbaseService {
                 completion?(response)
             } catch {
                 print("Error decoding data: \(error)")
+                print(String(data: data, encoding: String.Encoding.utf8))
             }
             
             // print(String(data: data, encoding: .utf8)!)

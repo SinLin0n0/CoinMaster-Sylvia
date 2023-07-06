@@ -152,10 +152,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 let twdAverage = average * (self.twdExchangeRate ?? 1)
                 cell.exchangeRateLabel.text = NumberFormatter.formattedNumber(twdAverage)
             }
-            
-            
-            
-
             return cell
         }
     }

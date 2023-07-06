@@ -21,6 +21,11 @@
 		27679D4A2A5425930003C3FE /* CoinConvertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27679D482A5425930003C3FE /* CoinConvertView.xib */; };
 		27679D4B2A5425930003C3FE /* CoinConvertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27679D492A5425930003C3FE /* CoinConvertView.swift */; };
 		27679D502A5447E00003C3FE /* CurrencyTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27679D4F2A5447E00003C3FE /* CurrencyTransactionViewController.swift */; };
+		277232132A556AAA008E4FB1 /* TransactionCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277232122A556AAA008E4FB1 /* TransactionCompletedViewController.swift */; };
+		277232162A559EBC008E4FB1 /* TradeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277232152A559EBC008E4FB1 /* TradeRequest.swift */; };
+		2779FBAB2A56649D0020FE0E /* TransactionSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779FBA92A56649D0020FE0E /* TransactionSuccessView.swift */; };
+		2779FBAC2A56649D0020FE0E /* TransactionSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2779FBAA2A56649D0020FE0E /* TransactionSuccessView.xib */; };
+		2779FBC22A56BA930020FE0E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779FBC12A56BA930020FE0E /* TabBarController.swift */; };
 		27965C362A4FF9BC00F0DFA7 /* CurrencyDetailsTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27965C352A4FF9BC00F0DFA7 /* CurrencyDetailsTableViewCell1.swift */; };
 		27965C382A4FF9C400F0DFA7 /* CurrencyDetailsTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27965C372A4FF9C400F0DFA7 /* CurrencyDetailsTableViewCell2.swift */; };
 		27965C3A2A4FFA8E00F0DFA7 /* TickerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27965C392A4FFA8E00F0DFA7 /* TickerMessage.swift */; };
@@ -56,6 +61,11 @@
 		27679D482A5425930003C3FE /* CoinConvertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoinConvertView.xib; sourceTree = "<group>"; };
 		27679D492A5425930003C3FE /* CoinConvertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinConvertView.swift; sourceTree = "<group>"; };
 		27679D4F2A5447E00003C3FE /* CurrencyTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTransactionViewController.swift; sourceTree = "<group>"; };
+		277232122A556AAA008E4FB1 /* TransactionCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCompletedViewController.swift; sourceTree = "<group>"; };
+		277232152A559EBC008E4FB1 /* TradeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeRequest.swift; sourceTree = "<group>"; };
+		2779FBA92A56649D0020FE0E /* TransactionSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionSuccessView.swift; sourceTree = "<group>"; };
+		2779FBAA2A56649D0020FE0E /* TransactionSuccessView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionSuccessView.xib; sourceTree = "<group>"; };
+		2779FBC12A56BA930020FE0E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		27965C352A4FF9BC00F0DFA7 /* CurrencyDetailsTableViewCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailsTableViewCell1.swift; sourceTree = "<group>"; };
 		27965C372A4FF9C400F0DFA7 /* CurrencyDetailsTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailsTableViewCell2.swift; sourceTree = "<group>"; };
 		27965C392A4FFA8E00F0DFA7 /* TickerMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerMessage.swift; sourceTree = "<group>"; };
@@ -107,6 +117,8 @@
 		275B10312A4D4BE70029666D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2779FBC12A56BA930020FE0E /* TabBarController.swift */,
+				277232142A556AB9008E4FB1 /* TransactionCompleted */,
 				27679D4E2A54405E0003C3FE /* CurrencyTransaction */,
 				275B103E2A4DC5370029666D /* CurrencyDetailsPage */,
 				275B10322A4D4BF00029666D /* HomePage */,
@@ -141,6 +153,7 @@
 				27965C3D2A50105000F0DFA7 /* BaseCurrency.swift */,
 				27965C3F2A5052A100F0DFA7 /* ExchangeRateResponse.swift */,
 				27625EC72A513C18006CE2F5 /* CurrencyOrder.swift */,
+				277232152A559EBC008E4FB1 /* TradeRequest.swift */,
 				27A8C2842A52B10D004BBAC0 /* CandlesDataPoint.swift */,
 			);
 			path = Model;
@@ -162,6 +175,14 @@
 				27679D4F2A5447E00003C3FE /* CurrencyTransactionViewController.swift */,
 			);
 			path = CurrencyTransaction;
+			sourceTree = "<group>";
+		};
+		277232142A556AB9008E4FB1 /* TransactionCompleted */ = {
+			isa = PBXGroup;
+			children = (
+				277232122A556AAA008E4FB1 /* TransactionCompletedViewController.swift */,
+			);
+			path = TransactionCompleted;
 			sourceTree = "<group>";
 		};
 		27FC0AF62A4C1FA00059BDFB = {
@@ -200,6 +221,8 @@
 		27FC0B202A4C33E90059BDFB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2779FBA92A56649D0020FE0E /* TransactionSuccessView.swift */,
+				2779FBAA2A56649D0020FE0E /* TransactionSuccessView.xib */,
 				27679D492A5425930003C3FE /* CoinConvertView.swift */,
 				27679D482A5425930003C3FE /* CoinConvertView.xib */,
 				27FC0B082A4C1FA00059BDFB /* Main.storyboard */,
@@ -287,6 +310,7 @@
 			files = (
 				27FC0B0F2A4C1FA20059BDFB /* LaunchScreen.storyboard in Resources */,
 				27679D4A2A5425930003C3FE /* CoinConvertView.xib in Resources */,
+				2779FBAC2A56649D0020FE0E /* TransactionSuccessView.xib in Resources */,
 				27FC0B0C2A4C1FA20059BDFB /* Assets.xcassets in Resources */,
 				27FC0B0A2A4C1FA00059BDFB /* Main.storyboard in Resources */,
 			);
@@ -342,8 +366,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				27FC0B1F2A4C31AA0059BDFB /* HomeTableViewCell1.swift in Sources */,
+				2779FBC22A56BA930020FE0E /* TabBarController.swift in Sources */,
 				275B103B2A4D4C850029666D /* Profile.swift in Sources */,
 				275B103A2A4D4C850029666D /* Account.swift in Sources */,
+				2779FBAB2A56649D0020FE0E /* TransactionSuccessView.swift in Sources */,
 				27625EC82A513C18006CE2F5 /* CurrencyOrder.swift in Sources */,
 				27A8C2872A52FC8D004BBAC0 /* DateFormatter.swift in Sources */,
 				27A8C2852A52B10D004BBAC0 /* CandlesDataPoint.swift in Sources */,
@@ -357,6 +383,7 @@
 				27FC0B1C2A4C31AA0059BDFB /* HomeTableViewCell2.swift in Sources */,
 				27625ECA2A517021006CE2F5 /* Double.swift in Sources */,
 				275B10392A4D4C850029666D /* CoinbaseService.swift in Sources */,
+				277232132A556AAA008E4FB1 /* TransactionCompletedViewController.swift in Sources */,
 				27965C3E2A50105000F0DFA7 /* BaseCurrency.swift in Sources */,
 				275B10402A4DC5780029666D /* CurrencyDetailsViewController.swift in Sources */,
 				27965C362A4FF9BC00F0DFA7 /* CurrencyDetailsTableViewCell1.swift in Sources */,
@@ -366,6 +393,7 @@
 				27965C3A2A4FFA8E00F0DFA7 /* TickerMessage.swift in Sources */,
 				27679D4B2A5425930003C3FE /* CoinConvertView.swift in Sources */,
 				27965C3C2A5000B700F0DFA7 /* SubscriptionMessage.swift in Sources */,
+				277232162A559EBC008E4FB1 /* TradeRequest.swift in Sources */,
 				2731B8222A50894A00AE9AF7 /* NumberFormatter.swift in Sources */,
 				27679D502A5447E00003C3FE /* CurrencyTransactionViewController.swift in Sources */,
 				276554BB2A4ECD7A00151017 /* WebsocketService.swift in Sources */,

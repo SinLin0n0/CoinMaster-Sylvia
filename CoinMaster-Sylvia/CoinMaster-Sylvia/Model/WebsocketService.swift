@@ -15,7 +15,7 @@ class WebsocketService: WebSocketDelegate {
     var realTimeData: ((TickerMessage) -> ())?
     
     func setWebsocket(currency: String) {
-        let request = URLRequest(url: URL(string: "wss://ws-feed.exchange.coinbase.com")!)
+        let request = URLRequest(url: URL(string: "wss://ws-feed-public.sandbox.exchange.coinbase.com")!)
         socket = WebSocket(request: request)
         socket.delegate = self
         socket.connect()
@@ -45,14 +45,14 @@ class WebsocketService: WebSocketDelegate {
         case .disconnected(let reason, let code):
             print("websocket is disconnected: \(reason) with code: \(code)")
         case .text(let string):
-            print("💙Received text: \(string)")
+//            print("💙Received text: \(string)")
             if let data = string.data(using: .utf8) {
                 do {
                     let decoder = JSONDecoder()
                     let tickerMessage = try decoder.decode(TickerMessage.self, from: data)
                     
                     self.realTimeData!(tickerMessage)
-                    print("💛Received price: \(tickerMessage)")
+//                    print("💛Received price: \(tickerMessage)")
                 } catch {
                     print("Failed to decode ticker message: \(error)")
                 }
