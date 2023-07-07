@@ -236,7 +236,7 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
             return
         }
         let productId = "\(currencyName)-USD"
-//        print("👾\("{\"price\": \"\(price)\", \"size\": \"\(size)\", \"side\": \"\(side)\", \"product_id\": \"\(productId)\", \"time_in_force\": \"FOK\"}")")
+        print("👾\("{\"price\": \"\(price)\", \"size\": \"\(size)\", \"side\": \"\(side)\", \"product_id\": \"\(productId)\", \"time_in_force\": \"FOK\"}")")
         self.createOrders(price: "35000.99", size: size, side: side, productId: productId) { orderId in
             print("😈\(orderId)")
             DispatchQueue.main.async {

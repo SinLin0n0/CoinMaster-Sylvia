@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.getApiData()
+        tabBarController?.tabBar.isHidden = false
     }
 
     func getApiData(completion: (([CurrencyPair]) -> Void)? = nil) {
@@ -47,7 +48,8 @@ class HomeViewController: UIViewController {
                     balanceExchange = Double(balance) ?? 0
                 }
             }
-            CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.exchangeRate, authRequired: false)  { [weak self] (exchangeRate: ExchangeRateResponse) in
+            let rate = "USD"
+            CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.exchangeRate, param: rate, authRequired: false)  { [weak self] (exchangeRate: ExchangeRateResponse) in
                 if let twdExchangeRate = exchangeRate.data.rates["TWD"] {
                     self?.twdExchangeRate = (Double(twdExchangeRate) ?? 0)
                     let balanceTWD = balanceExchange * (Double(twdExchangeRate) ?? 0)

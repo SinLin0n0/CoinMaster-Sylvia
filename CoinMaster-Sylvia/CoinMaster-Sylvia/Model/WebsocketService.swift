@@ -45,14 +45,14 @@ class WebsocketService: WebSocketDelegate {
         case .disconnected(let reason, let code):
             print("websocket is disconnected: \(reason) with code: \(code)")
         case .text(let string):
-//            print("💙Received text: \(string)")
+            print("💙Received text: \(string)")
             if let data = string.data(using: .utf8) {
                 do {
                     let decoder = JSONDecoder()
                     let tickerMessage = try decoder.decode(TickerMessage.self, from: data)
                     
                     self.realTimeData!(tickerMessage)
-//                    print("💛Received price: \(tickerMessage)")
+                    print("💛Received price: \(tickerMessage)")
                 } catch {
                     print("Failed to decode ticker message: \(error)")
                 }
