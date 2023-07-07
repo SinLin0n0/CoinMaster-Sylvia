@@ -9,7 +9,7 @@ import Foundation
 
 struct TradeRequest: Codable {
     let id: String
-    let price: String
+    let price: String?
     let size: String
     let productId: String
     let side: String

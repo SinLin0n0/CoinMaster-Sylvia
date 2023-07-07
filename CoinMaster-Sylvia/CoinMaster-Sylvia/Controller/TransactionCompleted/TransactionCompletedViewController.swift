@@ -57,7 +57,7 @@ class TransactionCompletedViewController: UIViewController {
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
 
             DispatchQueue.main.async {
-                if let date = dateFormatter.date(from: doneTime) {
+                if let date = dateFormatter.date(from: doneTime ?? "") {
                     let timeIntervalSince1970 = date.timeIntervalSince1970
                     let date = Date(timeIntervalSince1970: timeIntervalSince1970)
                     let taiwanTime = date.date2String(dateFormat: "yyyy-MM-dd HH:mm:ss")
@@ -65,7 +65,7 @@ class TransactionCompletedViewController: UIViewController {
                 } else {
                     print("error")
                 }
-                if let date = dateFormatter.date(from: createTime) {
+                if let date = dateFormatter.date(from: createTime ?? "") {
                     let timeIntervalSince1970 = date.timeIntervalSince1970
                     let date = Date(timeIntervalSince1970: timeIntervalSince1970)
                     let taiwanTime = date.date2String(dateFormat: "yyyy-MM-dd HH:mm:ss")
@@ -77,9 +77,14 @@ class TransactionCompletedViewController: UIViewController {
                     self?.transactionSuccessView?.sideButton.setTitle(side.rawValue, for: .normal)
                 }
                 self?.transactionSuccessView?.sideButton.layer.cornerRadius = 5
-                self?.transactionSuccessView?.sizeLabel.text = "\(order.size) \(currencyName)"
-                self?.transactionSuccessView?.priceLabel.text = "USD$ \(order.price)"
-                let pay = (Double(order.size) ?? 0) * (Double(order.price) ?? 0)
+                guard let size = order.size else {
+                    print("currencyName is nil")
+                    return
+                }
+                self?.transactionSuccessView?.sizeLabel.text = "\(size) \(currencyName)"
+                let price = (Double(order.executedValue ?? "") ?? 0) / (Double(order.size ?? "") ?? 0)
+                self?.transactionSuccessView?.priceLabel.text = "USD$ \(price)"
+                let pay = Double(order.executedValue)
                 self?.transactionSuccessView?.payLabel.text = "USD$ \(NumberFormatter.formattedNumber(pay ?? 0))"
             }
             

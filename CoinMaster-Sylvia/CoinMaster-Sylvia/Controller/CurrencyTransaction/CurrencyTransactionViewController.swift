@@ -227,8 +227,6 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func send(_ sender: Any) {
-        //         Pricec匯率、Size買幣數量
-        let price = String(self.exchangeRate ?? 1)
         let size = self.transactionView?.topTextField.text ?? ""
         let side: String = isSell ? "buy" : "sell"
         guard let currencyName = self.currencyName else {
@@ -236,23 +234,25 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
             return
         }
         let productId = "\(currencyName)-USD"
-        print("👾\("{\"price\": \"\(price)\", \"size\": \"\(size)\", \"side\": \"\(side)\", \"product_id\": \"\(productId)\", \"time_in_force\": \"FOK\"}")")
-        self.createOrders(price: "35000.99", size: size, side: side, productId: productId) { orderId in
+        print("👾\("{\"type\": \"market\", \"size\": \"\(size)\", \"side\": \"\(side)\", \"product_id\": \"\(productId)\", \"time_in_force\": \"FOK\"}")")
+        self.createOrders(size: size, side: side, productId: productId) { orderId in
             print("😈\(orderId)")
             DispatchQueue.main.async {
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TransactionCompletedViewController") as! TransactionCompletedViewController
                 nextVC.currencyName = self.currencyName
                 nextVC.isSell = self.isSell
                 nextVC.orderId = orderId
-                self.navigationController?.pushViewController(nextVC, animated: true)
+                DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                    self.navigationController?.pushViewController(nextVC, animated: true)
+                }
             }
         }
     }
     
-    func createOrders(price: String, size: String, side: String, productId: String, completion: @escaping (String) -> Void) {
-        let body = "{\"price\": \"\(price)\", \"size\": \"\(size)\", \"side\": \"\(side)\", \"product_id\": \"\(productId)\", \"time_in_force\": \"FOK\"}"
+    func createOrders(size: String, side: String, productId: String, completion: @escaping (String) -> Void) {
+        let body = "{\"type\": \"market\", \"size\": \"\(size)\", \"side\": \"\(side)\", \"product_id\": \"\(productId)\", \"time_in_force\": \"FOK\"}"
         
-        CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.orderBaseURL, authRequired: true, requestPath: RequestPath.orderBaseURL, httpMethod: HttpMethod.post, body: body, completion: { (order: TradeRequest) in
+        CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.orderBaseURL, authRequired: true, requestPath: RequestPath.orderBaseURL, httpMethod: HttpMethod.post, body: body, completion: { (order: ProductOrders) in
 //            print("👻\(order)")
             completion(order.id)
         })

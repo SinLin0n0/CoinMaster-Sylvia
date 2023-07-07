@@ -123,9 +123,9 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
         
         let nextDate = calendar.date(byAdding: dateComponents, to: currentDate)
         
-        var start = Int(nextDate!.timeIntervalSince1970)
+        let start = Int(nextDate!.timeIntervalSince1970)
         let end = Int(endTime)
-        let apiParam = "/\( currencyName!)-USD/candles?start=\(start)&end=\(end)&granularity=\(granularity)"
+        let apiParam = "/\(currencyName!)-USD/candles?start=\(start)&end=\(end)&granularity=\(granularity)"
         CoinbaseService.shared.getApiResponse(api: CoinbaseApi.products,
                                               param: apiParam,
                                               authRequired: false) { [weak self] (candles: [[Double]]) in

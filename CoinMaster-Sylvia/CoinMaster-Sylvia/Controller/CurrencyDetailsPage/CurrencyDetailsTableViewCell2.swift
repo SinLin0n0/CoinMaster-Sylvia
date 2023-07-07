@@ -28,11 +28,21 @@ class CurrencyDetailsTableViewCell2: UITableViewCell {
     }
     
     func setUI(data: ProductOrders, currency: String) {
-        
-        if let side = SideData(rawValue: data.side) {
-            sideButton.setTitle(side.rawValue, for: .normal)
+        let side = data.side
+        let uppercasedSide = side.uppercased()
+        sideButton.setTitle("\(uppercasedSide)", for: .normal)
+//        print("🧲data\(data)")
+//        if let side = SideData(rawValue: data.side) {
+//            sideButton.setTitle(side.rawValue, for: .normal)
+//
+//        }
+        if side == "buy" {
+            productNameLabel.text = "購入\(currency)"
+        } else {
+            sideButton.backgroundColor = UIColor(named: "mainRed")
+            productNameLabel.text = "賣出\(currency)"
         }
-        productNameLabel.text = "購入\(currency)"
+        
         let priceFormatted = NumberFormatter.formattedNumber(Double(data.executedValue) ?? 0)
         
         priceLabel.text = "USD$ \(priceFormatted)"
@@ -40,11 +50,11 @@ class CurrencyDetailsTableViewCell2: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
 
-        if let date = dateFormatter.date(from: time) {
+        if let date = dateFormatter.date(from: time ?? "" ) {
             let timeIntervalSince1970 = date.timeIntervalSince1970
             let date = Date(timeIntervalSince1970: timeIntervalSince1970)
-            let taiwanTime = date.date2String(dateFormat: "yyyy-MM-dd HH:mm")
-            timeLabel.text = taiwanTime
+            let formattedTime = date.date2String(dateFormat: "yyyy-MM-dd HH:mm")
+            timeLabel.text = formattedTime
         } else {
             print("error")
         }
