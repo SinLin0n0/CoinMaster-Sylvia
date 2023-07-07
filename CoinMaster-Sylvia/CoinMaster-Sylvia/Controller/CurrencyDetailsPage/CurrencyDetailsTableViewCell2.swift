@@ -33,8 +33,7 @@ class CurrencyDetailsTableViewCell2: UITableViewCell {
             sideButton.setTitle(side.rawValue, for: .normal)
         }
         productNameLabel.text = "購入\(currency)"
-        priceLabel.text = data.size
-        let priceFormatted = NumberFormatter.formattedNumber(Double(data.price) ?? 0)
+        let priceFormatted = NumberFormatter.formattedNumber(Double(data.executedValue) ?? 0)
         
         priceLabel.text = "USD$ \(priceFormatted)"
         let time = data.doneAt

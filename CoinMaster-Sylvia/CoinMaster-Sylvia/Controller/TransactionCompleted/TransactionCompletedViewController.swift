@@ -19,7 +19,7 @@ class TransactionCompletedViewController: UIViewController {
     
     var currencyName: String?
     var isSell: Bool = true // true為買入、false為賣出
-    var orderId: String?
+    var orderId: String? = "28ffde51-64fe-413b-b747-8cb7120c08b2"
     var transactionSuccessView: TransactionSuccessView?
 //    var order: ProductOrders?
     

@@ -14,7 +14,6 @@ class HomeTableViewCell1: UITableViewCell {
     @IBOutlet weak var carousel: iCarousel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var hideBalanceView: UIView!
     @IBOutlet weak var hideBalanceButton: UIButton!
     

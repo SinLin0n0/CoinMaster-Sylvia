@@ -12,7 +12,7 @@ enum CoinbaseApi: String {
     case products = "https://api-public.sandbox.pro.coinbase.com/products"
     case accounts  = "https://api-public.sandbox.pro.coinbase.com/accounts"
     case profile  = "https://api-public.sandbox.pro.coinbase.com/profiles?active"
-    case exchangeRate = "https://api.coinbase.com/v2/exchange-rates?currency=USD"
+    case exchangeRate = "https://api.coinbase.com/v2/exchange-rates?currency="
     case oders = "https://api-public.sandbox.pro.coinbase.com/orders?limit=5&status=done"
     case orderBaseURL = "https://api-public.sandbox.pro.coinbase.com/orders"
 }
