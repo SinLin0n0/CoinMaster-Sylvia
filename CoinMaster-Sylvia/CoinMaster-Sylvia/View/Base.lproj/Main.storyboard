@@ -1138,6 +1138,9 @@
                     <navigationItem key="navigationItem" title=" " id="zK7-Oc-IAR">
                         <barButtonItem key="rightBarButtonItem" title="歷史紀錄" id="u5Z-Lc-NfI">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="assetTracking:" destination="v8K-JM-lQT" id="lgt-1R-sOq"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -1228,7 +1231,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pv2-89-m8r">
                                 <rect key="frame" x="24" y="753" width="345" height="48"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <color key="backgroundColor" name="mainRed"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="W1c-Hh-dXV"/>
                                 </constraints>
@@ -1302,7 +1305,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="m9Z-cE-yqi">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1335,28 +1338,58 @@
         <!--資產紀錄-->
         <scene sceneID="XX0-h8-zqg">
             <objects>
-                <viewController id="Hha-47-aJ7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AssetTrackingViewController" id="Hha-47-aJ7" customClass="AssetTrackingViewController" customModule="CoinMaster_Sylvia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0jK-K3-DKc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dgt-XN-xyN">
-                                <rect key="frame" x="0.0" y="103" width="393" height="634"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CurrencyDetailsTableViewCell1" rowHeight="62" id="1xa-09-zVZ" customClass="CurrencyDetailsTableViewCell1" customModule="CoinMaster_Sylvia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="62"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategorySelectionTableViewCell" rowHeight="47" id="1xa-09-zVZ" customClass="CategorySelectionTableViewCell" customModule="CoinMaster_Sylvia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1xa-09-zVZ" id="JEn-9J-sEb">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="62"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kqs-Se-gv9">
+                                                    <rect key="frame" x="154" y="16" width="85" height="15"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3r5-Ht-p5c">
+                                                            <rect key="frame" x="0.0" y="0.0" width="62" height="15"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" title="全部幣種">
+                                                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                        </button>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_15px_more" translatesAutoresizingMaskIntoConstraints="NO" id="CND-sB-sk9">
+                                                            <rect key="frame" x="70" y="0.0" width="15" height="15"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="15" id="Mwh-Es-knz"/>
+                                                                <constraint firstAttribute="width" constant="15" id="WPV-cF-i0R"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Kqs-Se-gv9" firstAttribute="centerX" secondItem="JEn-9J-sEb" secondAttribute="centerX" id="GO5-ym-Hxh"/>
+                                                <constraint firstItem="Kqs-Se-gv9" firstAttribute="centerY" secondItem="JEn-9J-sEb" secondAttribute="centerY" id="RTW-Qr-yX6"/>
+                                                <constraint firstAttribute="bottom" secondItem="Kqs-Se-gv9" secondAttribute="bottom" constant="16" id="eE3-s6-N4F"/>
+                                                <constraint firstItem="Kqs-Se-gv9" firstAttribute="top" secondItem="JEn-9J-sEb" secondAttribute="top" constant="16" id="ePd-Of-VbH"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="currencySelectionButton" destination="3r5-Ht-p5c" id="a2M-WM-Aez"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CurrencyDetailsTableViewCell2" rowHeight="131" id="tit-m8-I8N" customClass="CurrencyDetailsTableViewCell2" customModule="CoinMaster_Sylvia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="112" width="393" height="131"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TransactionRecordsTableViewCell" rowHeight="115" id="tit-m8-I8N" customClass="TransactionRecordsTableViewCell" customModule="CoinMaster_Sylvia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="97" width="393" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tit-m8-I8N" id="qyi-LM-KE4">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="131"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBQ-gh-xEq">
@@ -1381,53 +1414,45 @@
                                                     <color key="textColor" red="0.63508807349999996" green="0.63508807349999996" blue="0.63508807349999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="購入USTD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqX-wz-5U3">
-                                                    <rect key="frame" x="16" y="56.000000000000007" width="75" height="23.333333333333336"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="購入USTD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqX-wz-5U3">
+                                                    <rect key="frame" x="16" y="48" width="75" height="23.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="16"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8N-MN-dxN">
-                                                    <rect key="frame" x="367.33333333333331" y="56.333333333333336" width="9.6666666666666856" height="22.666666666666664"/>
+                                                    <rect key="frame" x="367.33333333333331" y="48.333333333333336" width="9.6666666666666856" height="22.666666666666664"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="16"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="成功" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Coj-8x-Z3N">
-                                                    <rect key="frame" x="32" y="95.333333333333329" width="28" height="19.666666666666671"/>
+                                                    <rect key="frame" x="32" y="79.333333333333329" width="28" height="19.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="14"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jap-0O-7Gs">
-                                                    <rect key="frame" x="16" y="101.33333333333333" width="8" height="8"/>
+                                                    <rect key="frame" x="16" y="85.333333333333329" width="8" height="8"/>
                                                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="8" id="Bwv-rY-0fd"/>
                                                         <constraint firstAttribute="width" constant="8" id="CAq-uB-dMc"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSr-la-i0H">
-                                                    <rect key="frame" x="377" y="105.33333333333333" width="0.0" height="0.0"/>
-                                                    <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="14"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="qYD-D1-0WJ" firstAttribute="leading" secondItem="fBQ-gh-xEq" secondAttribute="trailing" constant="16" id="0KV-qZ-bYg"/>
                                                 <constraint firstItem="fBQ-gh-xEq" firstAttribute="top" secondItem="qyi-LM-KE4" secondAttribute="top" constant="16" id="3i5-W9-ZVx"/>
                                                 <constraint firstItem="qYD-D1-0WJ" firstAttribute="centerY" secondItem="fBQ-gh-xEq" secondAttribute="centerY" id="B2c-mz-l2P"/>
-                                                <constraint firstAttribute="trailing" secondItem="cSr-la-i0H" secondAttribute="trailing" constant="16" id="DzK-Gf-CoI"/>
-                                                <constraint firstItem="cSr-la-i0H" firstAttribute="centerY" secondItem="Coj-8x-Z3N" secondAttribute="centerY" id="HRT-gD-Czv"/>
                                                 <constraint firstAttribute="trailing" secondItem="s8N-MN-dxN" secondAttribute="trailing" constant="16" id="JqC-AY-v9a"/>
                                                 <constraint firstItem="BqX-wz-5U3" firstAttribute="leading" secondItem="qyi-LM-KE4" secondAttribute="leading" constant="16" id="Nbd-CJ-Lfs"/>
                                                 <constraint firstItem="Jap-0O-7Gs" firstAttribute="centerY" secondItem="Coj-8x-Z3N" secondAttribute="centerY" id="W7B-3o-frJ"/>
                                                 <constraint firstItem="Coj-8x-Z3N" firstAttribute="leading" secondItem="Jap-0O-7Gs" secondAttribute="trailing" constant="8" id="YHB-mC-XN2"/>
                                                 <constraint firstItem="Jap-0O-7Gs" firstAttribute="leading" secondItem="qyi-LM-KE4" secondAttribute="leading" constant="16" id="i8P-pv-ghI"/>
                                                 <constraint firstItem="fBQ-gh-xEq" firstAttribute="leading" secondItem="qyi-LM-KE4" secondAttribute="leading" constant="16" id="oZq-aA-Cso"/>
-                                                <constraint firstItem="Coj-8x-Z3N" firstAttribute="top" secondItem="BqX-wz-5U3" secondAttribute="bottom" constant="16" id="qMc-EN-7j6"/>
-                                                <constraint firstItem="BqX-wz-5U3" firstAttribute="top" secondItem="fBQ-gh-xEq" secondAttribute="bottom" constant="16" id="w8l-B6-gSG"/>
+                                                <constraint firstItem="Coj-8x-Z3N" firstAttribute="top" secondItem="BqX-wz-5U3" secondAttribute="bottom" constant="8" id="qMc-EN-7j6"/>
+                                                <constraint firstItem="BqX-wz-5U3" firstAttribute="top" secondItem="fBQ-gh-xEq" secondAttribute="bottom" constant="8" id="w8l-B6-gSG"/>
                                                 <constraint firstItem="s8N-MN-dxN" firstAttribute="centerY" secondItem="BqX-wz-5U3" secondAttribute="centerY" id="wUy-af-YzK"/>
                                                 <constraint firstAttribute="bottom" secondItem="Coj-8x-Z3N" secondAttribute="bottom" constant="16" id="yTr-M4-4i5"/>
                                             </constraints>
@@ -1436,76 +1461,17 @@
                                             <outlet property="priceLabel" destination="s8N-MN-dxN" id="ydh-8I-CPP"/>
                                             <outlet property="productNameLabel" destination="BqX-wz-5U3" id="jGk-Bt-iXk"/>
                                             <outlet property="sideButton" destination="fBQ-gh-xEq" id="IoE-D2-0AU"/>
-                                            <outlet property="statusView" destination="Jap-0O-7Gs" id="dU1-Bn-DeR"/>
+                                            <outlet property="statusView" destination="Jap-0O-7Gs" id="bc6-w0-YKC"/>
                                             <outlet property="timeLabel" destination="qYD-D1-0WJ" id="bQ8-S2-Wnl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" id="wfL-Zt-vWD">
-                                <rect key="frame" x="0.0" y="737" width="393" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5HC-np-U7l">
-                                        <rect key="frame" x="0.0" y="80" width="393" height="1"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="Se1-6C-nz9"/>
-                                        </constraints>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="brg-ho-U3b">
-                                        <rect key="frame" x="16" y="16" width="361" height="48"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elT-rQ-FWz">
-                                                <rect key="frame" x="0.0" y="0.0" width="173" height="48"/>
-                                                <color key="backgroundColor" name="mainRed"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="48" id="2kk-Zc-89W"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="17"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="買入">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buyCurrency:" destination="Hha-47-aJ7" eventType="touchUpInside" id="4nu-bx-uwO"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaa-bS-PNK">
-                                                <rect key="frame" x="188" y="0.0" width="173" height="48"/>
-                                                <color key="backgroundColor" name="mainRed"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="48" id="kLc-BR-1ya"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="17"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="賣出">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="sellCurrency:" destination="Hha-47-aJ7" eventType="touchUpInside" id="UXU-1n-28l"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="115" id="FFW-cK-VqZ"/>
-                                    <constraint firstItem="brg-ho-U3b" firstAttribute="leading" secondItem="wfL-Zt-vWD" secondAttribute="leading" constant="16" id="JEb-Iv-UUC"/>
-                                    <constraint firstAttribute="bottom" secondItem="5HC-np-U7l" secondAttribute="bottom" constant="34" id="QsQ-ws-Nq6"/>
-                                    <constraint firstAttribute="trailing" secondItem="5HC-np-U7l" secondAttribute="trailing" id="faT-TU-NcQ"/>
-                                    <constraint firstItem="brg-ho-U3b" firstAttribute="top" secondItem="wfL-Zt-vWD" secondAttribute="top" constant="16" id="iSz-GV-MJo"/>
-                                    <constraint firstItem="5HC-np-U7l" firstAttribute="leading" secondItem="wfL-Zt-vWD" secondAttribute="leading" id="vnQ-aF-NRS"/>
-                                    <constraint firstAttribute="trailing" secondItem="brg-ho-U3b" secondAttribute="trailing" constant="16" id="wdE-L2-jrr"/>
-                                    <constraint firstItem="5HC-np-U7l" firstAttribute="top" secondItem="brg-ho-U3b" secondAttribute="bottom" constant="16" id="wgc-du-p3Z"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HFc-eA-6FO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wfL-Zt-vWD" firstAttribute="top" secondItem="dgt-XN-xyN" secondAttribute="bottom" id="3eD-4q-I8X"/>
+                            <constraint firstItem="dgt-XN-xyN" firstAttribute="bottom" secondItem="HFc-eA-6FO" secondAttribute="bottom" id="HDe-M1-7no"/>
                             <constraint firstItem="dgt-XN-xyN" firstAttribute="top" secondItem="HFc-eA-6FO" secondAttribute="top" id="Lcy-E0-8dW"/>
                             <constraint firstItem="dgt-XN-xyN" firstAttribute="leading" secondItem="HFc-eA-6FO" secondAttribute="leading" id="fQ5-wP-L6i"/>
                             <constraint firstItem="dgt-XN-xyN" firstAttribute="trailing" secondItem="HFc-eA-6FO" secondAttribute="trailing" id="rbU-Xg-yLB"/>
@@ -1513,47 +1479,55 @@
                     </view>
                     <navigationItem key="navigationItem" title="資產紀錄" id="ghu-9M-Syq"/>
                     <connections>
-                        <outlet property="buyButton" destination="elT-rQ-FWz" id="Aj0-kp-lIu"/>
-                        <outlet property="sellButton" destination="oaa-bS-PNK" id="7Qw-Da-ns0"/>
-                        <outlet property="tableView" destination="dgt-XN-xyN" id="Ywx-tt-7X9"/>
-                        <segue destination="ho5-f3-XeM" kind="presentation" id="5Fo-8q-Fzv"/>
+                        <outlet property="tableView" destination="dgt-XN-xyN" id="WES-VR-03D"/>
+                        <segue destination="ho5-f3-XeM" kind="presentation" identifier="CategorySelectionSegue" destinationCreationSelector="showCategorySelection:" id="5Fo-8q-Fzv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcu-2z-cDu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5214.5038167938928" y="734.50704225352115"/>
         </scene>
-        <!--View Controller-->
+        <!--Category Selection View Controller-->
         <scene sceneID="dhX-Cs-c5Z">
             <objects>
-                <viewController id="ho5-f3-XeM" sceneMemberID="viewController">
+                <viewController id="ho5-f3-XeM" customClass="CategorySelectionViewController" customModule="CoinMaster_Sylvia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lAj-nP-b3l">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="選擇幣種" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rY-jP-Mov">
-                                <rect key="frame" x="160.66666666666666" y="32" width="72" height="26"/>
+                                <rect key="frame" x="160.66666666666666" y="24" width="72" height="26"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="18"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Uv-VP-lHi">
-                                <rect key="frame" x="337" y="29" width="32" height="32"/>
+                                <rect key="frame" x="337" y="21" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="KE4-Md-yeg"/>
                                     <constraint firstAttribute="width" constant="32" id="VWJ-pQ-S5W"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d6p-kw-nFc">
-                                <rect key="frame" x="0.0" y="74" width="393" height="768"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d6p-kw-nFc">
+                                <rect key="frame" x="0.0" y="66" width="393" height="776"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="74" id="FkT-RL-eTU">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="74"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FkT-RL-eTU" id="VGA-yc-kXQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="74"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DW0-g1-KIN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6rY-jP-Mov" firstAttribute="top" secondItem="DW0-g1-KIN" secondAttribute="top" constant="32" id="0sB-vt-L8t"/>
+                            <constraint firstItem="6rY-jP-Mov" firstAttribute="top" secondItem="DW0-g1-KIN" secondAttribute="top" constant="24" id="0sB-vt-L8t"/>
                             <constraint firstItem="DW0-g1-KIN" firstAttribute="trailing" secondItem="6Uv-VP-lHi" secondAttribute="trailing" constant="24" id="Bp9-R9-qso"/>
                             <constraint firstItem="6rY-jP-Mov" firstAttribute="centerX" secondItem="lAj-nP-b3l" secondAttribute="centerX" id="MOI-NX-Rfq"/>
                             <constraint firstItem="6Uv-VP-lHi" firstAttribute="centerY" secondItem="6rY-jP-Mov" secondAttribute="centerY" id="N3q-me-VoW"/>
@@ -1563,6 +1537,9 @@
                             <constraint firstItem="d6p-kw-nFc" firstAttribute="trailing" secondItem="DW0-g1-KIN" secondAttribute="trailing" id="zB3-VU-jyQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="d6p-kw-nFc" id="nno-GX-ma6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKb-a5-G9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1577,12 +1554,10 @@
         <image name="dollarsign" width="62" height="22"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
         <image name="folder.fill" catalog="system" width="128" height="96"/>
+        <image name="icon_15px_more" width="15.333333015441895" height="15.333333015441895"/>
         <namedColor name="mainRed">
             <color red="0.92156862745098034" green="0.41176470588235292" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

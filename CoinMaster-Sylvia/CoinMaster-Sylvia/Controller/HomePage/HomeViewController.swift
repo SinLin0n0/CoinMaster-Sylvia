@@ -31,8 +31,9 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.getApiData()
         tabBarController?.tabBar.isHidden = false
+        self.getApiData()
+       
     }
 
     func getApiData(completion: (([CurrencyPair]) -> Void)? = nil) {

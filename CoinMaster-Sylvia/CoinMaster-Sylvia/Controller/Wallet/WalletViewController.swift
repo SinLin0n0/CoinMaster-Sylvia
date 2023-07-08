@@ -29,8 +29,6 @@ class WalletViewController: UIViewController {
         // Refresch
         let header  = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(headerRefresh))
         tableView.mj_header = header
-        // TableViewUI
-        tableView.contentInsetAdjustmentBehavior = .never
         
     }
     
@@ -59,6 +57,7 @@ class WalletViewController: UIViewController {
         appearance.configureWithTransparentBackground()
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationItem.backButtonTitle = ""
         createCustomView(nibName: "WalletBalanceView", containerView: balanceView, customView: &walletBalanceView)
         createCustomView(nibName: "WalletHeaderView", containerView: headerView, customView: &walletHeaderView)
         self.walletBalanceView?.hideBalanceView.isHidden = true
@@ -114,17 +113,23 @@ class WalletViewController: UIViewController {
     }
     
     func getIconUrl(imageView: UIImageView, for coinCode: String) {
-            let lowercased = coinCode.lowercased()
-            let coinIconUrl = "https://cryptoicons.org/api/icon/\(lowercased)/200"
-            imageView.kf.setImage(with: URL(string: coinIconUrl))
-        }
+        let lowercased = coinCode.lowercased()
+        let coinIconUrl = "https://cryptoicons.org/api/icon/\(lowercased)/200"
+        imageView.kf.setImage(with: URL(string: coinIconUrl))
+    }
+    
+    @IBAction func assetTracking(_ sender: Any) {
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "AssetTrackingViewController") as! AssetTrackingViewController
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
 }
 
 extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return accounts.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "WalletCurrencyTableViewCell", for: indexPath) as? WalletCurrencyTableViewCell else {
             print("error")

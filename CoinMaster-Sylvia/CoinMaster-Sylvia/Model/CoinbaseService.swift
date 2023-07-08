@@ -108,6 +108,7 @@ final class CoinbaseService {
                 completion?(response)
             } catch {
                 print("Error decoding data: \(error)")
+                print("🔎\(String(data: data, encoding: String.Encoding.utf8))")
             }
             
             // print(String(data: data, encoding: .utf8)!)
