@@ -55,6 +55,10 @@ class WalletViewController: UIViewController {
         super.viewWillAppear(animated)
         // SetUI
         tabBarController?.tabBar.isHidden = false
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         createCustomView(nibName: "WalletBalanceView", containerView: balanceView, customView: &walletBalanceView)
         createCustomView(nibName: "WalletHeaderView", containerView: headerView, customView: &walletHeaderView)
         self.walletBalanceView?.hideBalanceView.isHidden = true
@@ -131,8 +135,6 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
         let currencyName = currency.currency
         cell.currencyBalance.text = NumberFormatter.formattedNumber(currencyBalance)
         cell.currencyNameLabel.text = currency.currency
-//        let coinIconUrl = "https://cryptoicons.org/api/icon//btc/200"
-//        cell.currencyImage.kf.setImage(with: URL(string: coinIconUrl))
         self.getIconUrl(imageView: cell.currencyImage, for: currencyName)
         currencyBalance.convertToTWD(rate: currencyName) { convertedValue in
             DispatchQueue.main.async {

@@ -31,15 +31,11 @@ class CurrencyDetailsTableViewCell2: UITableViewCell {
         let side = data.side
         let uppercasedSide = side.uppercased()
         sideButton.setTitle("\(uppercasedSide)", for: .normal)
-//        print("🧲data\(data)")
-//        if let side = SideData(rawValue: data.side) {
-//            sideButton.setTitle(side.rawValue, for: .normal)
-//
-//        }
+
         if side == "buy" {
             productNameLabel.text = "購入\(currency)"
         } else {
-            sideButton.backgroundColor = UIColor(named: "mainRed")
+            sideButton.backgroundColor = UIColor.systemCyan
             productNameLabel.text = "賣出\(currency)"
         }
         
