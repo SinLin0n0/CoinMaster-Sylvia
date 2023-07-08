@@ -28,8 +28,15 @@ class AssetTrackingViewController: UIViewController {
         super.viewWillAppear(animated)
         // SetUI
         tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
         // FetchData
-        self.fetchData(productId: "")
+        var productId = ""
+        if selectedCurrency == "全部幣種" {
+            self.fetchData(productId: productId)
+        } else {
+            productId = "&product_id=\(selectedCurrency)-USD"
+            self.fetchData(productId: productId)
+        }
     }
     
     func fetchData(productId: String) {
@@ -98,6 +105,22 @@ extension AssetTrackingViewController: UITableViewDelegate, UITableViewDataSourc
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row > 0 && indexPath.row <= productOrders.count {
+            let orderId = productOrders[indexPath.row - 1].id
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let nextViewController = storyboard.instantiateViewController(withIdentifier: "TransactionCompletedViewController") as! TransactionCompletedViewController
+            nextViewController.orderId = orderId
+            let inputString = productOrders[indexPath.row - 1].productID
+            let separatedComponents = inputString.components(separatedBy: "-")
+            let result = separatedComponents.first ?? ""
+            nextViewController.currencyName = result
+            nextViewController.openConfirmAssetsButton = false
+            navigationController?.pushViewController(nextViewController, animated: true)
+        }
+    }
+    
     @objc func toNextVC () {
         performSegue(withIdentifier: "CategorySelectionSegue", sender: nil)
     }

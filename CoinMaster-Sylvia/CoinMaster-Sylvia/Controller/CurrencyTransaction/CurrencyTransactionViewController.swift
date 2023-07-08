@@ -240,7 +240,6 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TransactionCompletedViewController") as! TransactionCompletedViewController
                 nextVC.currencyName = self.currencyName
-                nextVC.isSell = self.isSell
                 nextVC.orderId = orderId
                 DispatchQueue.main.asyncAfter(deadline: .now()+2) {
                     self.navigationController?.pushViewController(nextVC, animated: true)

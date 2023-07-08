@@ -118,8 +118,9 @@ class WalletViewController: UIViewController {
         imageView.kf.setImage(with: URL(string: coinIconUrl))
     }
     
-    @IBAction func assetTracking(_ sender: Any) {
+    @IBAction func showAssetTracking(_ sender: Any) {
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "AssetTrackingViewController") as! AssetTrackingViewController
+        nextVC.selectedCurrency = "全部幣種"
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -131,6 +132,9 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if accounts.isEmpty || indexPath.row >= accounts.count {
+            return UITableViewCell()
+        }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "WalletCurrencyTableViewCell", for: indexPath) as? WalletCurrencyTableViewCell else {
             print("error")
             return UITableViewCell()

@@ -320,7 +320,9 @@
                             <constraint firstItem="kLH-Lm-KYM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="u65-nn-A5e"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title=" " id="hsb-Xc-efM"/>
+                    <navigationItem key="navigationItem" title=" " id="hsb-Xc-efM">
+                        <barButtonItem key="backBarButtonItem" title=" " id="YTt-Rv-ILL"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="kLH-Lm-KYM" id="x5M-if-rZz"/>
                     </connections>
@@ -450,9 +452,6 @@
                                                             <state key="normal" title="查看全部">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
-                                                            <connections>
-                                                                <action selector="showAllTradeHistory:" destination="bo0-Hb-Sad" eventType="touchUpInside" id="9ag-yl-2oV"/>
-                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.93139094600000005" green="0.93139094600000005" blue="0.93139094600000005" alpha="0.29863410596026491" colorSpace="custom" customColorSpace="displayP3"/>
@@ -476,14 +475,14 @@
                                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="15"/>
                                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                     <state key="normal" title="1D">
-                                                                        <color key="titleColor" name="mainRed"/>
+                                                                        <color key="titleColor" red="0.63529411764705879" green="0.63529411764705879" blue="0.63529411764705879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="didDayButtonTapped:" destination="bo0-Hb-Sad" eventType="touchUpInside" id="rF2-MH-txB"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" name="mainRed"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="ExI-c7-5sk"/>
                                                                 <constraint firstItem="eXO-Kw-UTQ" firstAttribute="top" secondItem="Jzb-hK-DbE" secondAttribute="top" id="NLc-DG-QFj"/>
@@ -527,14 +526,14 @@
                                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="15"/>
                                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                     <state key="normal" title="1M">
-                                                                        <color key="titleColor" red="0.63508807349999996" green="0.63508807349999996" blue="0.63508807349999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <color key="titleColor" systemColor="systemPinkColor"/>
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="didMonthButtonTapped:" destination="bo0-Hb-Sad" eventType="touchUpInside" id="DqW-fP-avv"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" systemColor="systemPinkColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="iWT-hP-Tst" firstAttribute="top" secondItem="tah-8O-XQz" secondAttribute="top" id="70l-5f-bDq"/>
                                                                 <constraint firstAttribute="height" constant="24" id="MYi-yd-yas"/>
@@ -680,7 +679,8 @@
                                         <connections>
                                             <outlet property="allButton" destination="Lva-cW-aen" id="VNR-Q1-0Ea"/>
                                             <outlet property="allView" destination="UXO-vO-v3g" id="THm-F3-Uur"/>
-                                            <outlet property="dayButton" destination="eXO-Kw-UTQ" id="2Xw-Ub-n9z"/>
+                                            <outlet property="assetTracking" destination="oiG-4T-MHs" id="MVg-7h-32j"/>
+                                            <outlet property="dayButton" destination="eXO-Kw-UTQ" id="FWb-f4-c2X"/>
                                             <outlet property="dayView" destination="Jzb-hK-DbE" id="89A-6i-dfp"/>
                                             <outlet property="historyAverageLabel" destination="dbZ-Lh-CKp" id="FxY-D7-lHp"/>
                                             <outlet property="historyAverageView" destination="3RP-yM-OCe" id="Oxi-fS-CDf"/>
@@ -720,7 +720,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2023-02-08 08:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seJ-Mn-bb1">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023-02-08 08:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seJ-Mn-bb1">
                                                     <rect key="frame" x="76" y="19" width="117.33333333333331" height="18.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18.329999999999998" id="mvY-gs-zxQ"/>
@@ -729,25 +729,25 @@
                                                     <color key="textColor" red="0.63508807349999996" green="0.63508807349999996" blue="0.63508807349999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" ambiguous="YES" text="購入USTD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gq-y8-gEU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="購入USTD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gq-y8-gEU">
                                                     <rect key="frame" x="16" y="56.000000000000007" width="75" height="23.333333333333336"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="16"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" ambiguous="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fya-rc-QKD">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fya-rc-QKD">
                                                     <rect key="frame" x="367.33333333333331" y="56.333333333333336" width="9.6666666666666856" height="22.666666666666664"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="16"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="成功" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wu-4C-rl1">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="成功" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wu-4C-rl1">
                                                     <rect key="frame" x="32" y="95.333333333333329" width="28" height="19.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="14"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Onk-2y-cnj">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onk-2y-cnj">
                                                     <rect key="frame" x="16" y="101.33333333333333" width="8" height="8"/>
                                                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                     <constraints>
@@ -755,7 +755,7 @@
                                                         <constraint firstAttribute="height" constant="8" id="XvY-fK-AiJ"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpU-wp-lw7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpU-wp-lw7">
                                                     <rect key="frame" x="377" y="105.33333333333333" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="14"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -925,6 +925,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R0S-x5-ZlL">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1139,7 +1140,7 @@
                         <barButtonItem key="rightBarButtonItem" title="歷史紀錄" id="u5Z-Lc-NfI">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="assetTracking:" destination="v8K-JM-lQT" id="lgt-1R-sOq"/>
+                                <action selector="showAssetTracking:" destination="v8K-JM-lQT" id="lgt-1R-sOq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1581,6 +1582,9 @@
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

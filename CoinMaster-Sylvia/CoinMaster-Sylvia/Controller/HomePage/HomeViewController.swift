@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
 
     func getApiData(completion: (([CurrencyPair]) -> Void)? = nil) {
         var balanceExchange: Double!
-        
+        let semaphore = DispatchSemaphore(value: 0)
         CoinbaseService.shared.getApiResponse(api: CoinbaseApi.accounts,
                                               authRequired: true,
                                               requestPath: RequestPath.accounts,
@@ -90,7 +90,9 @@ class HomeViewController: UIViewController {
                     }
                 }
             }
+            semaphore.signal()
         }
+        semaphore.wait()
     }
     
     @objc func headerRefresh() {
