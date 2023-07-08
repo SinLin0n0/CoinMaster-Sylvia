@@ -8,18 +8,22 @@
 import Foundation
 
 struct ProductOrders: Codable {
-    let id, price, size: String
-    let productID, profileID: String
-    let side, type, timeInForce: String
+    let size, funds, timeInForce, createdAt: String?
+    let doneAt, doneReason, stp, marketType: String?
+    let id, productID: String
+    let side, type: String
     let postOnly, settled: Bool
-    let createdAt, doneAt, doneReason, fillFees, filledSize: String
-    let executedValue, marketType, status: String
-    let fundingCurrency: String?
+    let fillFees, filledSize: String
+    let executedValue, status: String
+    let fundingCurrency, profileID: String?
+    let price: String?
 
     enum CodingKeys: String, CodingKey {
         case id
         case price
         case size
+        case funds
+        case stp
         case productID = "product_id"
         case profileID = "profile_id"
         case side
