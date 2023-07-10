@@ -57,7 +57,10 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
                                               authRequired: true,
                                               requestPath: RequestPath.orders,
                                               requestPathParam: param) { [weak self] (orders: [ProductOrders]) in
-            self?.productOrders = orders
+            DispatchQueue.main.async {
+                    self?.productOrders = orders
+                    self?.tableView.reloadData()
+                }
         }
         
         WebsocketService.shared.realTimeData = { data in
@@ -65,7 +68,7 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
             self.exchangeRate = currency
             // 買賣價要寫相反，因為是對user來說的值
             DispatchQueue.main.async {
-                let realTimeBid = (Double(data.bestAsk) ?? 0)
+                let realTimeBid = (Double(data.bestAsk) ?? 0) 
                 let realTimeAsk = (Double(data.bestBid) ?? 0)
                 let realTimeBidFormatted = NumberFormatter.formattedNumber(realTimeBid)
                 let realTimeAskFormatted = NumberFormatter.formattedNumber(realTimeAsk)
