@@ -16,12 +16,11 @@ class TransactionCompletedViewController: UIViewController {
     
     @IBOutlet weak var confirmAssetsButton: UIButton!
     @IBOutlet weak var completedView: UIView!
-    
+    var openConfirmAssetsButton: Bool = true
     var currencyName: String?
-    var isSell: Bool = true // true為買入、false為賣出
-    var orderId: String? = "28ffde51-64fe-413b-b747-8cb7120c08b2"
+    var orderId: String?
     var transactionSuccessView: TransactionSuccessView?
-//    var order: ProductOrders?
+    //    var order: ProductOrders?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +29,13 @@ class TransactionCompletedViewController: UIViewController {
         self.completedView.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.completedView.layer.shadowOpacity = 0.25
         self.completedView.layer.shadowRadius = 4
+        
+        if openConfirmAssetsButton {
+            confirmAssetsButton.isHidden = false
+        } else {
+            navigationController?.navigationBar.isHidden = true
+            confirmAssetsButton.isHidden = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,21 +49,23 @@ class TransactionCompletedViewController: UIViewController {
             print("error")
             return
         }
-        print("👽orderId\(orderId)")
+//        print("👽orderId\(orderId)")
         let param = "/\(orderId)"
+        let semaphore = DispatchSemaphore(value: 0)
         CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.orderBaseURL,
-                                              param: param,
-                                              authRequired: true,
-                                              requestPath: RequestPath.orderBaseURL,
-                                              requestPathParam: param) { [weak self] (order: (ProductOrders)) in
+                                                    param: param,
+                                                    authRequired: true,
+                                                    requestPath: RequestPath.orderBaseURL,
+                                                    requestPathParam: param) { [weak self] (order: (ProductOrders)) in
             print("🎃orders\(order)")
-            let doneTime = order.doneAt
-            let createTime = order.createdAt
+            guard let doneTime = order.doneAt else { return }
+            guard let createTime = order.createdAt else { return }
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
-
+//            dateFormatter.timeZone = .current
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+            
             DispatchQueue.main.async {
-                if let date = dateFormatter.date(from: doneTime ?? "") {
+                if let date = dateFormatter.date(from: doneTime ) {
                     let timeIntervalSince1970 = date.timeIntervalSince1970
                     let date = Date(timeIntervalSince1970: timeIntervalSince1970)
                     let taiwanTime = date.date2String(dateFormat: "yyyy-MM-dd HH:mm:ss")
@@ -65,7 +73,7 @@ class TransactionCompletedViewController: UIViewController {
                 } else {
                     print("error")
                 }
-                if let date = dateFormatter.date(from: createTime ?? "") {
+                if let date = dateFormatter.date(from: createTime ) {
                     let timeIntervalSince1970 = date.timeIntervalSince1970
                     let date = Date(timeIntervalSince1970: timeIntervalSince1970)
                     let taiwanTime = date.date2String(dateFormat: "yyyy-MM-dd HH:mm:ss")
@@ -76,19 +84,32 @@ class TransactionCompletedViewController: UIViewController {
                 if let side = SideData(rawValue: order.side) {
                     self?.transactionSuccessView?.sideButton.setTitle(side.rawValue, for: .normal)
                 }
+                if order.side == "buy" {
+                    self?.transactionSuccessView?.sideButton.setTitle("BUY", for: .normal)
+                    self?.transactionSuccessView?.sideButton.backgroundColor = .systemGreen
+                } else {
+                    self?.transactionSuccessView?.sideButton.setTitle("SELL", for: .normal)
+                    self?.transactionSuccessView?.sideButton.backgroundColor = .systemCyan
+                }
                 self?.transactionSuccessView?.sideButton.layer.cornerRadius = 5
                 guard let size = order.size else {
                     print("currencyName is nil")
                     return
                 }
                 self?.transactionSuccessView?.sizeLabel.text = "\(size) \(currencyName)"
-                let price = (Double(order.executedValue ?? "") ?? 0) / (Double(order.size ?? "") ?? 0)
-                self?.transactionSuccessView?.priceLabel.text = "USD$ \(price)"
+                var price = (Double(order.executedValue ) ?? 0) / (Double(order.size ?? "") ?? 0)
+                if price.isNaN {
+                    self?.transactionSuccessView?.priceLabel.text = "USD$ 0"
+                } else {
+                    self?.transactionSuccessView?.priceLabel.text = "USD$ \(price)"
+                }
+                
                 let pay = Double(order.executedValue)
                 self?.transactionSuccessView?.payLabel.text = "USD$ \(NumberFormatter.formattedNumber(pay ?? 0))"
             }
-            
+            semaphore.signal()
         }
+        semaphore.wait()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -119,17 +140,15 @@ class TransactionCompletedViewController: UIViewController {
     }
     @IBAction func confirmAssets(_ sender: Any) {
         if let tabBarController = presentingViewController as? UITabBarController {
-              let desiredIndex = 1
-
-              if desiredIndex >= 0 && desiredIndex < tabBarController.viewControllers?.count ?? 0 {
+            let desiredIndex = 1
+            
+            if desiredIndex >= 0 && desiredIndex < tabBarController.viewControllers?.count ?? 0 {
                 tabBarController.selectedIndex = desiredIndex
-              }
-
-              UIView.animate(withDuration: 1, animations: {}) { _ in
-                self.dismiss(animated: false, completion: nil)
-              }
             }
+            
+            UIView.animate(withDuration: 1, animations: {}) { _ in
+                self.dismiss(animated: false, completion: nil)
+            }
+        }
     }
-
-    
 }

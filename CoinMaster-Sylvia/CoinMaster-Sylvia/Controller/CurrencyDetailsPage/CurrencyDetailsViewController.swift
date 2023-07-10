@@ -34,6 +34,7 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.register(UINib(nibName: "NoDataTableViewCell", bundle: nil), forCellReuseIdentifier: "NoDataTableViewCell")
         self.sellButton.layer.cornerRadius = 5
         self.buyButton.layer.cornerRadius = 5
     }
@@ -45,7 +46,7 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.isHidden = true
-        
+        navigationItem.backButtonTitle = ""
         guard let pageTitleEn = currencyName else { return }
         guard let currency = BaseCurrency.allCases.first(where: { $0.currencyName == pageTitleEn }) else { return }
         let pageTitleCh = currency.currencyChName
@@ -90,7 +91,7 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
         WebsocketService.shared.stopSocket()
     }
     
-    func doCalcDate(timeIntervalOption: TimeIntervalOption = TimeIntervalOption.oneDay,
+    func doCalcDate(timeIntervalOption: TimeIntervalOption = TimeIntervalOption.oneMonth,
                     endTime: TimeInterval = (Date().timeIntervalSince1970),
                     completion: @escaping ([Double], [Double], TimeInterval) -> Void) {
         let currentDate = Date()
@@ -153,31 +154,31 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
     
     @IBAction func buyCurrency(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                if let targetViewController = storyboard.instantiateViewController(withIdentifier: "CurrencyTransactionViewController") as? CurrencyTransactionViewController {
-                    targetViewController.currencyName = self.currencyName
-                    targetViewController.isSell = true
-                    let currencyTransactionVC = UINavigationController(rootViewController: targetViewController)
-
-                    currencyTransactionVC.modalPresentationStyle = .custom
-                    currencyTransactionVC.transitioningDelegate = self
-                    currencyTransactionVC.navigationBar.isHidden = true
-
-                    present(currencyTransactionVC, animated: true, completion: nil)
-                }
+        if let targetViewController = storyboard.instantiateViewController(withIdentifier: "CurrencyTransactionViewController") as? CurrencyTransactionViewController {
+            targetViewController.currencyName = self.currencyName
+            targetViewController.isSell = true
+            let currencyTransactionVC = UINavigationController(rootViewController: targetViewController)
+            
+            currencyTransactionVC.modalPresentationStyle = .custom
+            currencyTransactionVC.transitioningDelegate = self
+            currencyTransactionVC.navigationBar.isHidden = true
+            
+            present(currencyTransactionVC, animated: true, completion: nil)
+        }
     }
     @IBAction func sellCurrency(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                if let targetViewController = storyboard.instantiateViewController(withIdentifier: "CurrencyTransactionViewController") as? CurrencyTransactionViewController {
-                    targetViewController.currencyName = self.currencyName
-                    targetViewController.isSell = false
-                    let currencyTransactionVC = UINavigationController(rootViewController: targetViewController)
-
-                    currencyTransactionVC.modalPresentationStyle = .custom
-                    currencyTransactionVC.transitioningDelegate = self
-                    currencyTransactionVC.navigationBar.isHidden = true
-
-                    present(currencyTransactionVC, animated: true, completion: nil)
-                }
+        if let targetViewController = storyboard.instantiateViewController(withIdentifier: "CurrencyTransactionViewController") as? CurrencyTransactionViewController {
+            targetViewController.currencyName = self.currencyName
+            targetViewController.isSell = false
+            let currencyTransactionVC = UINavigationController(rootViewController: targetViewController)
+            
+            currencyTransactionVC.modalPresentationStyle = .custom
+            currencyTransactionVC.transitioningDelegate = self
+            currencyTransactionVC.navigationBar.isHidden = true
+            
+            present(currencyTransactionVC, animated: true, completion: nil)
+        }
     }
 }
 
@@ -199,7 +200,16 @@ extension CurrencyDetailsViewController: UITableViewDelegate, UITableViewDataSou
             cell.doCalcDate = self.doCalcDate
             cell.timestamps = self.timestamps
             cell.setChartView(dataArray: dataPointAverages)
+            cell.assetTracking.addTarget(self, action: #selector(showAssetTracking), for: .touchUpInside)
             
+            return cell
+        } else if indexPath.row == 1 && productOrders.isEmpty {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "NoDataTableViewCell", for: indexPath) as? NoDataTableViewCell else {
+                print("error")
+                return UITableViewCell()
+            }
+            cell.separatorInset = UIEdgeInsets(top: 0, left: tableView.bounds.size.width, bottom: 0, right: 0)
+            cell.noDataLabel.text = "尚無資料"
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyDetailsTableViewCell2", for: indexPath) as? CurrencyDetailsTableViewCell2 else {
@@ -211,5 +221,14 @@ extension CurrencyDetailsViewController: UITableViewDelegate, UITableViewDataSou
             
             return cell
         }
+    }
+    @objc func showAssetTracking() {
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "AssetTrackingViewController") as! AssetTrackingViewController
+        guard let currencyName = currencyName else {
+            print("currencyName is nil")
+            return
+        }
+        nextVC.selectedCurrency = currencyName
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

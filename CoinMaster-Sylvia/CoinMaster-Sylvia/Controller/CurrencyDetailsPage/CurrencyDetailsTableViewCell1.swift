@@ -22,6 +22,7 @@ class CurrencyDetailsTableViewCell1: UITableViewCell {
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var historyAverageView: UIView!
     
+    @IBOutlet weak var assetTracking: UIButton!
     @IBOutlet weak var dayButton: UIButton!
     @IBOutlet weak var weekButton: UIButton!
     @IBOutlet weak var monthButton: UIButton!
@@ -172,9 +173,7 @@ class CurrencyDetailsTableViewCell1: UITableViewCell {
         self.timestamps = timestamps
         print(array.count)
     }
-    
-    @IBAction func showAllTradeHistory(_ sender: Any) {
-    }
+
     
 }
 

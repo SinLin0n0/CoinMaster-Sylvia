@@ -1,14 +1,13 @@
 //
-//  CurrencyDetailsTableViewCell2.swift
+//  TransactionRecordsTableViewCell.swift
 //  CoinMaster-Sylvia
 //
-//  Created by Sin on 2023/7/1.
+//  Created by Sin on 2023/7/8.
 //
 
 import UIKit
 
-class CurrencyDetailsTableViewCell2: UITableViewCell {
-    
+class TransactionRecordsTableViewCell: UITableViewCell {
     @IBOutlet weak var sideButton: UIButton!
     @IBOutlet weak var productNameLabel: UILabel!
     
@@ -21,21 +20,24 @@ class CurrencyDetailsTableViewCell2: UITableViewCell {
         statusView.layer.cornerRadius = 4
         sideButton.layer.cornerRadius = 4
     }
-    
-    func setUI(data: ProductOrders, currency: String) {
+
+    func setUI(data: ProductOrders) {
         let side = data.side
         let uppercasedSide = side.uppercased()
         sideButton.setTitle("\(uppercasedSide)", for: .normal)
-
+        let inputString = data.productID
+        let separatedComponents = inputString.components(separatedBy: "-")
+        let result = separatedComponents.first ?? ""
         if side == "buy" {
             statusView.backgroundColor = UIColor.systemGreen
             sideButton.backgroundColor = UIColor.systemGreen
-            productNameLabel.text = "購入\(currency)"
+            productNameLabel.text = "購入\(result)"
         } else {
             statusView.backgroundColor = UIColor.systemCyan
             sideButton.backgroundColor = UIColor.systemCyan
-            productNameLabel.text = "賣出\(currency)"
+            productNameLabel.text = "賣出\(result)"
         }
+        
         let priceFormatted = NumberFormatter.formattedNumber(Double(data.executedValue) ?? 0)
         
         priceLabel.text = "USD$ \(priceFormatted)"
