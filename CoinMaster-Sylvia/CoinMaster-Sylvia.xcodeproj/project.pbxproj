@@ -269,10 +269,10 @@
 		27FC0B202A4C33E90059BDFB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				274539402A59A9BE00276850 /* NoDataTableViewCell.xib */,
 				2745393F2A59A9BE00276850 /* NoDataTableViewCell.swift */,
-				2768F8652A597D3C0079F0B5 /* SelectCurrencyTableViewCell.xib */,
+				274539402A59A9BE00276850 /* NoDataTableViewCell.xib */,
 				2768F8642A597D3C0079F0B5 /* SelectCurrencyTableViewCell.swift */,
+				2768F8652A597D3C0079F0B5 /* SelectCurrencyTableViewCell.xib */,
 				2779FBD22A56F9200020FE0E /* WalletBalanceView.swift */,
 				2779FBD82A5703B30020FE0E /* WalletBalanceView.xib */,
 				2779FBD02A56F9140020FE0E /* WalletHeaderView.swift */,

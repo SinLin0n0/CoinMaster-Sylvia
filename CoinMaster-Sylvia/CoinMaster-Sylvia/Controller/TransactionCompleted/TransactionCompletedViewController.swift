@@ -58,13 +58,14 @@ class TransactionCompletedViewController: UIViewController {
                                                     requestPath: RequestPath.orderBaseURL,
                                                     requestPathParam: param) { [weak self] (order: (ProductOrders)) in
             print("🎃orders\(order)")
-            let doneTime = order.doneAt
-            let createTime = order.createdAt
+            guard let doneTime = order.doneAt else { return }
+            guard let createTime = order.createdAt else { return }
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
+//            dateFormatter.timeZone = .current
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
             
             DispatchQueue.main.async {
-                if let date = dateFormatter.date(from: doneTime ?? "") {
+                if let date = dateFormatter.date(from: doneTime ) {
                     let timeIntervalSince1970 = date.timeIntervalSince1970
                     let date = Date(timeIntervalSince1970: timeIntervalSince1970)
                     let taiwanTime = date.date2String(dateFormat: "yyyy-MM-dd HH:mm:ss")
@@ -72,7 +73,7 @@ class TransactionCompletedViewController: UIViewController {
                 } else {
                     print("error")
                 }
-                if let date = dateFormatter.date(from: createTime ?? "") {
+                if let date = dateFormatter.date(from: createTime ) {
                     let timeIntervalSince1970 = date.timeIntervalSince1970
                     let date = Date(timeIntervalSince1970: timeIntervalSince1970)
                     let taiwanTime = date.date2String(dateFormat: "yyyy-MM-dd HH:mm:ss")

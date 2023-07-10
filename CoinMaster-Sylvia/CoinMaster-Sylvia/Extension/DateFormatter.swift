@@ -7,25 +7,6 @@
 import UIKit
 import Foundation
 
-extension DateFormatter {
-    func convertGMTtoTaiwanTime(
-        encodeFormat: String = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'",
-        gmtTimeString: String
-    ) -> String? {
-        self.dateFormat = encodeFormat
-        
-        if let date = self.date(from: gmtTimeString) {
-            let taiwanTimeZone = TimeZone(abbreviation: "GMT+8")
-            self.timeZone = taiwanTimeZone
-            self.dateFormat = "yyyy-MM-dd HH:mm"
-            let taiwanTime = self.string(from: date)
-            return taiwanTime
-        }
-        
-        return nil
-    }
-}
-
 extension Date {
     func date2String(dateFormat: String) -> String {
         let formatter = DateFormatter()

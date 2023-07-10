@@ -43,7 +43,7 @@ class TransactionRecordsTableViewCell: UITableViewCell {
         priceLabel.text = "USD$ \(priceFormatted)"
         let time = data.doneAt
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
 
         if let date = dateFormatter.date(from: time ?? "" ) {
             let timeIntervalSince1970 = date.timeIntervalSince1970
