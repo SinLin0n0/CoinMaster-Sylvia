@@ -31,7 +31,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxJ-gg-buk" customClass="iCarousel">
                                                     <rect key="frame" x="0.0" y="0.0" width="393" height="211"/>
-                                                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="xxJ-gg-buk" secondAttribute="height" multiplier="393:211" id="Jvk-UR-qtB"/>
                                                     </constraints>
