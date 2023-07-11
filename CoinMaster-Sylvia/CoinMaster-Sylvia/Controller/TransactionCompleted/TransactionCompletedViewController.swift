@@ -138,6 +138,10 @@ class TransactionCompletedViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func confirmAssets(_ sender: Any) {
-     
+        let tabBar = self.navigationController?.presentingViewController as? UITabBarController
+        
+        tabBar?.selectedIndex = 1
+        self.navigationController?.dismiss(animated: true)
+        (tabBar?.viewControllers![0] as? UINavigationController)!.popToRootViewController(animated: false)
     }
 }
