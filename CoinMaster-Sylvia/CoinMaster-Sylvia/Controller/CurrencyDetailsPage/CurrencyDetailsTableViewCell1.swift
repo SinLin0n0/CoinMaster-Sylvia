@@ -54,8 +54,6 @@ class CurrencyDetailsTableViewCell1: UITableViewCell {
     
     @IBAction func didDayButtonTapped(_ sender: Any) {
         setButton(exceptButton: dayButton, exceptView: dayView)
-        //        changeChartViewData(dataArray: test2Array)
-        
         self.doCalcDate(.oneDay, Date().timeIntervalSince1970) { averages, timestamps, endTime in
             DispatchQueue.main.async {
                 self.setChartView(dataArray: averages)
@@ -66,7 +64,6 @@ class CurrencyDetailsTableViewCell1: UITableViewCell {
     
     @IBAction func didWeekButtonTapped(_ sender: Any) {
         setButton(exceptButton: weekButton, exceptView: weekView)
-        //        changeChartViewData(dataArray: test3Array)
         self.doCalcDate(.oneWeek, Date().timeIntervalSince1970) { averages, timestamps, nextEndTime  in
             DispatchQueue.main.async {
                 self.setChartView(dataArray: averages)
@@ -76,7 +73,6 @@ class CurrencyDetailsTableViewCell1: UITableViewCell {
     }
     @IBAction func didMonthButtonTapped(_ sender: Any) {
         setButton(exceptButton: monthButton, exceptView: monthView)
-        //        changeChartViewData(dataArray: test4Array)
         self.doCalcDate(.oneMonth, Date().timeIntervalSince1970) { averages, timestamps, nextEndTime  in
             DispatchQueue.main.async {
                 self.setChartView(dataArray: averages)
@@ -86,7 +82,6 @@ class CurrencyDetailsTableViewCell1: UITableViewCell {
     }
     @IBAction func didThreeMonthButtonTapped(_ sender: Any) {
         setButton(exceptButton: threeMonthButton, exceptView: threeMonthView)
-        //        changeChartViewData(dataArray: test5Array)
         self.doCalcDate(.threeMonths, Date().timeIntervalSince1970) { averages, timestamps, nextEndTime  in
             DispatchQueue.main.async {
                 self.setChartView(dataArray: averages)
@@ -96,7 +91,6 @@ class CurrencyDetailsTableViewCell1: UITableViewCell {
     }
     @IBAction func didYearButtonTapped(_ sender: Any) {
         setButton(exceptButton: yearButton, exceptView: yearView)
-        //        changeChartViewData(dataArray: test6Array)
         self.doCalcDate(.threeHundredDays, Date().timeIntervalSince1970) { averages, timestamps, nextEndTime  in
             let olderAverages = averages
             let olderTimestamps = timestamps
@@ -112,7 +106,6 @@ class CurrencyDetailsTableViewCell1: UITableViewCell {
     }
     @IBAction func didAllButtonTapped(_ sender: Any) {
         setButton(exceptButton: allButton, exceptView: allView)
-        //        changeChartViewData(dataArray: testArray)
         self.getAllTransactionRecords()
     }
     
@@ -276,6 +269,7 @@ extension CurrencyDetailsTableViewCell1: ChartViewDelegate, ValueFormatter {
         lineChartView.doubleTapToZoomEnabled = false
         
         changeChartViewData(dataArray: dataArray, timeArray: timestamps)
+        print("🤡\(dataArray)")
     }
     
     func chartViewDidEndPanning(_ chartView: ChartViewBase) {
@@ -306,7 +300,7 @@ extension CurrencyDetailsTableViewCell1: ChartViewDelegate, ValueFormatter {
     func stringForValue(_ value: Double, entry: Charts.ChartDataEntry, dataSetIndex: Int, viewPortHandler: Charts.ViewPortHandler?) -> String {
         if entry.x == minXIndex || entry.x == maxXIndex {
             entry.icon = UIImage(named: "down")
-            return "\(entry.x)"
+            return "\(entry.y)"
         } else {
             return ""
         }

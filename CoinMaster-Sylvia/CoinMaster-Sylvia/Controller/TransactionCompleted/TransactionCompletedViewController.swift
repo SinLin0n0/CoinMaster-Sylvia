@@ -29,6 +29,7 @@ class TransactionCompletedViewController: UIViewController {
         self.completedView.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.completedView.layer.shadowOpacity = 0.25
         self.completedView.layer.shadowRadius = 4
+        self.confirmAssetsButton.layer.cornerRadius = 5
         
         if openConfirmAssetsButton {
             confirmAssetsButton.isHidden = false
@@ -61,9 +62,7 @@ class TransactionCompletedViewController: UIViewController {
             guard let doneTime = order.doneAt else { return }
             guard let createTime = order.createdAt else { return }
             let dateFormatter = DateFormatter()
-//            dateFormatter.timeZone = .current
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
-            
             DispatchQueue.main.async {
                 if let date = dateFormatter.date(from: doneTime ) {
                     let timeIntervalSince1970 = date.timeIntervalSince1970
@@ -139,16 +138,10 @@ class TransactionCompletedViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func confirmAssets(_ sender: Any) {
-        if let tabBarController = presentingViewController as? UITabBarController {
-            let desiredIndex = 1
-            
-            if desiredIndex >= 0 && desiredIndex < tabBarController.viewControllers?.count ?? 0 {
-                tabBarController.selectedIndex = desiredIndex
-            }
-            
-            UIView.animate(withDuration: 1, animations: {}) { _ in
-                self.dismiss(animated: false, completion: nil)
-            }
-        }
+        let tabBar = self.navigationController?.presentingViewController as? UITabBarController
+        
+        tabBar?.selectedIndex = 1
+        self.navigationController?.dismiss(animated: true)
+        (tabBar?.viewControllers![0] as? UINavigationController)!.popToRootViewController(animated: false)
     }
 }

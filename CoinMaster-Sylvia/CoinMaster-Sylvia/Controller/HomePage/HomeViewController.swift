@@ -29,14 +29,12 @@ class HomeViewController: UIViewController {
         // TableViewUI
         tableView.contentInsetAdjustmentBehavior = .never
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isHidden = true
         self.getApiData()
-        
     }
-    
     func getApiData(completion: (([CurrencyPair]) -> Void)? = nil) {
         var balanceExchange: Double!
         let semaphore = DispatchSemaphore(value: 0)

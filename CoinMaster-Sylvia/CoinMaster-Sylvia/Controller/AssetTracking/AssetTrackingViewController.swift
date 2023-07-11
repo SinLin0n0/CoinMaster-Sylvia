@@ -7,6 +7,7 @@
 
 import UIKit
 import MJRefresh
+import JGProgressHUD
 
 class AssetTrackingViewController: UIViewController {
     
@@ -14,6 +15,7 @@ class AssetTrackingViewController: UIViewController {
     
     var productOrders: [ProductOrders] = []
     var selectedCurrency: String = "全部幣種"
+    let hud = JGProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,8 @@ class AssetTrackingViewController: UIViewController {
         // Refresch
         let header  = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(headerRefresh))
         tableView.mj_header = header
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -48,6 +52,7 @@ class AssetTrackingViewController: UIViewController {
                                               requestPathParam: param) { [weak self] (orders: [ProductOrders]) in
             self?.productOrders = orders
             DispatchQueue.main.async {
+                self?.hud.dismiss()
                 self?.tableView.reloadData()
             }
         }
@@ -127,6 +132,8 @@ extension AssetTrackingViewController: UITableViewDelegate, UITableViewDataSourc
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CategorySelectionSegue" {
             if let destinationVC = segue.destination as? CategorySelectionViewController {
+                hud.textLabel.text = "Loading"
+                hud.show(in: self.view)
                 destinationVC.currencySelection = selectedCurrency
                 destinationVC.setCurrency = { [weak self] result in
                     var productId = ""

@@ -50,7 +50,7 @@
 		27A8C2852A52B10D004BBAC0 /* CandlesDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A8C2842A52B10D004BBAC0 /* CandlesDataPoint.swift */; };
 		27A8C2872A52FC8D004BBAC0 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A8C2862A52FC8D004BBAC0 /* DateFormatter.swift */; };
 		27C7ACA82A5BB29B007C2B9D /* UserDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C7ACA72A5BB29B007C2B9D /* UserDashboardViewController.swift */; };
-		27C7ACAA2A5BC5B6007C2B9D /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C7ACA92A5BC5B6007C2B9D /* test.swift */; };
+		27C7ACAC2A5BF568007C2B9D /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C7ACAB2A5BF568007C2B9D /* AlertUtils.swift */; };
 		27FC0B032A4C1FA00059BDFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B022A4C1FA00059BDFB /* AppDelegate.swift */; };
 		27FC0B052A4C1FA00059BDFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B042A4C1FA00059BDFB /* SceneDelegate.swift */; };
 		27FC0B0A2A4C1FA00059BDFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FC0B082A4C1FA00059BDFB /* Main.storyboard */; };
@@ -106,7 +106,7 @@
 		27A8C2842A52B10D004BBAC0 /* CandlesDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlesDataPoint.swift; sourceTree = "<group>"; };
 		27A8C2862A52FC8D004BBAC0 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		27C7ACA72A5BB29B007C2B9D /* UserDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDashboardViewController.swift; sourceTree = "<group>"; };
-		27C7ACA92A5BC5B6007C2B9D /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		27C7ACAB2A5BF568007C2B9D /* AlertUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtils.swift; sourceTree = "<group>"; };
 		27FC0AFF2A4C1FA00059BDFB /* CoinMaster-Sylvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinMaster-Sylvia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FC0B022A4C1FA00059BDFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27FC0B042A4C1FA00059BDFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,7 +142,6 @@
 				2731B8212A50894A00AE9AF7 /* NumberFormatter.swift */,
 				27A8C2862A52FC8D004BBAC0 /* DateFormatter.swift */,
 				27625EC92A517021006CE2F5 /* Double.swift */,
-				27C7ACA92A5BC5B6007C2B9D /* test.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -177,6 +176,7 @@
 			children = (
 				275B10352A4D4C850029666D /* CoinbaseService.swift */,
 				276554BA2A4ECD7A00151017 /* WebsocketService.swift */,
+				27C7ACAB2A5BF568007C2B9D /* AlertUtils.swift */,
 				27965C3B2A5000B700F0DFA7 /* SubscriptionMessage.swift */,
 				27FC0B162A4C20000059BDFB /* ApiKeys.swift */,
 				275B10362A4D4C850029666D /* Account.swift */,
@@ -450,6 +450,7 @@
 				27A8C2872A52FC8D004BBAC0 /* DateFormatter.swift in Sources */,
 				27C7ACA82A5BB29B007C2B9D /* UserDashboardViewController.swift in Sources */,
 				2779FBD32A56F9200020FE0E /* WalletBalanceView.swift in Sources */,
+				27C7ACAC2A5BF568007C2B9D /* AlertUtils.swift in Sources */,
 				27A8C2852A52B10D004BBAC0 /* CandlesDataPoint.swift in Sources */,
 				27FC0B172A4C20000059BDFB /* ApiKeys.swift in Sources */,
 				2779FBD12A56F9140020FE0E /* WalletHeaderView.swift in Sources */,
@@ -467,7 +468,6 @@
 				277232132A556AAA008E4FB1 /* TransactionCompletedViewController.swift in Sources */,
 				27965C3E2A50105000F0DFA7 /* BaseCurrency.swift in Sources */,
 				275B10402A4DC5780029666D /* CurrencyDetailsViewController.swift in Sources */,
-				27C7ACAA2A5BC5B6007C2B9D /* test.swift in Sources */,
 				2768F85D2A595EB30079F0B5 /* TransactionRecordsTableViewCell.swift in Sources */,
 				27965C362A4FF9BC00F0DFA7 /* CurrencyDetailsTableViewCell1.swift in Sources */,
 				2768F85F2A5963BD0079F0B5 /* CategorySelectionViewController.swift in Sources */,

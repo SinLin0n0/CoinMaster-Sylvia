@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 enum TimeIntervalOption {
     case oneDay
@@ -28,7 +29,7 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
     var dataPointAverages: [Double] = []
     var timestamps: [Double] = []
     var exchangeRate: Double?
-    
+    let hud = JGProgressHUD()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +38,8 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
         self.tableView.register(UINib(nibName: "NoDataTableViewCell", bundle: nil), forCellReuseIdentifier: "NoDataTableViewCell")
         self.sellButton.layer.cornerRadius = 5
         self.buyButton.layer.cornerRadius = 5
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
     }
     
     var realTimeBidLabel: UILabel?
@@ -60,6 +63,12 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
             DispatchQueue.main.async {
                     self?.productOrders = orders
                     self?.tableView.reloadData()
+                    self?.hud.dismiss()
+                if orders.isEmpty {
+                    guard let self = self else { return }
+                    AlertUtils.alert(title: "500 Internal Server Error", message: "Sandbox資料維護中，請稍後再試。", from: self)
+
+                }
                 }
         }
         

@@ -7,20 +7,6 @@
 
 import Foundation
 
-//extension Double {
-//    var convertToTWD: Double {
-//        var convertedValue: Double = 0.0
-//
-//        CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.exchangeRate, authRequired: false)  { (exchangeRate: ExchangeRateResponse) in
-//            if let twdExchangeRate = exchangeRate.data.rates["TWD"] {
-//                convertedValue = self * (Double(twdExchangeRate) ?? 0)
-//            }
-//        }
-//
-//        return convertedValue
-//    }
-//}
-
 extension Double {
     func convertToTWD(rate: String, completion: @escaping (Double) -> Void) {
         CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.exchangeRate, param: rate, authRequired: false) { (exchangeRate: ExchangeRateResponse) in

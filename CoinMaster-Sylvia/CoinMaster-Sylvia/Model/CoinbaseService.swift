@@ -2,7 +2,7 @@
 //  CoinbaseService.swift
 //  CryptoApp
 //
-//  Created by Ruby Chew on 2023/6/28.
+//  Created by Sin on 2023/6/28.
 //
 
 import Foundation
@@ -59,9 +59,7 @@ final class CoinbaseService {
             let data = Data(macBytes)
             return data.base64EncodedString()
         }
-        // print(cbAccessTimestamp)
-        // print(cbAccessSign)
-        
+
         return (cbAccessTimestamp, cbAccessSign)
     }
     
@@ -104,13 +102,13 @@ final class CoinbaseService {
             do {
                 let decoder = JSONDecoder()
                 let response = try decoder.decode([T].self, from: data)
-                 print("Response: \(response)")
+                print("Response: \(response)")
                 completion?(response)
             } catch {
                 print("Error decoding data: \(error)")
                 print("🔎\(String(data: data, encoding: String.Encoding.utf8))")
                 let emptyResponse: [T] = []
-                   completion?(emptyResponse)
+                completion?(emptyResponse)
             }
             //            semaphore.signal()
         }
@@ -126,7 +124,8 @@ final class CoinbaseService {
                                           requestPathParam: String = "",
                                           httpMethod: HttpMethod = .get,
                                           body: String = "",
-                                          completion: ((T) -> Void)? = nil) {
+                                          completion: ((T) -> Void)? = nil,
+                                          errorHandle: (() -> Void)? = nil) {
         
         //           let semaphore = DispatchSemaphore(value: 0)
         guard let url = URL(string: api.rawValue + param) else {
@@ -134,7 +133,7 @@ final class CoinbaseService {
         }
         var request = URLRequest(url: url, timeoutInterval: Double.infinity)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        //        request.addValue("application/json", forHTTPHeaderField: "Accept")
         if authRequired {
             let timestampSignature = getTimestampSignature(requestPath: requestPath.rawValue + requestPathParam,
                                                            method: httpMethod.rawValue,
@@ -161,10 +160,12 @@ final class CoinbaseService {
                 let decoder = JSONDecoder()
                 let response = try decoder.decode(T.self, from: data)
                 // print("Response: \(response)")
+                print("🟡decode\(response)")
                 completion?(response)
             } catch {
                 print("Error decoding data: \(error)")
-                print(String(data: data, encoding: String.Encoding.utf8))
+                print("🔎\(String(data: data, encoding: String.Encoding.utf8))")
+                errorHandle?()
             }
             
             // print(String(data: data, encoding: .utf8)!)
