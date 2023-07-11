@@ -38,10 +38,15 @@ class TransactionCompletedViewController: UIViewController {
             confirmAssetsButton.isHidden = true
         }
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        HudLoading.shared.setHud(view: self.view)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.creatCurrencyTransaction()
+        
         guard let currencyName = currencyName else {
             print("currencyName is nil")
             return
@@ -50,9 +55,9 @@ class TransactionCompletedViewController: UIViewController {
             print("error")
             return
         }
-//        print("👽orderId\(orderId)")
+        //        print("👽orderId\(orderId)")
         let param = "/\(orderId)"
-        let semaphore = DispatchSemaphore(value: 0)
+//        let semaphore = DispatchSemaphore(value: 0)
         CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.orderBaseURL,
                                                     param: param,
                                                     authRequired: true,
@@ -105,10 +110,14 @@ class TransactionCompletedViewController: UIViewController {
                 
                 let pay = Double(order.executedValue)
                 self?.transactionSuccessView?.payLabel.text = "USD$ \(NumberFormatter.formattedNumber(pay ?? 0))"
+                HudLoading.shared.dismissHud()
             }
-            semaphore.signal()
+//            semaphore.signal()
+        } errorHandle: {
+            HudLoading.shared.dismissHud()
+            AlertUtils.alert(title: "Internal Server Error", message: "資料維護中，請稍後再試。", from: self)
         }
-        semaphore.wait()
+//        semaphore.wait()
     }
     
     override func viewDidDisappear(_ animated: Bool) {

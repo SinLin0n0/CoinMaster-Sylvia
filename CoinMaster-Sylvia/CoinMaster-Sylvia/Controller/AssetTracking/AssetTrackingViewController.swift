@@ -50,10 +50,14 @@ class AssetTrackingViewController: UIViewController {
                                               authRequired: true,
                                               requestPath: RequestPath.orderBaseURL,
                                               requestPathParam: param) { [weak self] (orders: [ProductOrders]) in
-            self?.productOrders = orders
+            guard let self = self else { return }
+            self.productOrders = orders
             DispatchQueue.main.async {
-                self?.hud.dismiss()
-                self?.tableView.reloadData()
+                self.hud.dismiss()
+                self.tableView.reloadData()
+                if orders.isEmpty {
+                    AlertUtils.alert(title: "Internal Server Error", message: "資料維護中，請稍後再試。", from: self)
+                }
             }
         }
     }

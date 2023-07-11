@@ -25,7 +25,6 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
     var transactionView: CoinConvertView?
     var exchangeRate: Double?
     var accountCurrency: String?
-    let hud = JGProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -229,8 +228,7 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func send(_ sender: Any) {
-        hud.textLabel.text = "Loading"
-        hud.show(in: self.view)
+        HudLoading.shared.setHud(view: self.view)
         let size = self.transactionView?.topTextField.text ?? ""
         let side: String = isSell ? "buy" : "sell"
         guard let currencyName = self.currencyName else {
@@ -239,18 +237,20 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
         }
         let productId = "\(currencyName)-USD"
         print("👾\("{\"type\": \"market\", \"size\": \"\(size)\", \"side\": \"\(side)\", \"product_id\": \"\(productId)\", \"time_in_force\": \"FOK\"}")")
+
         self.createOrders(size: size, side: side, productId: productId) { orderId in
             print("😈\(orderId)")
             DispatchQueue.main.async {
                 if orderId == "" {
-                    self.hud.dismiss()
-                    AlertUtils.alert(title: "500 Internal Server Error", message: "Sandbox資料維護中，請稍後再試。", from: self)
+                    HudLoading.shared.dismissHud()
+                    AlertUtils.alert(title: "Internal Server Error", message: "資料維護中，請稍後再試。", from: self)
                 } else {
                     let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TransactionCompletedViewController") as! TransactionCompletedViewController
                     nextVC.currencyName = self.currencyName
                     nextVC.orderId = orderId
+                
                     DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-                        self.hud.dismiss()
+                        HudLoading.shared.dismissHud()
                         self.navigationController?.pushViewController(nextVC, animated: true)
                     }
                 }

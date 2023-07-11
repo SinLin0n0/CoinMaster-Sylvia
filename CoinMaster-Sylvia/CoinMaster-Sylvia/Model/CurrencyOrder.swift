@@ -13,7 +13,7 @@ struct CurrencyOrder: Codable {
     let postOnly, settled: Bool
     let doneReason, fillFees, filledSize: String
     let executedValue, marketType, status: String
-
+    
     private enum CodingKeys: String, CodingKey {
         case id
         case price

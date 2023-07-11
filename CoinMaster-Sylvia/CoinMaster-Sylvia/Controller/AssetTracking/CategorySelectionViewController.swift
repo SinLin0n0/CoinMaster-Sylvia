@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class CategorySelectionViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     var accounts: [Account] = []
     var currencySelection: String = ""
@@ -17,7 +17,7 @@ class CategorySelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         tableView.register(UINib(nibName: "SelectCurrencyTableViewCell", bundle: nil), forCellReuseIdentifier: "SelectCurrencyTableViewCell")
@@ -29,13 +29,13 @@ class CategorySelectionViewController: UIViewController {
                                               authRequired: true,
                                               requestPath: RequestPath.accounts,
                                               httpMethod: HttpMethod.get) { [weak self] (accounts: [Account]) in
-                self?.accounts = accounts
+            self?.accounts = accounts
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }
     }
-  
+    
     func getIconUrl(imageView: UIImageView, for coinCode: String) {
         let lowercased = coinCode.lowercased()
         let coinIconUrl = "https://cryptoicons.org/api/icon/\(lowercased)/200"
@@ -77,12 +77,12 @@ extension CategorySelectionViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-                self.setCurrency?("全部幣種")
-            } else {
-                let result = accounts[indexPath.row - 1].currency
-                self.setCurrency?(result)
-            }
-            dismiss(animated: true, completion: nil)
+            self.setCurrency?("全部幣種")
+        } else {
+            let result = accounts[indexPath.row - 1].currency
+            self.setCurrency?(result)
+        }
+        dismiss(animated: true, completion: nil)
     }
     
 }

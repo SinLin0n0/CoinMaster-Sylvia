@@ -102,7 +102,7 @@ final class CoinbaseService {
             do {
                 let decoder = JSONDecoder()
                 let response = try decoder.decode([T].self, from: data)
-                print("Response: \(response)")
+//                print("Response: \(response)")
                 completion?(response)
             } catch {
                 print("Error decoding data: \(error)")

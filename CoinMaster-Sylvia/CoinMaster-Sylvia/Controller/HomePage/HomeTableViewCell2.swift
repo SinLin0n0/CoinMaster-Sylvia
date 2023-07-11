@@ -27,9 +27,9 @@ class HomeTableViewCell2: UITableViewCell {
         // Initialization code
     }
     private var lineChartContentViewHost: UIHostingController<LineChartContentView>?
-
+    
     func setupLineChartView(with data: [Double], lineColor: UIColor) {
-
+        
         let convertedColor = Color(lineColor)
         let lineChartContentView = LineChartContentView(chartData: data, lineColor: convertedColor)
         lineChartContentViewHost = UIHostingController(rootView: lineChartContentView)
@@ -39,7 +39,7 @@ class HomeTableViewCell2: UITableViewCell {
         }
         
         lineChartContentViewHost.view.translatesAutoresizingMaskIntoConstraints = false
-
+        
         lineChartView.subviews.forEach { subview in
             subview.removeFromSuperview()
         }
@@ -52,5 +52,5 @@ class HomeTableViewCell2: UITableViewCell {
             lineChartContentViewHost.view.bottomAnchor.constraint(equalTo: lineChartView.bottomAnchor)
         ])
     }
-
+    
 }
