@@ -2,7 +2,7 @@
 //  Profile.swift
 //  CryptoApp
 //
-//  Created by Ruby Chew on 2023/6/28.
+//  Created by Sin on 2023/6/28.
 //
 
 import Foundation

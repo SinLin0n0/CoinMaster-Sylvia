@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
     
@@ -24,6 +25,7 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
     var transactionView: CoinConvertView?
     var exchangeRate: Double?
     var accountCurrency: String?
+    let hud = JGProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -227,6 +229,8 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func send(_ sender: Any) {
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
         let size = self.transactionView?.topTextField.text ?? ""
         let side: String = isSell ? "buy" : "sell"
         guard let currencyName = self.currencyName else {
@@ -238,12 +242,19 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
         self.createOrders(size: size, side: side, productId: productId) { orderId in
             print("😈\(orderId)")
             DispatchQueue.main.async {
-                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TransactionCompletedViewController") as! TransactionCompletedViewController
-                nextVC.currencyName = self.currencyName
-                nextVC.orderId = orderId
-                DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-                    self.navigationController?.pushViewController(nextVC, animated: true)
+                if orderId == "" {
+                    self.hud.dismiss()
+                    AlertUtils.alert(title: "500 Internal Server Error", message: "Sandbox資料維護中，請稍後再試。", from: self)
+                } else {
+                    let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TransactionCompletedViewController") as! TransactionCompletedViewController
+                    nextVC.currencyName = self.currencyName
+                    nextVC.orderId = orderId
+                    DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                        self.hud.dismiss()
+                        self.navigationController?.pushViewController(nextVC, animated: true)
+                    }
                 }
+                
             }
         }
     }
@@ -251,9 +262,10 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
     func createOrders(size: String, side: String, productId: String, completion: @escaping (String) -> Void) {
         let body = "{\"type\": \"market\", \"size\": \"\(size)\", \"side\": \"\(side)\", \"product_id\": \"\(productId)\", \"time_in_force\": \"FOK\"}"
         
-        CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.orderBaseURL, authRequired: true, requestPath: RequestPath.orderBaseURL, httpMethod: HttpMethod.post, body: body, completion: { (order: ProductOrders) in
-//            print("👻\(order)")
+        CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.orderBaseURL, authRequired: true, requestPath: RequestPath.orderBaseURL, httpMethod: HttpMethod.post, body: body) { (order: ProductOrders) in
             completion(order.id)
-        })
+        } errorHandle: {
+            completion("")
+        }
     }
 }
