@@ -15,7 +15,7 @@ class AssetTrackingViewController: UIViewController {
     
     var productOrders: [ProductOrders] = []
     var selectedCurrency: String = "全部幣種"
-    let hud = JGProgressHUD()
+//    let hud = JGProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +25,8 @@ class AssetTrackingViewController: UIViewController {
         // Refresch
         let header  = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(headerRefresh))
         tableView.mj_header = header
-        hud.textLabel.text = "Loading"
-        hud.show(in: self.view)
+        HudLoading.shared.setHud(view: self.view)
+      
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -43,7 +43,8 @@ class AssetTrackingViewController: UIViewController {
         }
     }
     
-    func fetchData(productId: String) {
+    func fetchData(productId: String, completion: @escaping () -> Void = {}) {
+      
         let param = "?limit=100&status=done\(productId)"
         CoinbaseService.shared.getApiResponse(api: CoinbaseApi.orderBaseURL,
                                               param: param,
@@ -53,18 +54,25 @@ class AssetTrackingViewController: UIViewController {
             guard let self = self else { return }
             self.productOrders = orders
             DispatchQueue.main.async {
-                self.hud.dismiss()
+                HudLoading.shared.dismissHud()
                 self.tableView.reloadData()
+                self.tableView.mj_header?.endRefreshing()
                 if orders.isEmpty {
                     AlertUtils.alert(title: "Internal Server Error", message: "資料維護中，請稍後再試。", from: self)
                 }
+                completion()
             }
         }
     }
     
     @objc func headerRefresh() {
-        self.tableView!.reloadData()
-        self.tableView.mj_header?.endRefreshing()
+        var productId = ""
+        if selectedCurrency == "全部幣種" {
+            self.fetchData(productId: productId)
+        } else {
+            productId = "&product_id=\(selectedCurrency)-USD"
+            self.fetchData(productId: productId)
+        }
     }
     
     @IBSegueAction func showCategorySelection(_ coder: NSCoder) -> CategorySelectionViewController? {
@@ -136,10 +144,9 @@ extension AssetTrackingViewController: UITableViewDelegate, UITableViewDataSourc
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CategorySelectionSegue" {
             if let destinationVC = segue.destination as? CategorySelectionViewController {
-                hud.textLabel.text = "Loading"
-                hud.show(in: self.view)
                 destinationVC.currencySelection = selectedCurrency
                 destinationVC.setCurrency = { [weak self] result in
+                    HudLoading.shared.setHud(view: self?.view ?? UIView())
                     var productId = ""
                     if result == "全部幣種" {
                         self?.fetchData(productId: productId)

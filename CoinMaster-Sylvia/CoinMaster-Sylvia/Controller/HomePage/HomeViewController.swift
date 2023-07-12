@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
     }
     func getApiData(completion: (([CurrencyPair]) -> Void)? = nil) {
         var balanceExchange: Double!
-        let semaphore = DispatchSemaphore(value: 0)
+//        let semaphore = DispatchSemaphore(value: 0)
         self.totalBalanceInTWD = 0
         CoinbaseService.shared.getApiResponse(api: CoinbaseApi.accounts,
                                               authRequired: true,
@@ -79,14 +79,15 @@ class HomeViewController: UIViewController {
                 }
                 group.notify(queue: .main) {
                     self?.tableView?.reloadData()
+                    self?.tableView.mj_header?.endRefreshing()
                 }
             }
         }
     }
     
     @objc func headerRefresh() {
-        self.tableView!.reloadData()
-        self.tableView.mj_header?.endRefreshing()
+        self.getApiData()
+        
     }
     
 }

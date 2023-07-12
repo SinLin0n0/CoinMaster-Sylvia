@@ -29,6 +29,7 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
     var dataPointAverages: [Double] = []
     var timestamps: [Double] = []
     var exchangeRate: Double?
+    let websocketService = WebsocketService()
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +73,7 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
             }
         }
         
-        WebsocketService.shared.realTimeData = { data in
+        websocketService.realTimeData = { data in
             let currency = Double(data.bestAsk)
             self.exchangeRate = currency
             // 買賣價要寫相反，因為是對user來說的值
@@ -87,7 +88,7 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
                 
             }
         }
-        WebsocketService.shared.setWebsocket(currency: pageTitleEn)
+        websocketService.setWebsocket(currency: pageTitleEn)
         let semaphore = DispatchSemaphore(value: 0)
         self.doCalcDate { averages, timestamps, endTime  in
             self.dataPointAverages = averages
@@ -100,10 +101,10 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        WebsocketService.shared.stopSocket()
+        websocketService.stopSocket()
     }
     
-    func doCalcDate(timeIntervalOption: TimeIntervalOption = TimeIntervalOption.oneMonth,
+    func doCalcDate(timeIntervalOption: TimeIntervalOption = TimeIntervalOption.oneDay,
                     endTime: TimeInterval = (Date().timeIntervalSince1970),
                     completion: @escaping ([Double], [Double], TimeInterval) -> Void) {
         DispatchQueue.main.async {

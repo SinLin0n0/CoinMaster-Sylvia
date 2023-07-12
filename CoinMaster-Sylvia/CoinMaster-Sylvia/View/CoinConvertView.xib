@@ -67,7 +67,7 @@
                         <constraint firstItem="0um-a6-QPU" firstAttribute="leading" secondItem="ow7-db-S30" secondAttribute="leading" id="q8x-lE-RSI"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="usd" translatesAutoresizingMaskIntoConstraints="NO" id="qkV-rY-HZP">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="usdc" translatesAutoresizingMaskIntoConstraints="NO" id="qkV-rY-HZP">
                     <rect key="frame" x="16" y="118.33333333333331" width="36" height="36"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="qkV-rY-HZP" secondAttribute="height" multiplier="1:1" id="BXT-Ln-kfV"/>
@@ -164,7 +164,7 @@
     </objects>
     <resources>
         <image name="button_36px_switch" width="36" height="36"/>
-        <image name="usd" width="32" height="32"/>
+        <image name="usdc" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

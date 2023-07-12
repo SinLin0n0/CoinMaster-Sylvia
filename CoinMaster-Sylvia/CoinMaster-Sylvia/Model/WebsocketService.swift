@@ -9,7 +9,7 @@ import Foundation
 import Starscream
 
 class WebsocketService: WebSocketDelegate {
-    static let shared = WebsocketService()
+//    static let shared = WebsocketService()
     var socket: WebSocket!
     var currency: String?
     var realTimeData: ((TickerMessage) -> ())?

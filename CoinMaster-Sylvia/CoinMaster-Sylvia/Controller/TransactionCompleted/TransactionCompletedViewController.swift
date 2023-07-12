@@ -38,15 +38,16 @@ class TransactionCompletedViewController: UIViewController {
             confirmAssetsButton.isHidden = true
         }
     }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//      
+//    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        HudLoading.shared.setHud(view: self.view)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+       
         self.creatCurrencyTransaction()
-        
+        HudLoading.shared.setHud(view: self.view)
         guard let currencyName = currencyName else {
             print("currencyName is nil")
             return
@@ -56,6 +57,7 @@ class TransactionCompletedViewController: UIViewController {
             return
         }
         //        print("👽orderId\(orderId)")
+//        let param = "/\(orderId)"
         let param = "/\(orderId)"
 //        let semaphore = DispatchSemaphore(value: 0)
         CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.orderBaseURL,
@@ -114,8 +116,16 @@ class TransactionCompletedViewController: UIViewController {
             }
 //            semaphore.signal()
         } errorHandle: {
-            HudLoading.shared.dismissHud()
-            AlertUtils.alert(title: "Internal Server Error", message: "資料維護中，請稍後再試。", from: self)
+            DispatchQueue.main.async {
+                HudLoading.shared.dismissHud()
+                AlertUtils.alert(title: "Internal Server Error", message: "交易成功，但讀取資料失敗，請到歷史紀錄查看。", from: self){
+                    let tabBar = self.navigationController?.presentingViewController as? UITabBarController
+                    
+                    tabBar?.selectedIndex = 1
+                    self.navigationController?.dismiss(animated: true)
+                    (tabBar?.viewControllers![0] as? UINavigationController)!.popToRootViewController(animated: false)
+                }
+            }
         }
 //        semaphore.wait()
     }

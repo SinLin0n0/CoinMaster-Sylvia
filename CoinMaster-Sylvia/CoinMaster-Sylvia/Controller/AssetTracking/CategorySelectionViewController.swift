@@ -36,6 +36,11 @@ class CategorySelectionViewController: UIViewController {
         }
     }
     
+    func getImage(imageView: UIImageView, currencyName: String) {
+        if let currency = BaseCurrency.allCases.first(where: { $0.currencyName == currencyName }) {
+            imageView.image = currency.currencyIconBlack
+        }
+    }
     func getIconUrl(imageView: UIImageView, for coinCode: String) {
         let lowercased = coinCode.lowercased()
         let coinIconUrl = "https://cryptoicons.org/api/icon/\(lowercased)/200"
@@ -65,7 +70,7 @@ extension CategorySelectionViewController: UITableViewDelegate, UITableViewDataS
             let currency = accounts[indexPath.row - 1]
             cell.currencyNameLabel.text = currency.currency
             let currencyName = currency.currency
-            self.getIconUrl(imageView: cell.currencyImage, for: currencyName)
+            self.getImage(imageView: cell.currencyImage, currencyName: currencyName)
             if currencySelection == currencyName {
                 cell.sellectedImage.isHidden = false
             } else {

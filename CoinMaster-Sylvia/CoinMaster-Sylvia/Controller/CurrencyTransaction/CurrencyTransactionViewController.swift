@@ -25,6 +25,7 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
     var transactionView: CoinConvertView?
     var exchangeRate: Double?
     var accountCurrency: String?
+    let websocketService = WebsocketService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,24 +40,20 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
             textFieldIsUSD = false
             availableBalanceStackView.isHidden = false
             actionButton.setTitle("賣出", for: .normal)
-            CoinbaseService.shared.getApiResponse(api: CoinbaseApi.accounts,
-                                                  authRequired: true,
-                                                  requestPath: RequestPath.accounts,
-                                                  httpMethod: HttpMethod.get) { [weak self] (accounts: [Account]) in
-                guard let currencyName = self?.currencyName else {
-                    print("currencyName is nil")
-                    return
-                }
-                for account in accounts {
-                    if account.currency == currencyName {
-                        let balance = String(format: "%.8f", Double(account.balance)!)
-                        let trimmedBalance = balance.trimmingCharacters(in: CharacterSet(charactersIn: "0"))
-                        self?.accountCurrency = balance
-                        DispatchQueue.main.async {
-                            self?.balanceLabel.text = "\(balance) \(currencyName)"
-                        }
+            guard let currencyName = self.currencyName else {
+                print("currencyName is nil")
+                return
+            }
+            HudLoading.shared.setHud(view: self.view)
+            self.getAccountCurrency(currencyName: currencyName) { balance in
+                DispatchQueue.main.async {
+                    guard let accountCurrency = self.accountCurrency else {
+                        print("accountCurrency is nil")
+                        return
                     }
+                    self.balanceLabel.text = "\(accountCurrency) \(currencyName)"
                 }
+                HudLoading.shared.dismissHud()
             }
         }
         // CurrencyNameLabel
@@ -78,15 +75,29 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        WebsocketService.shared.realTimeData = { data in
+        websocketService.realTimeData = { data in
             let currency = Double(data.bestAsk) // 即時匯率
             self.exchangeRateToUSD(currency ?? 0)
             self.currencyAmountLabel.text = NumberFormatter.formattedNumber(currency ?? 0)
             self.exchangeRate = currency
         }
-        WebsocketService.shared.setWebsocket(currency: currencyName ?? "")
+        websocketService.setWebsocket(currency: currencyName ?? "")
     }
-    
+    func getAccountCurrency(currencyName: String, completion: @escaping (String) -> Void) {
+        CoinbaseService.shared.getApiResponse(api: CoinbaseApi.accounts,
+                                              authRequired: true,
+                                              requestPath: RequestPath.accounts,
+                                              httpMethod: HttpMethod.get) { [weak self] (accounts: [Account]) in
+            for account in accounts {
+                if account.currency == currencyName {
+                    let balance = String(format: "%.8f", Double(account.balance)!)
+                    let trimmedBalance = balance.trimmingCharacters(in: CharacterSet(charactersIn: "0"))
+                    self?.accountCurrency = balance
+                    completion(trimmedBalance)
+                }
+            }
+        }
+    }
     
     func exchangeRateToUSD(_ rate: Double) {
         if self.textFieldIsUSD == true {
@@ -102,7 +113,7 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        WebsocketService.shared.stopSocket()
+        websocketService.stopSocket()
     }
     func creatCurrencyTransaction() {
         //nibName:View的名稱
@@ -249,7 +260,7 @@ class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
                     nextVC.currencyName = self.currencyName
                     nextVC.orderId = orderId
                 
-                    DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                    DispatchQueue.main.asyncAfter(deadline: .now()+4) {
                         HudLoading.shared.dismissHud()
                         self.navigationController?.pushViewController(nextVC, animated: true)
                     }
