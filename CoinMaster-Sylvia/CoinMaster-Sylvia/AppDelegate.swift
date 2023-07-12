@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,9 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        let barAppearance = UINavigationBarAppearance()
-//        barAppearance.configureWithOpaqueBackground()
-//            UINavigationBar.appearance().scrollEdgeAppearance = barAppearance
+        IQKeyboardManager.shared.enable = true
         return true
     }
 

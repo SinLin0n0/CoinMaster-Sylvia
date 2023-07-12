@@ -20,7 +20,7 @@ class TransactionRecordsTableViewCell: UITableViewCell {
         statusView.layer.cornerRadius = 4
         sideButton.layer.cornerRadius = 4
     }
-
+    
     func setUI(data: ProductOrders) {
         let side = data.side
         let uppercasedSide = side.uppercased()
@@ -44,7 +44,7 @@ class TransactionRecordsTableViewCell: UITableViewCell {
         let time = data.doneAt
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
-
+        
         if let date = dateFormatter.date(from: time ?? "" ) {
             let timeIntervalSince1970 = date.timeIntervalSince1970
             let date = Date(timeIntervalSince1970: timeIntervalSince1970)

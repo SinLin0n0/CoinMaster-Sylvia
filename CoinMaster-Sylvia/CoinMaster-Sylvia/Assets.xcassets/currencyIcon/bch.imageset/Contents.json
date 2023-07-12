@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "bch.png",
+      "filename" : "bch@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -11,6 +11,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "bch@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

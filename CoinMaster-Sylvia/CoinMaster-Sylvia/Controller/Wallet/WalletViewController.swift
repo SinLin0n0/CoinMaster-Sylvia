@@ -33,8 +33,9 @@ class WalletViewController: UIViewController {
     }
     
     @objc func headerRefresh() {
-        self.tableView!.reloadData()
-        self.tableView.mj_header?.endRefreshing()
+        self.fetchData()
+//        self.tableView!.reloadData()
+//        self.tableView.mj_header?.endRefreshing()
     }
     
     @objc func hideBalance(_ sender: Any) {
@@ -62,6 +63,10 @@ class WalletViewController: UIViewController {
         createCustomView(nibName: "WalletHeaderView", containerView: headerView, customView: &walletHeaderView)
         self.walletBalanceView?.hideBalanceView.isHidden = true
         walletBalanceView?.hideBalanceButton.addTarget(self, action: #selector(hideBalance), for: .touchUpInside)
+        self.fetchData()
+    }
+    
+    func fetchData(completion: @escaping () -> Void = {}) {
         // FetchData
         self.totalBalanceInTWD = 0
         self.accounts = []
@@ -90,6 +95,7 @@ class WalletViewController: UIViewController {
                 self?.walletBalanceView?.balanceLabel.text = NumberFormatter.formattedNumber(totalBalanceInTWD)
                 self?.accounts = accounts
                 self?.tableView.reloadData()
+                self?.tableView.mj_header?.endRefreshing()
             }
         }
     }
@@ -112,11 +118,16 @@ class WalletViewController: UIViewController {
         }
     }
     
-    func getIconUrl(imageView: UIImageView, for coinCode: String) {
-        let lowercased = coinCode.lowercased()
-        let coinIconUrl = "https://cryptoicons.org/api/icon/\(lowercased)/200"
-        imageView.kf.setImage(with: URL(string: coinIconUrl))
+    func getImage(imageView: UIImageView, currencyName: String) {
+        if let currency = BaseCurrency.allCases.first(where: { $0.currencyName == currencyName }) {
+            imageView.image = currency.currencyIcon
+        }
     }
+//    func getIconUrl(imageView: UIImageView, for coinCode: String) {
+//        let lowercased = coinCode.lowercased()
+//        let coinIconUrl = "https://cryptoicons.org/api/icon/\(lowercased)/200"
+//        imageView.kf.setImage(with: URL(string: coinIconUrl))
+//    }
     
     @IBAction func showAssetTracking(_ sender: Any) {
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "AssetTrackingViewController") as! AssetTrackingViewController
@@ -144,11 +155,12 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
         let currencyName = currency.currency
         cell.currencyBalance.text = NumberFormatter.formattedNumber(currencyBalance)
         cell.currencyNameLabel.text = currency.currency
-        self.getIconUrl(imageView: cell.currencyImage, for: currencyName)
+        self.getImage(imageView: cell.currencyImage, currencyName: currencyName)
+//        self.getIconUrl(imageView: cell.currencyImage, for: currencyName)
         currencyBalance.convertToTWD(rate: currencyName) { convertedValue in
             DispatchQueue.main.async {
                 let conversionTWD = NumberFormatter.formattedNumber(convertedValue)
-                cell.conversionTWDLabel.text = "≈ USD$ \(conversionTWD)"
+                cell.conversionTWDLabel.text = "≈ NT$ \(conversionTWD)"
             }
         }
         return cell

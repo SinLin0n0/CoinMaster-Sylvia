@@ -8,12 +8,12 @@
 import UIKit
 
 class CategorySelectionTableViewCell: UITableViewCell {
-
+    
     
     @IBOutlet weak var currencySelectionButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    
+        
     }
 }

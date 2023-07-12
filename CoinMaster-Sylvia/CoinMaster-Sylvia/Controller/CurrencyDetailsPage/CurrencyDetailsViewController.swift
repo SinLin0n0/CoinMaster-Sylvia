@@ -29,7 +29,8 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
     var dataPointAverages: [Double] = []
     var timestamps: [Double] = []
     var exchangeRate: Double?
-    let hud = JGProgressHUD()
+    let websocketService = WebsocketService()
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,8 +39,8 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
         self.tableView.register(UINib(nibName: "NoDataTableViewCell", bundle: nil), forCellReuseIdentifier: "NoDataTableViewCell")
         self.sellButton.layer.cornerRadius = 5
         self.buyButton.layer.cornerRadius = 5
-        hud.textLabel.text = "Loading"
-        hud.show(in: self.view)
+        HudLoading.shared.setHud(view: self.view)
+
     }
     
     var realTimeBidLabel: UILabel?
@@ -61,18 +62,18 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
                                               requestPath: RequestPath.orders,
                                               requestPathParam: param) { [weak self] (orders: [ProductOrders]) in
             DispatchQueue.main.async {
-                    self?.productOrders = orders
-                    self?.tableView.reloadData()
-                    self?.hud.dismiss()
+                self?.productOrders = orders
+                self?.tableView.reloadData()
+                HudLoading.shared.dismissHud()
                 if orders.isEmpty {
                     guard let self = self else { return }
-                    AlertUtils.alert(title: "500 Internal Server Error", message: "Sandbox資料維護中，請稍後再試。", from: self)
-
+                    AlertUtils.alert(title: "Internal Server Error", message: "資料維護中，請稍後再試。", from: self)
+                    
                 }
-                }
+            }
         }
         
-        WebsocketService.shared.realTimeData = { data in
+        websocketService.realTimeData = { data in
             let currency = Double(data.bestAsk)
             self.exchangeRate = currency
             // 買賣價要寫相反，因為是對user來說的值
@@ -87,7 +88,7 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
                 
             }
         }
-        WebsocketService.shared.setWebsocket(currency: pageTitleEn)
+        websocketService.setWebsocket(currency: pageTitleEn)
         let semaphore = DispatchSemaphore(value: 0)
         self.doCalcDate { averages, timestamps, endTime  in
             self.dataPointAverages = averages
@@ -100,12 +101,15 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        WebsocketService.shared.stopSocket()
+        websocketService.stopSocket()
     }
     
-    func doCalcDate(timeIntervalOption: TimeIntervalOption = TimeIntervalOption.oneMonth,
+    func doCalcDate(timeIntervalOption: TimeIntervalOption = TimeIntervalOption.oneDay,
                     endTime: TimeInterval = (Date().timeIntervalSince1970),
                     completion: @escaping ([Double], [Double], TimeInterval) -> Void) {
+        DispatchQueue.main.async {
+            HudLoading.shared.setHud(view: self.view)
+        }
         let currentDate = Date()
         let calendar = Calendar.current
         
@@ -142,6 +146,7 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
         CoinbaseService.shared.getApiResponse(api: CoinbaseApi.products,
                                               param: apiParam,
                                               authRequired: false) { [weak self] (candles: [[Double]]) in
+
             var candlesDataPoint = [CandlesDataPoint]()
             candles.forEach { numbers in
                 candlesDataPoint.append(CandlesDataPoint(numbers: numbers))
@@ -157,6 +162,7 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
                 return time
             }
             completion(averages, timestamps, nextEndTime)
+           
         }
     }
     
@@ -196,7 +202,13 @@ class CurrencyDetailsViewController: UIViewController, UIViewControllerTransitio
 
 extension CurrencyDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return productOrders.count + 1
+        var numberOfRows = 0
+        if productOrders.count == 0 {
+            numberOfRows = 2
+        } else {
+            numberOfRows = productOrders.count + 1
+        }
+        return numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

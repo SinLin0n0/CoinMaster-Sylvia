@@ -106,10 +106,14 @@ class CurrencyDetailsTableViewCell1: UITableViewCell {
     }
     @IBAction func didAllButtonTapped(_ sender: Any) {
         setButton(exceptButton: allButton, exceptView: allView)
-        self.getAllTransactionRecords()
+        HudLoading.shared.setHud(view: self.contentView)
+        DispatchQueue.global().async {
+            self.getAllTransactionRecords()
+        }
     }
     
     func getAllTransactionRecords() {
+        
         let calendar = Calendar.current
         var date = Date()
         
@@ -122,9 +126,9 @@ class CurrencyDetailsTableViewCell1: UITableViewCell {
         repeat {
             let threeHundredDaysAgo = calendar.date(byAdding: .day, value: -300, to: date)!
             
-            print("---------------------")
-            print("Start = \(threeHundredDaysAgo)")
-            print("End = \(date)")
+            //            print("---------------------")
+            //            print("Start = \(threeHundredDaysAgo)")
+            //            print("End = \(date)")
             let granularity = 86400
             let start = Int(threeHundredDaysAgo.timeIntervalSince1970)
             let end = Int(date.timeIntervalSince1970)
@@ -146,8 +150,8 @@ class CurrencyDetailsTableViewCell1: UITableViewCell {
             
             semaphore.wait()
             
-            print(array.count)
-            print(candlesTemp.count)
+            //            print(array.count)
+            //            print(candlesTemp.count)
             print("---------------------")
         } while(candlesTemp.count != 0)
         let reversedCandlesDataPoint = array.reversed()
@@ -156,17 +160,15 @@ class CurrencyDetailsTableViewCell1: UITableViewCell {
         }
         let timestamps = array.map { point in
             let time = point.timestamp
-            //            let date = Date(timeIntervalSince1970: time)
-            //            let taiwanTime = date.date2String(dateFormat: "yyyy-MM-dd HH:mm")
             return time
         }
         DispatchQueue.main.async {
             self.setChartView(dataArray: averages)
         }
         self.timestamps = timestamps
-        print(array.count)
+        //        print(array.count)
     }
-
+    
     
 }
 
@@ -267,9 +269,8 @@ extension CurrencyDetailsTableViewCell1: ChartViewDelegate, ValueFormatter {
         lineChartView.scaleXEnabled = false
         lineChartView.scaleYEnabled = false
         lineChartView.doubleTapToZoomEnabled = false
-        
+        HudLoading.shared.dismissHud()
         changeChartViewData(dataArray: dataArray, timeArray: timestamps)
-        print("🤡\(dataArray)")
     }
     
     func chartViewDidEndPanning(_ chartView: ChartViewBase) {

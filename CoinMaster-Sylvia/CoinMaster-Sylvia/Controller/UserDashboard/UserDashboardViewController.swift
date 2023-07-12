@@ -8,7 +8,7 @@
 import UIKit
 
 class UserDashboardViewController: UIViewController {
-
+    
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userUIDLabel: UILabel!
     @IBOutlet weak var activeButton: UIButton!
@@ -23,7 +23,7 @@ class UserDashboardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-      
+        
         CoinbaseService.shared.getApiResponse(api: .profile,
                                               authRequired: true,
                                               requestPath: .profile) { (profiles: [Profile]) in

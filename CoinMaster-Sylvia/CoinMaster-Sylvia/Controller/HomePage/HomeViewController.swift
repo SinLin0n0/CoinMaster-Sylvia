@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
     }
     func getApiData(completion: (([CurrencyPair]) -> Void)? = nil) {
         var balanceExchange: Double!
-        let semaphore = DispatchSemaphore(value: 0)
+//        let semaphore = DispatchSemaphore(value: 0)
         self.totalBalanceInTWD = 0
         CoinbaseService.shared.getApiResponse(api: CoinbaseApi.accounts,
                                               authRequired: true,
@@ -51,45 +51,43 @@ class HomeViewController: UIViewController {
                     }
                 }
             }
-                CoinbaseService.shared.getApiResponse(api: CoinbaseApi.products,
-                                                      authRequired: false) { [weak self] (products: [CurrencyPair]) in
+            CoinbaseService.shared.getApiResponse(api: CoinbaseApi.products,
+                                                  authRequired: false) { [weak self] (products: [CurrencyPair]) in
+                
+                self?.usdPairs = products.filter { currencyPair in
+                    return String(currencyPair.id.suffix(3)) == "USD" && currencyPair.auctionMode == false && currencyPair.status == "online"
+                }
+                self?.usdPairsStats = [:]
+                let group = DispatchGroup()
+                for pair in self!.usdPairs {
+                    group.enter()
                     
-                    self?.usdPairs = products.filter { currencyPair in
-                        return String(currencyPair.id.suffix(3)) == "USD" && currencyPair.auctionMode == false && currencyPair.status == "online"
-                    }
-                    self?.usdPairsStats = [:]
-                    let group = DispatchGroup()
-                    for pair in self!.usdPairs {
-                        group.enter()
+                    CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.products,
+                                                                param: "/\(pair.id)/stats",
+                                                                authRequired: false) { [weak self] (products: ProductsStats) in
+                        let open = Double(products.open) ?? 0
+                        let last = Double(products.last) ?? 0
+                        let trend = (last - open) / last * 100
                         
-                        CoinbaseService.shared.getApiSingleResponse(api: CoinbaseApi.products,
-                                                                    param: "/\(pair.id)/stats",
-                                                                    authRequired: false) { [weak self] (products: ProductsStats) in
-                            let open = Double(products.open) ?? 0
-                            let last = Double(products.last) ?? 0
-                            let trend = (last - open) / last * 100
-                            
-                            let low = Double(products.low) ?? 0
-                            let high = Double(products.high) ?? 0
-                            let average = (low + high) / 2
-                            
-                            self?.usdPairsStats.updateValue((average, trend), forKey: pair.id)
-                            group.leave()
-                        }
-                    }
-                    group.notify(queue: .main) {
-                        self?.tableView?.reloadData()
+                        let low = Double(products.low) ?? 0
+                        let high = Double(products.high) ?? 0
+                        let average = (low + high) / 2
+                        
+                        self?.usdPairsStats.updateValue((average, trend), forKey: pair.id)
+                        group.leave()
                     }
                 }
-            
-            semaphore.signal()
+                group.notify(queue: .main) {
+                    self?.tableView?.reloadData()
+                    self?.tableView.mj_header?.endRefreshing()
+                }
+            }
         }
-        semaphore.wait()
     }
     
     @objc func headerRefresh() {
-        self.tableView!.reloadData()
-        self.tableView.mj_header?.endRefreshing()
+        self.getApiData()
+        
     }
     
 }

@@ -23,7 +23,7 @@ struct TradeRequest: Codable {
     let executedValue: String
     let status: String
     let settled: Bool
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case price

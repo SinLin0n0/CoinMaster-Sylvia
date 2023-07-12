@@ -26,7 +26,7 @@ class CurrencyDetailsTableViewCell2: UITableViewCell {
         let side = data.side
         let uppercasedSide = side.uppercased()
         sideButton.setTitle("\(uppercasedSide)", for: .normal)
-
+        
         if side == "buy" {
             statusView.backgroundColor = UIColor.systemGreen
             sideButton.backgroundColor = UIColor.systemGreen
@@ -42,7 +42,7 @@ class CurrencyDetailsTableViewCell2: UITableViewCell {
         let time = data.doneAt
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
-
+        
         if let date = dateFormatter.date(from: time ?? "" ) {
             let timeIntervalSince1970 = date.timeIntervalSince1970
             let date = Date(timeIntervalSince1970: timeIntervalSince1970)

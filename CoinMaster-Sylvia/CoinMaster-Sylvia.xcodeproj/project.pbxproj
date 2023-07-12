@@ -15,11 +15,12 @@
 		275B10392A4D4C850029666D /* CoinbaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10352A4D4C850029666D /* CoinbaseService.swift */; };
 		275B103A2A4D4C850029666D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10362A4D4C850029666D /* Account.swift */; };
 		275B103B2A4D4C850029666D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10372A4D4C850029666D /* Profile.swift */; };
-		275B103D2A4D78E50029666D /* ProductsStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B103C2A4D78E50029666D /* ProductsStats.swift */; };
 		275B10402A4DC5780029666D /* CurrencyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B103F2A4DC5780029666D /* CurrencyDetailsViewController.swift */; };
 		27625EC82A513C18006CE2F5 /* CurrencyOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27625EC72A513C18006CE2F5 /* CurrencyOrder.swift */; };
 		27625ECA2A517021006CE2F5 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27625EC92A517021006CE2F5 /* Double.swift */; };
+		27638E5D2A5D1BA7002C7D8B /* HudLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27638E5C2A5D1BA7002C7D8B /* HudLoading.swift */; };
 		276554BB2A4ECD7A00151017 /* WebsocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276554BA2A4ECD7A00151017 /* WebsocketService.swift */; };
+		276659042A5E40C00025DFBC /* ProductsStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276659032A5E40C00025DFBC /* ProductsStats.swift */; };
 		27679D4A2A5425930003C3FE /* CoinConvertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27679D482A5425930003C3FE /* CoinConvertView.xib */; };
 		27679D4B2A5425930003C3FE /* CoinConvertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27679D492A5425930003C3FE /* CoinConvertView.swift */; };
 		27679D502A5447E00003C3FE /* CurrencyTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27679D4F2A5447E00003C3FE /* CurrencyTransactionViewController.swift */; };
@@ -71,11 +72,12 @@
 		275B10352A4D4C850029666D /* CoinbaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinbaseService.swift; sourceTree = "<group>"; };
 		275B10362A4D4C850029666D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		275B10372A4D4C850029666D /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		275B103C2A4D78E50029666D /* ProductsStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductsStats.swift; path = "../../../../../.Trash/CoinMaster-Sylvia 上午9.11.59/CoinMaster-Sylvia/CoinMaster-Sylvia/ProductsStats.swift"; sourceTree = "<group>"; };
 		275B103F2A4DC5780029666D /* CurrencyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailsViewController.swift; sourceTree = "<group>"; };
 		27625EC72A513C18006CE2F5 /* CurrencyOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyOrder.swift; sourceTree = "<group>"; };
 		27625EC92A517021006CE2F5 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		27638E5C2A5D1BA7002C7D8B /* HudLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudLoading.swift; sourceTree = "<group>"; };
 		276554BA2A4ECD7A00151017 /* WebsocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketService.swift; sourceTree = "<group>"; };
+		276659032A5E40C00025DFBC /* ProductsStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsStats.swift; sourceTree = "<group>"; };
 		27679D482A5425930003C3FE /* CoinConvertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoinConvertView.xib; sourceTree = "<group>"; };
 		27679D492A5425930003C3FE /* CoinConvertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinConvertView.swift; sourceTree = "<group>"; };
 		27679D4F2A5447E00003C3FE /* CurrencyTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTransactionViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				275B10352A4D4C850029666D /* CoinbaseService.swift */,
+				27638E5C2A5D1BA7002C7D8B /* HudLoading.swift */,
 				276554BA2A4ECD7A00151017 /* WebsocketService.swift */,
 				27C7ACAB2A5BF568007C2B9D /* AlertUtils.swift */,
 				27965C3B2A5000B700F0DFA7 /* SubscriptionMessage.swift */,
@@ -183,13 +186,13 @@
 				275B10342A4D4C850029666D /* CurrencyPair.swift */,
 				275B10372A4D4C850029666D /* Profile.swift */,
 				27A8C2822A526045004BBAC0 /* ProductOrders.swift */,
-				275B103C2A4D78E50029666D /* ProductsStats.swift */,
 				27965C392A4FFA8E00F0DFA7 /* TickerMessage.swift */,
 				27965C3D2A50105000F0DFA7 /* BaseCurrency.swift */,
 				27965C3F2A5052A100F0DFA7 /* ExchangeRateResponse.swift */,
 				27625EC72A513C18006CE2F5 /* CurrencyOrder.swift */,
 				277232152A559EBC008E4FB1 /* TradeRequest.swift */,
 				27A8C2842A52B10D004BBAC0 /* CandlesDataPoint.swift */,
+				276659032A5E40C00025DFBC /* ProductsStats.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27FC0B1F2A4C31AA0059BDFB /* HomeTableViewCell1.swift in Sources */,
+				276659042A5E40C00025DFBC /* ProductsStats.swift in Sources */,
 				275B103B2A4D4C850029666D /* Profile.swift in Sources */,
 				275B103A2A4D4C850029666D /* Account.swift in Sources */,
 				2779FBAB2A56649D0020FE0E /* TransactionSuccessView.swift in Sources */,
@@ -461,13 +465,13 @@
 				2768F8662A597D3C0079F0B5 /* SelectCurrencyTableViewCell.swift in Sources */,
 				27FC0B052A4C1FA00059BDFB /* SceneDelegate.swift in Sources */,
 				2768F8572A595A720079F0B5 /* CategorySelectionTableViewCell.swift in Sources */,
-				275B103D2A4D78E50029666D /* ProductsStats.swift in Sources */,
 				27FC0B1C2A4C31AA0059BDFB /* HomeTableViewCell2.swift in Sources */,
 				27625ECA2A517021006CE2F5 /* Double.swift in Sources */,
 				275B10392A4D4C850029666D /* CoinbaseService.swift in Sources */,
 				277232132A556AAA008E4FB1 /* TransactionCompletedViewController.swift in Sources */,
 				27965C3E2A50105000F0DFA7 /* BaseCurrency.swift in Sources */,
 				275B10402A4DC5780029666D /* CurrencyDetailsViewController.swift in Sources */,
+				27638E5D2A5D1BA7002C7D8B /* HudLoading.swift in Sources */,
 				2768F85D2A595EB30079F0B5 /* TransactionRecordsTableViewCell.swift in Sources */,
 				27965C362A4FF9BC00F0DFA7 /* CurrencyDetailsTableViewCell1.swift in Sources */,
 				2768F85F2A5963BD0079F0B5 /* CategorySelectionViewController.swift in Sources */,
