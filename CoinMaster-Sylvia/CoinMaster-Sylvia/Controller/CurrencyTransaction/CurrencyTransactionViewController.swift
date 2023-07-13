@@ -7,6 +7,7 @@
 
 import UIKit
 import JGProgressHUD
+import CoinMasterInfoKit
 
 class CurrencyTransactionViewController: UIViewController, UITextFieldDelegate {
     

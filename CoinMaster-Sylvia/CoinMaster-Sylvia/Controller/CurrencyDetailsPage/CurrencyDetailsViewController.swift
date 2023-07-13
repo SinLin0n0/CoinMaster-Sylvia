@@ -7,6 +7,7 @@
 
 import UIKit
 import JGProgressHUD
+import CoinMasterInfoKit
 
 enum TimeIntervalOption {
     case oneDay

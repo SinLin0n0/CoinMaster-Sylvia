@@ -7,6 +7,7 @@
 
 import UIKit
 import Charts
+import CoinMasterInfoKit
 
 class CurrencyDetailsTableViewCell1: UITableViewCell {
     var doCalcDate: ((TimeIntervalOption, TimeInterval ,

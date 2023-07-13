@@ -7,11 +7,16 @@
 
 import SwiftUI
 
-struct LineChartContentView: View {
-    let chartData: [Double]
-    let lineColor: Color
+public struct LineChartContentView: View {
+    public let chartData: [Double]
+    public let lineColor: Color
     
-    var body: some View {
+    public init(chartData: [Double], lineColor: Color) {
+        self.chartData = chartData
+        self.lineColor = lineColor
+    }
+    
+    public var body: some View {
         GeometryReader { geometry in
             let height = geometry.size.height
             let width = geometry.size.width
@@ -38,4 +43,5 @@ struct LineChartContentView: View {
         }
     }
 }
+
 

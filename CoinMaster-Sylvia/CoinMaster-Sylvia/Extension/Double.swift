@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoinMasterInfoKit
 
 extension Double {
     func convertToTWD(rate: String, completion: @escaping (Double) -> Void) {

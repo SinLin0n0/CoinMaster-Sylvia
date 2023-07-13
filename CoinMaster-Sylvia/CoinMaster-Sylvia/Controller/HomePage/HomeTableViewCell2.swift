@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import CoinMasterInfoKit
 
 class HomeTableViewCell2: UITableViewCell {
     

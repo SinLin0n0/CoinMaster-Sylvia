@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoinMasterInfoKit
 
 class TransactionCompletedViewController: UIViewController {
     

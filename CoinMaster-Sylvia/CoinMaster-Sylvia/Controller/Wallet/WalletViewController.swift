@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 import MJRefresh
+import CoinMasterInfoKit
 
 class WalletViewController: UIViewController {
     
@@ -63,6 +64,7 @@ class WalletViewController: UIViewController {
         createCustomView(nibName: "WalletHeaderView", containerView: headerView, customView: &walletHeaderView)
         self.walletBalanceView?.hideBalanceView.isHidden = true
         walletBalanceView?.hideBalanceButton.addTarget(self, action: #selector(hideBalance), for: .touchUpInside)
+        HudLoading.shared.setHud(view: self.view)
         self.fetchData()
     }
     
@@ -95,6 +97,7 @@ class WalletViewController: UIViewController {
                 self?.walletBalanceView?.balanceLabel.text = NumberFormatter.formattedNumber(totalBalanceInTWD)
                 self?.accounts = accounts
                 self?.tableView.reloadData()
+                HudLoading.shared.dismissHud()
                 self?.tableView.mj_header?.endRefreshing()
             }
         }

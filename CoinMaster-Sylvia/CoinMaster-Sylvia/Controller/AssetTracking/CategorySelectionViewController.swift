@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import CoinMasterInfoKit
 
 class CategorySelectionViewController: UIViewController {
     

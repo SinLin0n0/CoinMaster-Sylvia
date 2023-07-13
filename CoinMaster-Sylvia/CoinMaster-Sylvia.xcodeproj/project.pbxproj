@@ -11,8 +11,13 @@
 		2731B8222A50894A00AE9AF7 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731B8212A50894A00AE9AF7 /* NumberFormatter.swift */; };
 		274539412A59A9BE00276850 /* NoDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745393F2A59A9BE00276850 /* NoDataTableViewCell.swift */; };
 		274539422A59A9BE00276850 /* NoDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 274539402A59A9BE00276850 /* NoDataTableViewCell.xib */; };
-		275B10382A4D4C850029666D /* CurrencyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10342A4D4C850029666D /* CurrencyPair.swift */; };
-		275B10392A4D4C850029666D /* CoinbaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10352A4D4C850029666D /* CoinbaseService.swift */; };
+		27590CD02A5EC7BA002520C2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27590CCF2A5EC7BA002520C2 /* WidgetKit.framework */; };
+		27590CD22A5EC7BA002520C2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27590CD12A5EC7BA002520C2 /* SwiftUI.framework */; };
+		27590CD52A5EC7BA002520C2 /* CoinMasterBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27590CD42A5EC7BA002520C2 /* CoinMasterBundle.swift */; };
+		27590CD72A5EC7BA002520C2 /* CoinMasterLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27590CD62A5EC7BA002520C2 /* CoinMasterLiveActivity.swift */; };
+		27590CD92A5EC7BA002520C2 /* CoinMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27590CD82A5EC7BA002520C2 /* CoinMaster.swift */; };
+		27590CDB2A5EC7BB002520C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27590CDA2A5EC7BB002520C2 /* Assets.xcassets */; };
+		27590CDF2A5EC7BB002520C2 /* CoinMasterExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 27590CCE2A5EC7BA002520C2 /* CoinMasterExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		275B103A2A4D4C850029666D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10362A4D4C850029666D /* Account.swift */; };
 		275B103B2A4D4C850029666D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10372A4D4C850029666D /* Profile.swift */; };
 		275B10402A4DC5780029666D /* CurrencyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B103F2A4DC5780029666D /* CurrencyDetailsViewController.swift */; };
@@ -20,7 +25,10 @@
 		27625ECA2A517021006CE2F5 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27625EC92A517021006CE2F5 /* Double.swift */; };
 		27638E5D2A5D1BA7002C7D8B /* HudLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27638E5C2A5D1BA7002C7D8B /* HudLoading.swift */; };
 		276554BB2A4ECD7A00151017 /* WebsocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276554BA2A4ECD7A00151017 /* WebsocketService.swift */; };
-		276659042A5E40C00025DFBC /* ProductsStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276659032A5E40C00025DFBC /* ProductsStats.swift */; };
+		276719282A5FCA6A000D2654 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B1A2A4C31AA0059BDFB /* LineChartView.swift */; };
+		2767192D2A5FCB7E000D2654 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B1A2A4C31AA0059BDFB /* LineChartView.swift */; };
+		2767192F2A5FD5C8000D2654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27FC0B0B2A4C1FA20059BDFB /* Assets.xcassets */; };
+		276719302A5FF5BF000D2654 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731B8212A50894A00AE9AF7 /* NumberFormatter.swift */; };
 		27679D4A2A5425930003C3FE /* CoinConvertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27679D482A5425930003C3FE /* CoinConvertView.xib */; };
 		27679D4B2A5425930003C3FE /* CoinConvertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27679D492A5425930003C3FE /* CoinConvertView.swift */; };
 		27679D502A5447E00003C3FE /* CurrencyTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27679D4F2A5447E00003C3FE /* CurrencyTransactionViewController.swift */; };
@@ -52,22 +60,78 @@
 		27A8C2872A52FC8D004BBAC0 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A8C2862A52FC8D004BBAC0 /* DateFormatter.swift */; };
 		27C7ACA82A5BB29B007C2B9D /* UserDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C7ACA72A5BB29B007C2B9D /* UserDashboardViewController.swift */; };
 		27C7ACAC2A5BF568007C2B9D /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C7ACAB2A5BF568007C2B9D /* AlertUtils.swift */; };
+		27F680E92A5EF365000AF44C /* CoinMasterInfoKit.docc in Sources */ = {isa = PBXBuildFile; fileRef = 27F680E82A5EF365000AF44C /* CoinMasterInfoKit.docc */; };
+		27F680EA2A5EF365000AF44C /* CoinMasterInfoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 27F680E72A5EF365000AF44C /* CoinMasterInfoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27F680ED2A5EF365000AF44C /* CoinMasterInfoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F680E52A5EF365000AF44C /* CoinMasterInfoKit.framework */; };
+		27F680EE2A5EF365000AF44C /* CoinMasterInfoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27F680E52A5EF365000AF44C /* CoinMasterInfoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		27F680F32A5EF592000AF44C /* CurrencyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10342A4D4C850029666D /* CurrencyPair.swift */; };
+		27F680F42A5EF592000AF44C /* ProductsStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276659032A5E40C00025DFBC /* ProductsStats.swift */; };
+		27F680F52A5EF592000AF44C /* CoinbaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B10352A4D4C850029666D /* CoinbaseService.swift */; };
+		27F680F62A5EF5C0000AF44C /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B162A4C20000059BDFB /* ApiKeys.swift */; };
 		27FC0B032A4C1FA00059BDFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B022A4C1FA00059BDFB /* AppDelegate.swift */; };
 		27FC0B052A4C1FA00059BDFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B042A4C1FA00059BDFB /* SceneDelegate.swift */; };
 		27FC0B0A2A4C1FA00059BDFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FC0B082A4C1FA00059BDFB /* Main.storyboard */; };
 		27FC0B0C2A4C1FA20059BDFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27FC0B0B2A4C1FA20059BDFB /* Assets.xcassets */; };
 		27FC0B0F2A4C1FA20059BDFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FC0B0D2A4C1FA20059BDFB /* LaunchScreen.storyboard */; };
-		27FC0B172A4C20000059BDFB /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B162A4C20000059BDFB /* ApiKeys.swift */; };
 		27FC0B1C2A4C31AA0059BDFB /* HomeTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B182A4C31AA0059BDFB /* HomeTableViewCell2.swift */; };
 		27FC0B1D2A4C31AA0059BDFB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B192A4C31AA0059BDFB /* HomeViewController.swift */; };
-		27FC0B1E2A4C31AA0059BDFB /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B1A2A4C31AA0059BDFB /* LineChartView.swift */; };
 		27FC0B1F2A4C31AA0059BDFB /* HomeTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC0B1B2A4C31AA0059BDFB /* HomeTableViewCell1.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27590CDD2A5EC7BB002520C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27FC0AF72A4C1FA00059BDFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27590CCD2A5EC7BA002520C2;
+			remoteInfo = CoinMasterExtension;
+		};
+		27F680EB2A5EF365000AF44C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27FC0AF72A4C1FA00059BDFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27F680E42A5EF365000AF44C;
+			remoteInfo = CoinMasterInfoKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		27590CE02A5EC7BB002520C2 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				27590CDF2A5EC7BB002520C2 /* CoinMasterExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F680EF2A5EF366000AF44C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				27F680EE2A5EF365000AF44C /* CoinMasterInfoKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2731B8212A50894A00AE9AF7 /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		2745393F2A59A9BE00276850 /* NoDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataTableViewCell.swift; sourceTree = "<group>"; };
 		274539402A59A9BE00276850 /* NoDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDataTableViewCell.xib; sourceTree = "<group>"; };
+		27590CCE2A5EC7BA002520C2 /* CoinMasterExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CoinMasterExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		27590CCF2A5EC7BA002520C2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		27590CD12A5EC7BA002520C2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		27590CD42A5EC7BA002520C2 /* CoinMasterBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMasterBundle.swift; sourceTree = "<group>"; };
+		27590CD62A5EC7BA002520C2 /* CoinMasterLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMasterLiveActivity.swift; sourceTree = "<group>"; };
+		27590CD82A5EC7BA002520C2 /* CoinMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMaster.swift; sourceTree = "<group>"; };
+		27590CDA2A5EC7BB002520C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27590CDC2A5EC7BB002520C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		275B10342A4D4C850029666D /* CurrencyPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyPair.swift; sourceTree = "<group>"; };
 		275B10352A4D4C850029666D /* CoinbaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinbaseService.swift; sourceTree = "<group>"; };
 		275B10362A4D4C850029666D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -109,6 +173,9 @@
 		27A8C2862A52FC8D004BBAC0 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		27C7ACA72A5BB29B007C2B9D /* UserDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDashboardViewController.swift; sourceTree = "<group>"; };
 		27C7ACAB2A5BF568007C2B9D /* AlertUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtils.swift; sourceTree = "<group>"; };
+		27F680E52A5EF365000AF44C /* CoinMasterInfoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoinMasterInfoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27F680E72A5EF365000AF44C /* CoinMasterInfoKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinMasterInfoKit.h; sourceTree = "<group>"; };
+		27F680E82A5EF365000AF44C /* CoinMasterInfoKit.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = CoinMasterInfoKit.docc; sourceTree = "<group>"; };
 		27FC0AFF2A4C1FA00059BDFB /* CoinMaster-Sylvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinMaster-Sylvia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FC0B022A4C1FA00059BDFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27FC0B042A4C1FA00059BDFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,10 +194,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		27590CCB2A5EC7BA002520C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27590CD22A5EC7BA002520C2 /* SwiftUI.framework in Frameworks */,
+				27590CD02A5EC7BA002520C2 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F680E22A5EF365000AF44C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27FC0AFC2A4C1FA00059BDFB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F680ED2A5EF365000AF44C /* CoinMasterInfoKit.framework in Frameworks */,
 				22F146952BE757D1193A5291 /* Pods_CoinMaster_Sylvia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +230,18 @@
 				27625EC92A517021006CE2F5 /* Double.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		27590CD32A5EC7BA002520C2 /* CoinMaster */ = {
+			isa = PBXGroup;
+			children = (
+				27590CD42A5EC7BA002520C2 /* CoinMasterBundle.swift */,
+				27590CD62A5EC7BA002520C2 /* CoinMasterLiveActivity.swift */,
+				27590CD82A5EC7BA002520C2 /* CoinMaster.swift */,
+				27590CDA2A5EC7BB002520C2 /* Assets.xcassets */,
+				27590CDC2A5EC7BB002520C2 /* Info.plist */,
+			);
+			path = CoinMaster;
 			sourceTree = "<group>";
 		};
 		275B10312A4D4BE70029666D /* Controller */ = {
@@ -168,7 +264,6 @@
 				27FC0B192A4C31AA0059BDFB /* HomeViewController.swift */,
 				27FC0B1B2A4C31AA0059BDFB /* HomeTableViewCell1.swift */,
 				27FC0B182A4C31AA0059BDFB /* HomeTableViewCell2.swift */,
-				27FC0B1A2A4C31AA0059BDFB /* LineChartView.swift */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -176,14 +271,11 @@
 		275B10332A4D4C600029666D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				275B10352A4D4C850029666D /* CoinbaseService.swift */,
 				27638E5C2A5D1BA7002C7D8B /* HudLoading.swift */,
 				276554BA2A4ECD7A00151017 /* WebsocketService.swift */,
 				27C7ACAB2A5BF568007C2B9D /* AlertUtils.swift */,
 				27965C3B2A5000B700F0DFA7 /* SubscriptionMessage.swift */,
-				27FC0B162A4C20000059BDFB /* ApiKeys.swift */,
 				275B10362A4D4C850029666D /* Account.swift */,
-				275B10342A4D4C850029666D /* CurrencyPair.swift */,
 				275B10372A4D4C850029666D /* Profile.swift */,
 				27A8C2822A526045004BBAC0 /* ProductOrders.swift */,
 				27965C392A4FFA8E00F0DFA7 /* TickerMessage.swift */,
@@ -192,7 +284,6 @@
 				27625EC72A513C18006CE2F5 /* CurrencyOrder.swift */,
 				277232152A559EBC008E4FB1 /* TradeRequest.swift */,
 				27A8C2842A52B10D004BBAC0 /* CandlesDataPoint.swift */,
-				276659032A5E40C00025DFBC /* ProductsStats.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,10 +341,26 @@
 			path = UserDashboard;
 			sourceTree = "<group>";
 		};
+		27F680E62A5EF365000AF44C /* CoinMasterInfoKit */ = {
+			isa = PBXGroup;
+			children = (
+				27FC0B1A2A4C31AA0059BDFB /* LineChartView.swift */,
+				27FC0B162A4C20000059BDFB /* ApiKeys.swift */,
+				275B10352A4D4C850029666D /* CoinbaseService.swift */,
+				275B10342A4D4C850029666D /* CurrencyPair.swift */,
+				276659032A5E40C00025DFBC /* ProductsStats.swift */,
+				27F680E72A5EF365000AF44C /* CoinMasterInfoKit.h */,
+				27F680E82A5EF365000AF44C /* CoinMasterInfoKit.docc */,
+			);
+			path = CoinMasterInfoKit;
+			sourceTree = "<group>";
+		};
 		27FC0AF62A4C1FA00059BDFB = {
 			isa = PBXGroup;
 			children = (
 				27FC0B012A4C1FA00059BDFB /* CoinMaster-Sylvia */,
+				27590CD32A5EC7BA002520C2 /* CoinMaster */,
+				27F680E62A5EF365000AF44C /* CoinMasterInfoKit */,
 				27FC0B002A4C1FA00059BDFB /* Products */,
 				C73BB338CE0F2DEC6E7674E7 /* Pods */,
 				D3957C90DF2E5BE9DC391795 /* Frameworks */,
@@ -264,6 +371,8 @@
 			isa = PBXGroup;
 			children = (
 				27FC0AFF2A4C1FA00059BDFB /* CoinMaster-Sylvia.app */,
+				27590CCE2A5EC7BA002520C2 /* CoinMasterExtension.appex */,
+				27F680E52A5EF365000AF44C /* CoinMasterInfoKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -319,13 +428,61 @@
 			isa = PBXGroup;
 			children = (
 				860466229DA4B4CA2EB7948C /* Pods_CoinMaster_Sylvia.framework */,
+				27590CCF2A5EC7BA002520C2 /* WidgetKit.framework */,
+				27590CD12A5EC7BA002520C2 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		27F680E02A5EF365000AF44C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F680EA2A5EF365000AF44C /* CoinMasterInfoKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		27590CCD2A5EC7BA002520C2 /* CoinMasterExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27590CE32A5EC7BB002520C2 /* Build configuration list for PBXNativeTarget "CoinMasterExtension" */;
+			buildPhases = (
+				27590CCA2A5EC7BA002520C2 /* Sources */,
+				27590CCB2A5EC7BA002520C2 /* Frameworks */,
+				27590CCC2A5EC7BA002520C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoinMasterExtension;
+			productName = CoinMasterExtension;
+			productReference = 27590CCE2A5EC7BA002520C2 /* CoinMasterExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		27F680E42A5EF365000AF44C /* CoinMasterInfoKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27F680F22A5EF366000AF44C /* Build configuration list for PBXNativeTarget "CoinMasterInfoKit" */;
+			buildPhases = (
+				27F680E02A5EF365000AF44C /* Headers */,
+				27F680E12A5EF365000AF44C /* Sources */,
+				27F680E22A5EF365000AF44C /* Frameworks */,
+				27F680E32A5EF365000AF44C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoinMasterInfoKit;
+			productName = CoinMasterInfoKit;
+			productReference = 27F680E52A5EF365000AF44C /* CoinMasterInfoKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		27FC0AFE2A4C1FA00059BDFB /* CoinMaster-Sylvia */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27FC0B132A4C1FA20059BDFB /* Build configuration list for PBXNativeTarget "CoinMaster-Sylvia" */;
@@ -335,10 +492,14 @@
 				27FC0AFC2A4C1FA00059BDFB /* Frameworks */,
 				27FC0AFD2A4C1FA00059BDFB /* Resources */,
 				6D3A1BBF49BCF8320481C123 /* [CP] Embed Pods Frameworks */,
+				27590CE02A5EC7BB002520C2 /* Embed Foundation Extensions */,
+				27F680EF2A5EF366000AF44C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				27590CDE2A5EC7BB002520C2 /* PBXTargetDependency */,
+				27F680EC2A5EF365000AF44C /* PBXTargetDependency */,
 			);
 			name = "CoinMaster-Sylvia";
 			productName = "CoinMaster-Sylvia";
@@ -355,6 +516,12 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					27590CCD2A5EC7BA002520C2 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					27F680E42A5EF365000AF44C = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					27FC0AFE2A4C1FA00059BDFB = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -374,11 +541,29 @@
 			projectRoot = "";
 			targets = (
 				27FC0AFE2A4C1FA00059BDFB /* CoinMaster-Sylvia */,
+				27590CCD2A5EC7BA002520C2 /* CoinMasterExtension */,
+				27F680E42A5EF365000AF44C /* CoinMasterInfoKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		27590CCC2A5EC7BA002520C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2767192F2A5FD5C8000D2654 /* Assets.xcassets in Resources */,
+				27590CDB2A5EC7BB002520C2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F680E32A5EF365000AF44C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27FC0AFD2A4C1FA00059BDFB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -441,12 +626,35 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		27590CCA2A5EC7BA002520C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27590CD52A5EC7BA002520C2 /* CoinMasterBundle.swift in Sources */,
+				276719302A5FF5BF000D2654 /* NumberFormatter.swift in Sources */,
+				27590CD72A5EC7BA002520C2 /* CoinMasterLiveActivity.swift in Sources */,
+				27590CD92A5EC7BA002520C2 /* CoinMaster.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F680E12A5EF365000AF44C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F680F42A5EF592000AF44C /* ProductsStats.swift in Sources */,
+				27F680F52A5EF592000AF44C /* CoinbaseService.swift in Sources */,
+				27F680F32A5EF592000AF44C /* CurrencyPair.swift in Sources */,
+				27F680E92A5EF365000AF44C /* CoinMasterInfoKit.docc in Sources */,
+				27F680F62A5EF5C0000AF44C /* ApiKeys.swift in Sources */,
+				276719282A5FCA6A000D2654 /* LineChartView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27FC0AFB2A4C1FA00059BDFB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				27FC0B1F2A4C31AA0059BDFB /* HomeTableViewCell1.swift in Sources */,
-				276659042A5E40C00025DFBC /* ProductsStats.swift in Sources */,
 				275B103B2A4D4C850029666D /* Profile.swift in Sources */,
 				275B103A2A4D4C850029666D /* Account.swift in Sources */,
 				2779FBAB2A56649D0020FE0E /* TransactionSuccessView.swift in Sources */,
@@ -456,18 +664,16 @@
 				2779FBD32A56F9200020FE0E /* WalletBalanceView.swift in Sources */,
 				27C7ACAC2A5BF568007C2B9D /* AlertUtils.swift in Sources */,
 				27A8C2852A52B10D004BBAC0 /* CandlesDataPoint.swift in Sources */,
-				27FC0B172A4C20000059BDFB /* ApiKeys.swift in Sources */,
 				2779FBD12A56F9140020FE0E /* WalletHeaderView.swift in Sources */,
+				2767192D2A5FCB7E000D2654 /* LineChartView.swift in Sources */,
 				27965C382A4FF9C400F0DFA7 /* CurrencyDetailsTableViewCell2.swift in Sources */,
 				27A8C2832A526045004BBAC0 /* ProductOrders.swift in Sources */,
 				27FC0B032A4C1FA00059BDFB /* AppDelegate.swift in Sources */,
-				27FC0B1E2A4C31AA0059BDFB /* LineChartView.swift in Sources */,
 				2768F8662A597D3C0079F0B5 /* SelectCurrencyTableViewCell.swift in Sources */,
 				27FC0B052A4C1FA00059BDFB /* SceneDelegate.swift in Sources */,
 				2768F8572A595A720079F0B5 /* CategorySelectionTableViewCell.swift in Sources */,
 				27FC0B1C2A4C31AA0059BDFB /* HomeTableViewCell2.swift in Sources */,
 				27625ECA2A517021006CE2F5 /* Double.swift in Sources */,
-				275B10392A4D4C850029666D /* CoinbaseService.swift in Sources */,
 				277232132A556AAA008E4FB1 /* TransactionCompletedViewController.swift in Sources */,
 				27965C3E2A50105000F0DFA7 /* BaseCurrency.swift in Sources */,
 				275B10402A4DC5780029666D /* CurrencyDetailsViewController.swift in Sources */,
@@ -475,7 +681,6 @@
 				2768F85D2A595EB30079F0B5 /* TransactionRecordsTableViewCell.swift in Sources */,
 				27965C362A4FF9BC00F0DFA7 /* CurrencyDetailsTableViewCell1.swift in Sources */,
 				2768F85F2A5963BD0079F0B5 /* CategorySelectionViewController.swift in Sources */,
-				275B10382A4D4C850029666D /* CurrencyPair.swift in Sources */,
 				2779FBCF2A56F1340020FE0E /* WalletCurrencyTableViewCell.swift in Sources */,
 				27965C402A5052A100F0DFA7 /* ExchangeRateResponse.swift in Sources */,
 				27FC0B1D2A4C31AA0059BDFB /* HomeViewController.swift in Sources */,
@@ -493,6 +698,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27590CDE2A5EC7BB002520C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27590CCD2A5EC7BA002520C2 /* CoinMasterExtension */;
+			targetProxy = 27590CDD2A5EC7BB002520C2 /* PBXContainerItemProxy */;
+		};
+		27F680EC2A5EF365000AF44C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27F680E42A5EF365000AF44C /* CoinMasterInfoKit */;
+			targetProxy = 27F680EB2A5EF365000AF44C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		27FC0B082A4C1FA00059BDFB /* Main.storyboard */ = {
@@ -514,6 +732,126 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		27590CE12A5EC7BB002520C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VV2Q9SW232;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoinMaster/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CoinMaster;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sin.CoinMaster-Sylvia.CoinMaster";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27590CE22A5EC7BB002520C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VV2Q9SW232;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoinMaster/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CoinMaster;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sin.CoinMaster-Sylvia.CoinMaster";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		27F680F02A5EF366000AF44C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = VV2Q9SW232;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sin.CoinMasterInfoKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		27F680F12A5EF366000AF44C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = VV2Q9SW232;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sin.CoinMasterInfoKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		27FC0B112A4C1FA20059BDFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -632,6 +970,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94091719932C85AB1DD7EF9B /* Pods-CoinMaster-Sylvia.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -644,7 +983,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -662,6 +1001,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A351BBD70E5CA39B52EF7F37 /* Pods-CoinMaster-Sylvia.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -674,7 +1014,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -691,6 +1031,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		27590CE32A5EC7BB002520C2 /* Build configuration list for PBXNativeTarget "CoinMasterExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27590CE12A5EC7BB002520C2 /* Debug */,
+				27590CE22A5EC7BB002520C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27F680F22A5EF366000AF44C /* Build configuration list for PBXNativeTarget "CoinMasterInfoKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27F680F02A5EF366000AF44C /* Debug */,
+				27F680F12A5EF366000AF44C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		27FC0AFA2A4C1FA00059BDFB /* Build configuration list for PBXProject "CoinMaster-Sylvia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

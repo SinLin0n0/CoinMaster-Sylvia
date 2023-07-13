@@ -8,6 +8,7 @@
 import UIKit
 import MJRefresh
 import JGProgressHUD
+import CoinMasterInfoKit
 
 class AssetTrackingViewController: UIViewController {
     

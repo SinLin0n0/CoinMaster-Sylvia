@@ -8,7 +8,7 @@
 import Foundation
 import CryptoKit
 
-enum CoinbaseApi: String {
+public enum CoinbaseApi: String {
     case products = "https://api-public.sandbox.pro.coinbase.com/products"
     case accounts  = "https://api-public.sandbox.pro.coinbase.com/accounts"
     case profile  = "https://api-public.sandbox.pro.coinbase.com/profiles?active"
@@ -17,7 +17,7 @@ enum CoinbaseApi: String {
     case orderBaseURL = "https://api-public.sandbox.pro.coinbase.com/orders"
 }
 
-enum RequestPath: String {
+public enum RequestPath: String {
     case none
     case accounts = "/accounts"
     case profile = "/profiles?active"
@@ -25,19 +25,19 @@ enum RequestPath: String {
     case orderBaseURL = "/orders"
 }
 
-enum HttpMethod: String {
+public enum HttpMethod: String {
     case get = "GET"
     case post = "POST"
 }
 
-final class CoinbaseService {
+public class CoinbaseService {
     
-    static let shared = CoinbaseService()
-    var apiKeys = ApiKeys()
+    public static let shared = CoinbaseService()
+    public var apiKeys = ApiKeys()
     private init() {}
     
     // 加密
-    func getTimestampSignature(requestPath: String,
+    public func getTimestampSignature(requestPath: String,
                                method: String,
                                body: String) -> (String, String) {
         
@@ -63,7 +63,7 @@ final class CoinbaseService {
         return (cbAccessTimestamp, cbAccessSign)
     }
     
-    func getApiResponse<T: Codable>(api: CoinbaseApi,
+    public func getApiResponse<T: Codable>(api: CoinbaseApi,
                                     param: String = "",
                                     authRequired: Bool,
                                     requestPath: RequestPath = .none,
@@ -117,7 +117,7 @@ final class CoinbaseService {
         //        semaphore.wait()
     }
     
-    func getApiSingleResponse<T: Codable>(api: CoinbaseApi,
+    public func getApiSingleResponse<T: Codable>(api: CoinbaseApi,
                                           param: String = "",
                                           authRequired: Bool,
                                           requestPath: RequestPath = .none,

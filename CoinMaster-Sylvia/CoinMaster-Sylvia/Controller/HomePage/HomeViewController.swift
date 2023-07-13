@@ -7,6 +7,7 @@
 
 import UIKit
 import MJRefresh
+import CoinMasterInfoKit
 
 class HomeViewController: UIViewController {
     
@@ -33,12 +34,14 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.isHidden = true
+        HudLoading.shared.setHud(view: self.view)
         self.getApiData()
     }
     func getApiData(completion: (([CurrencyPair]) -> Void)? = nil) {
         var balanceExchange: Double!
 //        let semaphore = DispatchSemaphore(value: 0)
         self.totalBalanceInTWD = 0
+      
         CoinbaseService.shared.getApiResponse(api: CoinbaseApi.accounts,
                                               authRequired: true,
                                               requestPath: RequestPath.accounts,
@@ -80,6 +83,7 @@ class HomeViewController: UIViewController {
                 group.notify(queue: .main) {
                     self?.tableView?.reloadData()
                     self?.tableView.mj_header?.endRefreshing()
+                    HudLoading.shared.dismissHud()
                 }
             }
         }

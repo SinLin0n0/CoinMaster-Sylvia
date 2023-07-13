@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct CurrencyPair: Codable {
+public struct CurrencyPair: Codable, Hashable {
     
-    let id, baseCurrency, quoteCurrency, quoteIncrement: String
-    let baseIncrement, displayName, minMarketFunds: String
-    let marginEnabled, postOnly, limitOnly, cancelOnly: Bool
-    let status, statusMessage: String
-    let tradingDisabled, fxStablecoin: Bool
-    let maxSlippagePercentage: String
-    let auctionMode: Bool
-    let highBidLimitPercentage: String
+    public let id, baseCurrency, quoteCurrency, quoteIncrement: String
+    public let baseIncrement, displayName, minMarketFunds: String
+    public let marginEnabled, postOnly, limitOnly, cancelOnly: Bool
+    public let status, statusMessage: String
+    public let tradingDisabled, fxStablecoin: Bool
+    public let maxSlippagePercentage: String
+    public let auctionMode: Bool
+    public let highBidLimitPercentage: String
     
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case id
         case baseCurrency = "base_currency"
         case quoteCurrency = "quote_currency"
